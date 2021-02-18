@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="ObsidianY">
+    
+    
+    
+    
+    
+    
+    <title>做题记录 | ObsidianY&#39;s blog</title>
+    <!-- inject:style -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- endinject -->
+    <style>
+        .cube-loading {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('/images/lg/loading.gif') no-repeat center center;
+            background-color: rgba(0,0,0,.7);
+        }
+
+        .cube-loading.out {
+            display: none;
+        }
+
+        .cube-loading:before {
+            display: block;
+            content: '加载中';
+            position: relative;
+            width: 100%;
+            top: 50%;
+            right: -50%;
+            color: #fff;
+        }
+
+        @media(max-width: 768px) {
+            .cube-loading:before {
+                font-size: 1.2em;
+                transform: translate(-24px,20px);
+                -webkit-transform: translate(-24px,20px);
+                -o-transform: translate(-24px,20px);
+                -ms-transform: translate(-24px,20px);
+            }
+        }
+
+        @media(min-width: 768px) {
+            .cube-loading:before {
+
+            }
+        }
+    </style>
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+<div class="cube-body">
+    <nav id="cube-top-memu" class="cube-menu">
+    <ul class="cube-menu-collapse">
+        
+        <li>
+            <i class="cube-icon cube-icon-home" aria-hidden="true"></i>
+            <a href="/">首页</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-archive" aria-hidden="true"></i>
+            <a href="/archives">归档</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-categories" aria-hidden="true"></i>
+            <a href="/categories">分类</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-tags" aria-hidden="true"></i>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-about" aria-hidden="true"></i>
+            <a href="/about-me">关于我</a>
+        </li>
+        
+    </ul>
+</nav>
+<nav class="cube-side-menu" id="cube-side-menu">
+    <ul class="cube-menu-list">
+        
+        <li>
+            <a class="lrc-control">开启歌词</a>
+        </li>
+        
+        <li>
+            <a class="scroll-to-top">回到顶部</a>
+        </li>
+    </ul>
+</nav>
+    <header class="cube-header" id="cube-header">
+    <img src=" https://cdn.luogu.com.cn/upload/image_hosting/zbzjt7fe.png " alt="头部背景图片">
+    
+    <div class="cube-type">
+        <span class="cube-typed-title">ObsidianY&#39;s blog</span>
+        <span class="cube-typed-cursor">|</span>
+    </div>
+    
+</header>
+
+    <style>
+        nav.cube-menu:before {
+            content: '';
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 44px;
+        
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+        
+            z-index: -1;
+            background-image: url('/images/background.jpg');
+            background-repeat: no-repeat;
+            background-position: center -356px;
+            background-size: cover;
+            background-color: transparent;
+        }
+
+        header.cube-background.cube-header-background {
+            visibility: hidden;
+            background-image: url('/images/background.jpg');
+            background-position: center -400px;
+        }
+    </style>
+    <header class="cube-background cube-header-background">
+        
+        <div class="cube-type">
+            <span class="cube-typed-title">ObsidianY&#39;s blog</span>
+            <span class="cube-typed-cursor">|</span>
+        </div>
+        
+    </header>
+    <div class="load-header-background"></div>
+    <script>
+        (function (window) {
+
+            window.headerModule = {}
+            window.headerModule.image = {
+                width: '2000',
+                height: '1414'
+            }
+
+        })(window)
+    </script>
+    
+    <div class="cube-content">
+        <div class="cube-left">
+            <div class="cube-article">
+    <h1 class="title">做题记录</h1>
+    
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2021-01-15
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>
+    
+</div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <p>做题记录</p>
+<a id="more"></a>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/ObsidianY/dp-zhuan-ti">DP专题</a></p>
+<h1 id="2020-10"><a href="#2020-10" class="headerlink" title="2020.10"></a>2020.10</h1><h3 id="10-3"><a href="#10-3" class="headerlink" title="10.3"></a>10.3</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF27E">CF27E Number With The Given Amount Of Divisors</a></p>
+<p>令答案为 $ans$。</p>
+<p>则 $ans= \prod p_i^{c_i}$，其中 $p_i$ 为连续的质数，且 $\forall i<j, c_i>=c_j$。</p>
+<p>那么暴力搜索，剪一下枝就好啦。</p>
+<h3 id="10-4"><a href="#10-4" class="headerlink" title="10.4"></a>10.4</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3225">P3225 [HNOI2012]矿场搭建</a></p>
+<p>跑一遍圆方树，考虑连了两个及以上方点的圆点为割点，可以搜索每个方点，若没连割点就在点双内建两个，若连了一个就在点双内建一个，若连了两个就不用建，简单统计一下答案就行。</p>
+<h3 id="10-7"><a href="#10-7" class="headerlink" title="10.7"></a>10.7</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4630">P4630 [APIO2018] Duathlon 铁人两项</a></p>
+<p>一个性质：对于点双内的任意三点 $u,v,c$，一定存在一条从 $u$ 到 $v$ 的简单路径经过 $c$。</p>
+<p>建出圆方树，将方点权值设为与它相连的所有点双的点数之和，圆点的权值设为 $-1$，统计一下所有圆点的贡献。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1822">P1822 魔法指纹</a></p>
+<p>分段打表。暴力跑就行。</p>
+<h3 id="10-8"><a href="#10-8" class="headerlink" title="10.8"></a>10.8</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4396">P4396 [AHOI2013]作业</a></p>
+<p>莫队套树状数组就行。</p>
+<h3 id="10-9"><a href="#10-9" class="headerlink" title="10.9"></a>10.9</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3806">CF161D Distance in Tree</a></p>
+<p>新学的换根 dp。</p>
+<p>设 $dp[i][j]$ 表示以 $i$ 为根向下走长度为 $j$ 的路径条数。</p>
+<p>先以 $1$ 为根 dfs 一遍，求出每个点向下走长度为 $j$ 的路径条数。</p>
+<p>观察到把一个点换为根，它以 $1$ 在为根时在子树内的贡献是不变的。所以只要考虑它父亲连着的那块就行。</p>
+<p>就是把 $dp[u][i]$ 加上 $dp[fa[u]][i-1]-dp[u][i-2]$（这里记得 $i$ 要从大到小枚）。</p>
+<p>最后的答案就是 $\sum\limits_{i=1}^ndp[i][k]/2$（每条路径都会被两端点各算一次）。</p>
+<h3 id="10-10"><a href="#10-10" class="headerlink" title="10.10"></a>10.10</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2986">P2986 [USACO10MAR]Great Cow Gathering G</a></p>
+<p>换根 dp。设 $dp[i]$ 为在 $i$ 集合的价值，用换根的经典处理就行了。</p>
+<p>错误 $v==fa$ 时直接 continue 了，$ans$ 初值设得不够大。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3674">P3674 小清新人渣的本愿</a></p>
+<p>莫队 $+$ bitset。</p>
+<p>bitset: 类似状压的思想。还要把加转化成减。</p>
+<h3 id="10-11"><a href="#10-11" class="headerlink" title="10.11"></a>10.11</h3><p>我可能真的要从头学 dp 了。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2858">P2858 [USACO06FEB]Treats for the Cows G/S</a></p>
+<p>区间 dp。设 $dp[i][j]$ 表示最后取得的一段是 $[i,j]$ 时的最大值。枚举长度与左端点，每次取 max 求解。</p>
+<h3 id="10-12"><a href="#10-12" class="headerlink" title="10.12"></a>10.12</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1439">P1439 【模板】最长公共子序列</a></p>
+<p>将 $LCS$ 转化为 $LIS$。（就是记录下标）</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1233">P1233 木棍加工</a></p>
+<p>按长度从大到小排序（若相同则按宽度），求一遍 $LIS$ 的长度即可。</p>
+<h3 id="10-13"><a href="#10-13" class="headerlink" title="10.13"></a>10.13</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1280">P1280 尼克的任务</a></p>
+<p>设 $dp[i]$ 表示前 $i$ 时间内最大休息时间，发现不好转移，则设 $dp[i]$ 表示后 $i$ 时间内最大休息时间。将开始时间从大到小排序，再从后向前枚举时间，若当前不是任务的开始点，则 $dp[i]=dp[i+1]+1$;否则枚举所有开始点在 $i$ 的任务，用它们结尾的 dp 值与当前值取 max 即可。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4933">P4933 大师</a></p>
+<p>设 $dp[i][j]$ 表示前 $i$ 个中公差为 $j$ 的方案数，特殊处理一下相等的情况就好。</p>
+<h3 id="10-14"><a href="#10-14" class="headerlink" title="10.14"></a>10.14</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3146">P3146 [USACO16OPEN]248 G</a></p>
+<p>发现区间判断能否合并过于麻烦，可以设 $dp[i][j]$ 表示区间 $[i,j]$ <strong>完全合并</strong> 的价值，枚举长度、左端点、断点，每次判断两个区间能否合并，若无法完全合并就跳过，能合并就更新答案。</p>
+<h3 id="10-15"><a href="#10-15" class="headerlink" title="10.15"></a>10.15</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1220">P1220 关路灯</a></p>
+<p>观察到关掉的一定是连续的一段，考虑区间 dp。</p>
+<p>设 $dp[i][j][0/1]$ 表示关掉区间 $[i,j]$，留在左/右端时最少耗的电量。</p>
+<p>此处固定了出发点，所以从 $c$ 向左右枚举左端点和右端点。</p>
+<p>每次转移讨论到左端还是右端。</p>
+<p>最后输出 $min(dp[1][n][0], dp[1][n][1])$。</p>
+<p>复杂度 $O(n^2)$。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF372C">CF372C Watching Fireworks is Fun</a></p>
+<p>设 $dp[i][j]$ 表示第 $i$ 个烟花时在区域 $j$ 的最大值。</p>
+<p>暴力的想法是枚举第几个烟花，上一个到的点和这个点能在限制时间内能到的所有点。</p>
+<p>然后我们发现这就是一个滑动窗口，用单调队列优化。</p>
+<p>开不下，用滚动数组。</p>
+<h3 id="10-16"><a href="#10-16" class="headerlink" title="10.16"></a>10.16</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5858">P5858 「SWTR-03」Golden Sword</a></p>
+<p>设 $dp[i][j]$ 表示放第 $i$ 个原料时锅里已经有 $j- 1$ 个。</p>
+<p>暴力考虑枚举 $i,j$ 和从 $k$ 转移过来 $(j-1&lt;=k&lt;=min(j+s-1,w))$。</p>
+<p>然后用单调队列优化。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1005">P1005 矩阵取数游戏</a></p>
+<p>区间 dp 常见套路。</p>
+<p>分别对每行 dp 并累加。</p>
+<p>用 <code>__int128</code> 水过的 ~</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3205">P3205 [HNOI2010]合唱队</a></p>
+<p>可以将题目看为从外向里取。</p>
+<p>讨论在左/右端点。</p>
+<p>记得最后也要 $\%mod$。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF607B">CF607B Zuma</a></p>
+<p>设 $dp[i][j]$ 表示区间合并的最小步数。</p>
+<p>预处理出长度为 $1$ 和 $2$ 的情况。</p>
+<p>再进行枚举，讨论两端是否相同。</p>
+<h3 id="10-18"><a href="#10-18" class="headerlink" title="10.18"></a>10.18</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3147">P3147 [USACO16OPEN]262144 P</a></p>
+<p>设 $dp[i][j]$ 为在前 $i$ 个数中，合出 $j$ 的最右端的值。</p>
+<p>$dp[i][j]=dp[dp[i][j-1]][j-1]$。<br>初值 $dp[i][a[i]]=i+1$。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5851">P5851 [USACO19DEC]Greedy Pie Eaters P</a></p>
+<p>设 $dp[i][j]$ 表示区间 $[l,r]$ 间最大可能的重量；<br>$maxn[i][j][k]$ 表示吃的区间 $[l,r]$ 为 $[i, j]$ 的子区间且 $k$ 在 $[l,r]$ 中。</p>
+<p>先处理出 $maxn$， 再递推处理 $dp$， $dp[i][j] = max(dp[i][k-1]+maxn[i][j][k]+dp[k+1][j])$</p>
+<h3 id="10-20"><a href="#10-20" class="headerlink" title="10.20"></a>10.20</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA1292">UVA1292 Strategic game</a></p>
+<p>设 $dp[i][0/1]$ 表示节点 $i$ 放/不放的最小需求。</p>
+<p>易得 $dp[i][0] = \sum\limits_j^{son} dp[j][1]$</p>
+<p>$dp[i][1] = \sum\limits_j^{son} max(dp[j][0],dp[j][1])$</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4753">P4753 River Jumping</a></p>
+<p>贪心。</p>
+<p>显然如果 $pos[1]-pos[0]&lt;s$ 或 $pos[m+1]-pos[m]&lt;s$，那么无解。</p>
+<p>然后模拟，能加就加。</p>
+<p>判断最后总点数是否等于 $m+2$ 就好。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4290">P4290 [HAOI2008]玩具取名</a></p>
+<p>先把字母转化为数字。</p>
+<p>设 $dp[i][j][1/2/3/4]$ 表示区间 $[i,j]$ 能否合成第三维数字对应的字母，简单维护。</p>
+<p>最后判断一下。</p>
+<h3 id="10-23"><a href="#10-23" class="headerlink" title="10.23"></a>10.23</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA10140">UVA10140 Prime Distance</a></p>
+<p>值域很大，但询问的区间较小。</p>
+<p>一个数若是合数，则必然有一个质因子 $p \le \sqrt n$。</p>
+<p>筛出 $\sqrt n$ 以下的质因子，暴力覆盖。</p>
+<p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/199/">AcWing 197. 阶乘分解</a></p>
+<p>显然对于一个质数 $p$，它出现的次数为 $\sum\limits_{i=1}^{log_pn}{\frac{n}{p^i}}$。</p>
+<p>暴力统计。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4310">P4310 绝世好题</a></p>
+<p>设 $dp[i]$ 表示结尾的数 $&amp; (1 &lt;&lt; i) == 1)$的最长子序列长度。</p>
+<p>每次枚举将每一位是一的取最大值再加一。</p>
+<h3 id="10-24"><a href="#10-24" class="headerlink" title="10.24"></a>10.24</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2158">P2158 [SDOI2008]仪仗队</a></p>
+<p>就是 $\sum\limits_{i=2}^{n}\varphi(i) + 3$。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1082">P1082 同余方程</a></p>
+<p>Exgcd 板子1。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA10104">UVA10104 Euclid Problem</a></p>
+<p>Exgcd 板子2。</p>
+<h3 id="10-25"><a href="#10-25" class="headerlink" title="10.25"></a>10.25</h3><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/204/">AcWing 202. 最幸运的数字</a></p>
+<p>$x$ 个 $8$ 可表示为 $8 \times(10^x-1)/9$。</p>
+<p>求最小的 $x$，使得 $n|8 \times(10^x-1)/9$。</p>
+<p>设 $d=gcd(n,8)$。</p>
+<script type="math/tex; mode=display">9\times n\mid8 \times(10^x-1)</script><script type="math/tex; mode=display">\frac{9\times n}{d}\mid10^x-1</script><script type="math/tex; mode=display">10^x\equiv1 \pmod{\frac{9\times n}{d}}</script><p>又因为如果 $gcd(a,b)$,则满足$a^x\equiv1\pmod{n}$的最小正整数 $x_0\mid\varphi(n)$。</p>
+<p>求出 $\varphi(\frac{9\times n}{d})$，枚举因数判断。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2398">P2398 GCD SUM</a></p>
+<p>对于任意两数 $a,b$ 若 $gcd(a,b)=1$</p>
+<p>那么 $gcd(ap,bp)=p$。</p>
+<p>所以 $gcd=p$ 的个数为 $\sum\limits_{i=1}^{\lfloor\frac{n}{p}\rfloor}\varphi(i)\times2-1$。（$(k,k)$ 计算了两遍，要减掉一个）。</p>
+<p>可以用一个前缀和记录。</p>
+<h3 id="10-26"><a href="#10-26" class="headerlink" title="10.26"></a>10.26</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF906D">CF906D Power Tower</a></p>
+<p>显然的一点是，如果我们令 $n=\varphi(n)$,那么这个式子在 $O(logn)$ 次操作后就会变成 $1$。</p>
+<p>所以我们可以用递归的方式求解，复杂度是可以保证的。</p>
+<p>但是要注意一定要满足拓展欧拉定理。</p>
+<p>我们可以在快速幂中维护，即只有当 $res$ 或 $a$ $\le$ $mod$ 时，才将这个值 $\%mod$ 并 $+mod$。( 这里对 $a$ 维护的原因是，$a$ 可能也被模小，使 $res$ 达不到本来大于 $mod$ 的值 )</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3934">P3934 [Ynoi2016]炸脖龙I</a></p>
+<p>第一道正宗由乃题！</p>
+<p>这题就是 Power Tower 的带修版。</p>
+<p>但是我们可以线性筛了。</p>
+<p>再套一个树状数组，差分一下，每次单点查值就行。</p>
+<h3 id="10-30"><a href="#10-30" class="headerlink" title="10.30"></a>10.30</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2054">P2054 [AHOI2005]洗牌</a></p>
+<p>这道题比较 trick。</p>
+<p>发现在位置 $x$ 的牌经过 $1$ 次变换后位置为 $2x \small\%$ $(n+1)$。</p>
+<p>经过 $m$ 次变换后位置为 $2^mx \small\%$ $(n+1)$。</p>
+<p>所以 $m$ 次变换后位置为 $l$ 的牌应该为 $l\times(2^m)^{-1} \small\%$ $(n+1)$。</p>
+<p>注意求逆元不能用费马小定理，要用拓欧。</p>
+<h2 id="2020-11"><a href="#2020-11" class="headerlink" title="2020.11"></a>2020.11</h2><h3 id="11-2"><a href="#11-2" class="headerlink" title="11.2"></a>11.2</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5658">P5658 括号树</a></p>
+<p>令 $con_i$ 表示编号为 $i$ 的括号对答案新增的贡献。</p>
+<p>观察到每个右括号（编号为 $r$ ）和与它匹配的左括号（编号为 $l$）对答案的贡献 $dp[r]=dp[fa[r]]+con[r]$</p>
+<p>然后 $con[r]=con[fa[l]]+1$</p>
+<p>用栈维护左括号，模拟括号匹配，每次要回溯时进行相反操作还原栈。</p>
+<h3 id="11-3"><a href="#11-3" class="headerlink" title="11.3"></a>11.3</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1279">P1279 字串距离</a></p>
+<p>设 $dp[i][j]$ 表示匹配到 $S_1$ 的第 $i$ 位，$S_2$ 的第 $j$ 位。</p>
+<p>$dp[i][j]=min(dp[i-1][j-1]+abs(s1[i]-s2[j]), dp[i][j-1]+k,dp[i-1][j]+k)$</p>
+<p>注意赋初值的时候 $dp[i][0]=dp[i-1][0]+k, dp[0][j]=dp[0][j-1]+k$。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF359D">CF359D Pair of Numbers</a></p>
+<p>用 ST 表维护一下区间 $gcd$ 和区间 $min$，二分长度每次 $O(n)$ 判断。</p>
+<h3 id="11-4"><a href="#11-4" class="headerlink" title="11.4"></a>11.4</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1541">P1541 乌龟棋</a></p>
+<p>简单 DP?</p>
+<p>观察到每种卡片的数量都比较少可以设 $dp[i][j][k][l]$ 表示四种卡分别用了 $i,j,k,l$ 张时的最大得分。</p>
+<p>枚举 $i,j,k,l$ 计算位置并转移即可。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4342">P4342 [IOI1998]Polygon</a></p>
+<p>正常区间 DP 吧，但有乘法，所以要维护区间最大和最小值。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3052">P3052 [USACO12MAR]Cows in a Skyscraper G</a></p>
+<p>状压 DP，枚举可行子集。</p>
+<p>设 $dp[i][j]$ 为选了 $i$ 个集合，已经选过的数集二进制表示为 $j$。</p>
+<p>枚举 $i$，$j$ 和 $k$，如果 $j|(1&lt;&lt;k)$ （选过）就 continue，不然讨论 $dp[i][j]+v[k]$ 是否大于 $V$，如果是就另开一次，不然直接放入。</p>
+<p>最后枚举 $i$，找到第一个 $dp[i][(1&lt;&lt;n)-1]$ 的值是推出的值的 $i$ 输出。</p>
+<h3 id="11-5"><a href="#11-5" class="headerlink" title="11.5"></a>11.5</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3959">P3959 宝藏</a></p>
+<p>考虑将这个图分层。</p>
+<p>预处理出 $to[i]$ 表示集合 $i$ 尽可能拓展所得到的最大子集。</p>
+<p>设 $dp[i][j]$ 表示选了 $i$ 层，已选集合为 $j$ 的最小花费。显然 $dp[0][1&lt;&lt;k]=0$。</p>
+<p>枚举状态 $i$,它的子集 $j$，对于每个 $to[j]$，如果 $i$ 是它的子集，就求出 $i$ 在它中的补集并暴力转移。</p>
+<p>然后每次暴力统计。</p>
+<p>最后输出 $min\{dp[i][(1&lt;&lt;n)-1]\}(0\le i&lt;n)$。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3092">P3092 [USACO13NOV]No Change G</a></p>
+<p>先处理出 $most[i][j]$ 表示用第 $i$ 个硬币从第 $j$ 个物品开始最多能买到的位置。</p>
+<p>然后枚举状态，单点转移即可。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2495">P2495 [SDOI2011]消耗战</a></p>
+<p>我们可以设 $dp[u]$ 表示切断 $1 - u$ 和 $u$ 子树中所有关键点的最小代价，$min1[u]$ 表示 $1-u$ 这段路径中边权的最小值。</p>
+<p>对于每个询问，我们可以这样 dp:</p>
+<p>对于 $u$ 的每个儿子 $v$，如果 $v$ 是是关键点，那么 $dp[u]+=min1[v]$，不然 $dp[u]+=min(dp[v],min1[v])$。</p>
+<p>但如果这样，我们最坏每次都会遍历整棵树，复杂度无法保证。</p>
+<p>所以我们要建虚树。</p>
+<p>我们用栈维护建树，栈中的元素代表当前树的最右链。</p>
+<p>然后跑一跑 dp 之类的东西就好啦！</p>
+<h3 id="11-6"><a href="#11-6" class="headerlink" title="11.6"></a>11.6</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2150">P2150 [NOI2015]寿司晚宴</a></p>
+<p>分析题目性质可知，题目要求两个人选的质因数集无交。</p>
+<p>然后可以发现对于任意一个小于等于 $500$ 的数，它最多只有一个大于等于 $23$ 的质因子，而小于 $23$ 的质因子只有 $8$ 个。</p>
+<p>我们可以对每一个数分解质因子并将其小于 $23$ 的质因子状压。</p>
+<p>对于有大于等于 $23$ 的质因子的数，我们对它们按照这个大质因子从大到小排序。</p>
+<p>然后枚举两个状态，依次转移。</p>
+<h3 id="11-8"><a href="#11-8" class="headerlink" title="11.8"></a>11.8</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1955">P1955 [NOI2015]程序自动分析</a></p>
+<p>开了个 <code>unordered_map</code> 离散化。</p>
+<p>用并查集维护相同的值，</p>
+<p>最后扫一遍不同的。</p>
+<p>记得将 <code>unordered_map</code> 清空。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1196">P1196 [NOI2002]银河英雄传说</a></p>
+<p>带权并查集模板题。</p>
+<p>记 $d[i]$ 为 $i$ 到它的集合的代表元素的距离，每次路径压缩时维护一下。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA11987">UVA11987 Almost Union-Find</a></p>
+<p>思路还是可以借鉴的。</p>
+<p>如果没有操作 <code>2</code>，那么它就是一个并查集板子（<strong>Almost Union-Find</strong>）。</p>
+<p>但每次操作 <code>2</code> 都可能使从属关系被打乱。</p>
+<p>对于每个点 $i$，我们发现每次操作 <code>2</code> 只转移一个点，所以可以维护它的一个拓展点 $i+n$，用这些编号大于 $n$ 的点维护关系架构，每个转移就是把编号小于等于 $n$ 的点拆下来丢到另一个上面。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1533">P1533 可怜的狗狗</a></p>
+<p>莫队 + 平衡树。</p>
+<p>十分板子。</p>
+<p>但要开大平衡树空间。</p>
+<h3 id="11-10"><a href="#11-10" class="headerlink" title="11.10"></a>11.10</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3165">P3165 [CQOI2014]排序机械臂</a></p>
+<p>平衡树记录父亲。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1486">P1486 [NOI2004]郁闷的出纳员</a></p>
+<p>平衡树板子。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3165">P3165 [CQOI2014]排序机械臂</a></p>
+<p>统计答案时先跑到父亲，并下传标记。</p>
+<h3 id="11-11"><a href="#11-11" class="headerlink" title="11.11"></a>11.11</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1903">P1903 [国家集训队]数颜色 / 维护队列</a></p>
+<p>带修莫队板子。</p>
+<p>少写了一个 $=$ 调了好久……</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1000F">CF1000F One Occurrence</a></p>
+<p>用莫队简单维护。</p>
+<p>卡常：用栈记录答案比链表块（因为地址相邻）。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3246">P3246 [HNOI2016]序列</a></p>
+<p>显然莫队。</p>
+<p>考虑怎么从区间 $[l,r]$ 转移到区间 $[l, r+1]$（其它类似）。</p>
+<p>用单调栈维护一个 $pre[i]$ 记录 $i$ 前第一个比 $a[i]$ 小的值的位置。</p>
+<p>然后记 $pans[i]$ 表示以 $i$ 结尾的所有后缀的答案之和。</p>
+<p>那么对于区间 $[l,r+1]$ 我们可以用 ST 表找出这段区间的最小值的位置 $p$，那么答案就为 $(p-l+1)\times a[p]+pans[r+1]-pans[p]$。这里简单理解一下，如果有多个最小值取哪个位置都是一样的。</p>
+<p>其它操作同理。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4137">P4137 Rmq Problem / mex</a></p>
+<p>莫队。</p>
+<p>简单单点修改后值域分块，依次枚举每个值域块，找到没放满的就进去跑一遍。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/AT1219">AT1219 歴史の研究</a></p>
+<p>可以说是回滚莫队板子。</p>
+<p>记得开 long long。</p>
+<h3 id="11-12"><a href="#11-12" class="headerlink" title="11.12"></a>11.12</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF911F">CF911F Tree Destruction</a></p>
+<p>显然不在直径上的点要答案最大肯定是与直径的一个端点产生贡献。</p>
+<p>否则如果存在值更大的一条路径，那么它应该是直径，与原设矛盾。</p>
+<p>而对于直径上的点，依次删就好了。</p>
+<p>注意只能选叶子，所以在直径 $lca$ 的两端点的祖先那一块要处理一下。</p>
+<p>记得开 $long\ long$。</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2491">P2491 [SDOI2011]消防</a></p>
+<p>一个很显然的性质是，树上离一个点最远的点一定是直径的两个端点之一。</p>
+<p>所以这说明我们选的位置必须与直径有交。</p>
+<p>若选中了直径上一点，那么在直径上拓展显然更优。</p>
+<p>所以选的位置一定是直径的子集。</p>
+<p>考虑直径外的点对答案的贡献，容易发现当且仅当直径上离这个点最近的点被选中时才可能有贡献。</p>
+<p>所以我们可以记录一下每个直径上的点不走直径的其它点能到达的最远距离 $mx[u]$。</p>
+<p>用单调队列维护一下即可。</p>
+<h3 id="11-17"><a href="#11-17" class="headerlink" title="11.17"></a>11.17</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3157">P3157 [CQOI2011]动态逆序对</a></p>
+<p>加上时间轴，就是一个三维偏序。</p>
+<h3 id="11-18"><a href="#11-18" class="headerlink" title="11.18"></a>11.18</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4169">P4169 [Violet]天使玩偶/SJY摆棋子</a></p>
+<p>时间轴变三维偏序。</p>
+<p>树状数组维护 $max$。</p>
+<p>为了卡常将 <code>sort</code> 换成归并。</p>
+<p>注意 $x==0||y==0$ 的情况树状数组可能死循环，要加 $1$。</p>
+<h3 id="11-20"><a href="#11-20" class="headerlink" title="11.20"></a>11.20</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1972">P1972 [SDOI2009]HH的项链</a></p>
+<p>先将询问按右端点从小到大排序。</p>
+<p>从前往后扫一遍，对于每一个值在树状数组里把这种元素的 $lastpos$ 上 $-1$，每个询问用两个前缀和减一下就好了。</p>
+<h3 id="11-25"><a href="#11-25" class="headerlink" title="11.25"></a>11.25</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF103D">CF103D Time to Raid Cowavans</a></p>
+<p>根号分治。</p>
+<p>对于距离小于 $\sqrt n$ 的记录前缀和，大于就暴力跑。</p>
+<p>卡空间，所以按长度排序依次处理。</p>
+<h3 id="11-30"><a href="#11-30" class="headerlink" title="11.30"></a>11.30</h3><p><a target="_blank" rel="noopener" href="https://loj.ac/p/2559">「HNOI2003」消防局的设立</a></p>
+<p>设 $dp[u][sta]$ 为点 $u$ 覆盖到它 $+2-sta$ 层最小需要的点数。</p>
+<p>讨论转移即可。</p>
+<p><a target="_blank" rel="noopener" href="https://loj.ac/p/517">「LibreOJ β Round #2」计算几何瞎暴力</a></p>
+<p>考虑任意时刻序列都是前一段排过序，后一段没有。</p>
+<p>全局异或可以记一个值来存，每次插入时异或上它。</p>
+<p>用一个 $01trie$ 维护前面那段排过序的，后面无序的用拆位的前缀和维护。</p>
+<p>每次排序将前缀和里的东西插到 $01trie$ 里。</p>
+<h2 id="2020-12"><a href="#2020-12" class="headerlink" title="2020.12"></a>2020.12</h2><h3 id="12-14"><a href="#12-14" class="headerlink" title="12.14"></a>12.14</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1375G">CF1375G Tree Modification</a></p>
+<p>妙题。</p>
+<p>最后树的形态是一朵菊花，考虑将树节点黑白染色，那么要求某个颜色的数量为 $1$。</p>
+<p>考虑每次操作，只会改变 $a$ 点的颜色。</p>
+<p>而只要有颜色出现次数大于 $1$ 就一定可以操作。</p>
+<p>所以答案就是 $min(cnt[0], cnt[1]) - 1$。</p>
+<h2 id="2021-1"><a href="#2021-1" class="headerlink" title="2021.1"></a>2021.1</h2><h3 id="1-15"><a href="#1-15" class="headerlink" title="1.15"></a>1.15</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3396">P3396 哈希冲突</a></p>
+<p>紫题100祭！</p>
+<p>一道根号分治大水题（一开始还看难了</p>
+<p>就是对小于 $\sqrt n$ 的记个 $ans$ 数组。</p>
+<h3 id="1-17"><a href="#1-17" class="headerlink" title="1.17"></a>1.17</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5356">P5356 [Ynoi2017] 由乃打扑克</a></p>
+<p>分块。块内排序。</p>
+<p>维护块内有序用归并。</p>
+<p>然后套个二分。</p>
+<p>再加上奇怪优化。</p>
+<h3 id="1-27"><a href="#1-27" class="headerlink" title="1.27"></a>1.27</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF711D">CF711D Directed Roads</a></p>
+<p>定义 $len$ 为环长度。</p>
+<p>答案就是 $2^{n-\sum len} \prod (2^{len} - 2)$</p>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        <li class="prev">
+            <a href="/2021/01/19/ToDoList/">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                ToDoList
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2020/12/30/12-28Test/">
+                12.28Test
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+
+
+        </div>
+        <div class="cube-right">
+            
+
+<div class="cube-search cube-sidebar" id="cube-search">
+    <div class="search-container">
+        <input type="text" placeholder="搜索" class="cube-search-input" id="cube-search-input">
+        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
+    </div>
+    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
+</div>
+<script>
+    (function (window) {
+        'use strict';
+        window.searchModule = {}
+        window.searchModule.JSONUrl = '/content.json'
+        window.searchModule.rootUrl = '/'
+    })(window)
+</script>
+<div class="cube-search-form">
+    <div class="cube-search-control">
+        <input type="text" placeholder="搜索" class="search-input">
+        <a class="close-button">
+            <i class="cube-icon cube-close" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="cube-search-result"></div>
+</div>
+
+
+<div class="cube-author cube-sidebar" id="cube-author">
+    
+    
+    <span>ObsidianY</span>
+    
+    
+    <div class="count">
+        <a class="count articles"><span>12</span>文章</a>
+        <a class="count tags"><span>16</span>标签</a>
+        <a class="count categories"><span>0</span>分类</a>
+    </div>
+</div>
+
+
+
+<div class="cube-music cube-sidebar" id="cube-music">
+    <div class="cube-player aplayer" id="cube-player"></div>
+</div>
+<script>
+    (function (window) {
+        window.musicModule = {}
+        window.musicModule.musicConfig = '{"narrow":false,"autoplay":false,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"},{"title":"Sweden","author":"c418","url":"https://obsidiany.github.io/music/Sweden.mp3","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"}]}'
+        window.musicModule.lrcConfig = {
+            open: '开启歌词',
+            close: '关闭歌词'
+        }
+    })(window)
+</script>
+
+
+
+<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
+    <div class="title">
+        <a>近期文章</a>
+    </div>
+    <ul class="list">
+        
+        
+        <li>
+            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
+            
+            <div class="normal">
+                <p class="index first">
+                    <span>1</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/01/19/ToDoList/" title="ToDoList">ToDoList</a>
+                </p>
+            </div>
+            
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>2</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/01/15/%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" title="做题记录">做题记录</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>3</span>
+                </p>
+                <p class="title">
+                    <a href="/2020/12/30/12-28Test/" title="12.28Test">12.28Test</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>4</span>
+                </p>
+                <p class="title">
+                    <a href="/2020/12/27/12-27Test/" title="12.27Test">12.27Test</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>5</span>
+                </p>
+                <p class="title">
+                    <a href="/2020/12/11/noip2020%E5%8F%8D%E6%80%9D%E8%AE%B0/" title="noip2020反思记">noip2020反思记</a>
+                </p>
+            </div>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+
+
+
+<div class="cube-tagcloud cube-sidebar" id="cube-tagcloud">
+    <div class="title">
+        <a href="/tags">标签云</a>
+    </div>
+    <div class="cube-boxs">
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E8%80%83%E8%AF%95/">#考试</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%9E%84%E9%80%A0/">#构造</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E7%A6%BB%E7%BA%BF/">#离线</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/TEST/">#TEST</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E9%94%99%E5%9B%A0/">#错因</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%8C%82%E5%88%86/">#挂分</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/dp/">#dp</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/">#欧拉定理</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E6%95%B0%E5%AD%A6/">#数学</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/gu/">#gu</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E4%B9%B1%E6%90%9E/">#乱搞</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="cube-links cube-sidebar" id="cube-links">
+    <div class="title">
+        <a>个人链接</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png">
+            
+            <a href="https://github.com/ObsidianY" target="_blank">GitHub</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="https://cdn.jsdelivr.net/gh/libreoj/assets/logo-website.min.svg">
+            
+            <a href="https://loj.ac/u/ObsidianY" target="_blank">LOJ</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="https://cdn.luogu.com.cn/fe/logo.png">
+            
+            <a href="https://www.luogu.com.cn/user/108098" target="_blank">泥谷</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
+    <div class="title">
+        <a>友情链接</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="https://i.loli.net/2021/02/17/23wtOEGMbaCroFl.jpg">
+            <a href="https://cnblogs.com/zcus" target="_blank">Zcus</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+    </div>
+</div>
+<footer class="cube-footer">
+    
+© 2017 ObsidianY
+
+<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+</footer>
+<!-- inject:script -->
+<script src="/js/script.js"></script>
+<!-- endinject -->
+<div class="cube-loading out"></div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+</body>
+</html>
