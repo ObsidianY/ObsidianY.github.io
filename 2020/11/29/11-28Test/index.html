@@ -131,7 +131,7 @@
             z-index: -1;
             background-image: url('/images/background.jpg');
             background-repeat: no-repeat;
-            background-position: center -356px;
+            background-position: center -156px;
             background-size: cover;
             background-color: transparent;
         }
@@ -139,7 +139,7 @@
         header.cube-background.cube-header-background {
             visibility: hidden;
             background-image: url('/images/background.jpg');
-            background-position: center -400px;
+            background-position: center -200px;
         }
     </style>
     <header class="cube-background cube-header-background">
@@ -235,6 +235,25 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
 
 <!-- TODO 根据theme.comment的内容进行入口选择 -->
 
+    <!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
+<div class="gitment-comment">
+    <div id="container"></div>
+</div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id default is location.href
+        owner: 'ObsidianY',
+        repo: 'blog_comments',
+        oauth: {
+            client_id: '6603691d184d0907e56a',
+            client_secret: '848f8ccf2e7d7c87cd892ba59b464cef8e58a784',
+        },
+    })
+    gitment.render('container')
+</script>
+    
 
 
         </div>
@@ -298,8 +317,8 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
     
     
     <div class="count">
-        <a class="count articles"><span>12</span>文章</a>
-        <a class="count tags"><span>16</span>标签</a>
+        <a class="count articles"><span>13</span>文章</a>
+        <a class="count tags"><span>17</span>标签</a>
         <a class="count categories"><span>0</span>分类</a>
     </div>
 </div>
@@ -337,7 +356,7 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
                     <span>1</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/01/19/ToDoList/" title="ToDoList">ToDoList</a>
+                    <a href="/2021/02/19/2-19Test/" title="2.19Test">2.19Test</a>
                 </p>
             </div>
             
@@ -351,7 +370,7 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
                     <span>2</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/01/15/%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" title="做题记录">做题记录</a>
+                    <a href="/2021/01/19/ToDoList/" title="ToDoList">ToDoList</a>
                 </p>
             </div>
         </li>
@@ -364,7 +383,7 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
                     <span>3</span>
                 </p>
                 <p class="title">
-                    <a href="/2020/12/30/12-28Test/" title="12.28Test">12.28Test</a>
+                    <a href="/2021/01/15/%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" title="做题记录">做题记录</a>
                 </p>
             </div>
         </li>
@@ -377,7 +396,7 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
                     <span>4</span>
                 </p>
                 <p class="title">
-                    <a href="/2020/12/27/12-27Test/" title="12.27Test">12.27Test</a>
+                    <a href="/2020/12/30/12-28Test/" title="12.28Test">12.28Test</a>
                 </p>
             </div>
         </li>
@@ -390,7 +409,7 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
                     <span>5</span>
                 </p>
                 <p class="title">
-                    <a href="/2020/12/11/noip2020%E5%8F%8D%E6%80%9D%E8%AE%B0/" title="noip2020反思记">noip2020反思记</a>
+                    <a href="/2020/12/27/12-27Test/" title="12.27Test">12.27Test</a>
                 </p>
             </div>
         </li>
@@ -415,7 +434,7 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%9E%84%E9%80%A0/">#构造</a>
         </div>
         
@@ -430,7 +449,7 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
         </div>
         
@@ -440,7 +459,7 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/">#欧拉定理</a>
         </div>
         
@@ -455,7 +474,7 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
         </div>
         
@@ -465,17 +484,17 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/TEST/">#TEST</a>
         </div>
         
@@ -487,6 +506,11 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
         
         <div class="cube-box ">
             <a href="/tags/%E4%B9%B1%E6%90%9E/">#乱搞</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86%EF%BC%8C%E7%BB%84%E5%90%88%EF%BC%8C%E4%BA%8C%E5%88%86%E5%9B%BE%EF%BC%8C%E5%88%86%E5%9D%97/">#矩阵树定理，组合，二分图，分块</a>
         </div>
         
     </div>
@@ -547,6 +571,12 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
             <a href="https://ycpedef.github.io/" target="_blank">ycpedef</a>
         </li>
         
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="https://www.luogu.com.cn/upload/usericon/35255.png">
+            <a href="http://chaos1018.rinue.top/" target="_blank">Chaos1018</a>
+        </li>
+        
     </ul>
 </div>
 
@@ -565,5 +595,24 @@ Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a
 <script src="/js/script.js"></script>
 <!-- endinject -->
 <div class="cube-loading out"></div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
 </body>
 </html>

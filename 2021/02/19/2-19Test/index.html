@@ -10,7 +10,7 @@
     
     
     
-    <title>标签: TEST | ObsidianY&#39;s blog</title>
+    <title>2.19Test | ObsidianY&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -165,29 +165,93 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">2.19Test</h1>
     
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">TEST</h1>
-        
-        <ul class="posts">
-            
-            <li class="post">
-                <a href="/2020/11/27/testpage/">testpage</a>
-            </li>
-            
-        </ul>
-        
-    </div>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2021-02-19
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/%E8%80%83%E8%AF%95/">#考试</a>
+    
+    <a href="/tags/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86%EF%BC%8C%E7%BB%84%E5%90%88%EF%BC%8C%E4%BA%8C%E5%88%86%E5%9B%BE%EF%BC%8C%E5%88%86%E5%9D%97/">#矩阵树定理，组合，二分图，分块</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h3 id="2-19Test"><a href="#2-19Test" class="headerlink" title="2.19Test"></a>2.19Test</h3><p>$180/300pts$</p>
+<p>T1 傻了，找半天规律结果式子这么简单。</p>
+<p>T2 随机化拿了 $75pts$ 很爽</p>
+<p>T3 被毒瘤 lxl 卡常了难受</p>
+<a id="more"></a>
+<h4 id="zhang"><a href="#zhang" class="headerlink" title="zhang"></a>zhang</h4><p>按深度的奇偶性可以把这棵树分成一个二分图。（这个我就没想到）</p>
+<p>令 $S(N, M)$ 表示左边 $N$ 个点， 右边 $M$ 个点的完全二分图生成树个数， 答案即 $S(K, N-K) \times C(N-1, K-1)$</p>
+<p>其中可以发现 $S(N, M)=N^{M-1}\times M^{N-1}$</p>
+<p>然后就做完了</p>
+<h4 id="z"><a href="#z" class="headerlink" title="z"></a>z</h4><p>取一个极大值 $INF$。</p>
+<p>从原点向每种减肥药连边，边权为 $INF-p[i]$;</p>
+<p>减肥药向对应药材连边，边权为比 $INF$ 还大许多的极大值。</p>
+<p>每个药材向汇点连边，边权为 $INF$。</p>
+<p>现在我们跑最小割，答案就是 $maxflow-\sum\limits_{i=1}^nINF-p[i]$</p>
+<p>为什么这是对的呢？</p>
+<p>因为保证可以一一配对了，跑出 $maxflow$ 后，匹配状态一定是满的。又因为是最大流，$p$ 之和大于 $0$ 的一块就跑不到 $INF$，再在最后一减就会被抵消掉，而 $p$ 之和小于 $0$ 的只能跑到 $INF$，最后一减就得到了 $p$。</p>
+<h4 id="j"><a href="#j" class="headerlink" title="j"></a>j</h4><p>我的复杂度是对的！！！我只是被卡了！！！</p>
+<p>设块大小为 $S$。</p>
+<p>用 $dfs$ 序！子树问题变成序列区间问题！</p>
+<p>分块！区间排序！预处理 $O(N \frac{N}{S}\log S)$ ！</p>
+<p>修改怎么办？完整块部分直接记偏移量！$O(\dfrac{N}{S})$ ！零散部分对被修改部分和未被修改部分归并！$O(S)$！</p>
+<p>怎么回答第 $k$ 大？二分！二分值 $x$ 之后再对于区间包含的每个块 <code>lower_bound</code> 求排名并判定！时间复杂度 $O(\dfrac{N}{S}\log len \log S)$！</p>
+<p>$S$ 取 $sqrt{N}\log N$ 较优！总复杂度 $O(N\sqrt{N}\log N)$！</p>
+<p>卡常什么的不管了！</p>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        
+        <li class="next">
+            <a href="/2021/01/19/ToDoList/">
+                ToDoList
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+    <!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
+<div class="gitment-comment">
+    <div id="container"></div>
+</div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id default is location.href
+        owner: 'ObsidianY',
+        repo: 'blog_comments',
+        oauth: {
+            client_id: '6603691d184d0907e56a',
+            client_secret: '848f8ccf2e7d7c87cd892ba59b464cef8e58a784',
+        },
+    })
+    gitment.render('container')
+</script>
+    
+
+
         </div>
         <div class="cube-right">
             
@@ -371,17 +435,17 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%A6%BB%E7%BA%BF/">#离线</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%8C%82%E5%88%86/">#挂分</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
         </div>
         
@@ -391,7 +455,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/">#欧拉定理</a>
         </div>
         
@@ -411,7 +475,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/dp/">#dp</a>
         </div>
         
@@ -421,7 +485,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>
         </div>
         
@@ -441,7 +505,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86%EF%BC%8C%E7%BB%84%E5%90%88%EF%BC%8C%E4%BA%8C%E5%88%86%E5%9B%BE%EF%BC%8C%E5%88%86%E5%9D%97/">#矩阵树定理，组合，二分图，分块</a>
         </div>
         
