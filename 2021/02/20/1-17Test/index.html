@@ -10,7 +10,7 @@
     
     
     
-    <title>标签: TEST | ObsidianY&#39;s blog</title>
+    <title>1.17Test | ObsidianY&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -165,29 +165,90 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">1.17Test</h1>
     
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">TEST</h1>
-        
-        <ul class="posts">
-            
-            <li class="post">
-                <a href="/2020/11/27/testpage/">testpage</a>
-            </li>
-            
-        </ul>
-        
-    </div>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2021-02-20
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/%E8%80%83%E8%AF%95/">#考试</a>
+    
+    <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
+    
+    <a href="/tags/dp/">#dp</a>
+    
+    <a href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/">#二分图</a>
+    
+    <a href="/tags/%E6%A0%91/">#树</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h3 id="1-17Test"><a href="#1-17Test" class="headerlink" title="1.17Test"></a>1.17Test</h3><h4 id="A"><a href="#A" class="headerlink" title="A"></a>A</h4><p>水位不断上升，我们可以看成把两个水箱合并。这样会形成一个树形结构。接着我们要在这棵树上 dp。</p>
+<p>我们可以把每个水箱点从下到上依次做前缀和 $+1/-1$ </p>
+<p>然后对水位讨论取 <code>max</code> 即可。</p>
+<h4 id="B"><a href="#B" class="headerlink" title="B"></a>B</h4><p>之前知道这个 $trick$，不过没有好好想</p>
+<p>把格子黑白染色，然后这就变成了一张二分图。</p>
+<p>那么答案是所有非必须匹配点（如果必须，我就能找到一条增广路反败为胜）</p>
+<h4 id="C"><a href="#C" class="headerlink" title="C"></a>C</h4><p>李超树板子。</p>
+<p>并没有什么好写的。</p>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        <li class="prev">
+            <a href="/2021/02/20/%E5%88%86%E6%95%A3%E5%B1%82%E5%8F%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                分散层叠学习笔记
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2021/02/19/2-19Test/">
+                2.19Test
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+    <!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
+<div class="gitment-comment">
+    <div id="container"></div>
+</div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id default is location.href
+        owner: 'ObsidianY',
+        repo: 'blog_comments',
+        oauth: {
+            client_id: '6603691d184d0907e56a',
+            client_secret: '848f8ccf2e7d7c87cd892ba59b464cef8e58a784',
+        },
+    })
+    gitment.render('container')
+</script>
+    
+
+
         </div>
         <div class="cube-right">
             
@@ -390,7 +451,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%A6%BB%E7%BA%BF/">#离线</a>
         </div>
         
@@ -405,12 +466,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/">#欧拉定理</a>
         </div>
         
@@ -420,7 +481,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/gu/">#gu</a>
         </div>
         
@@ -435,7 +496,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
         </div>
         
@@ -455,7 +516,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86/">#矩阵树定理</a>
         </div>
         
@@ -465,12 +526,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%88%86%E5%9D%97/">#分块</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%A0%91/">#树</a>
         </div>
         
