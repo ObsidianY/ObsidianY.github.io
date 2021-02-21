@@ -10,7 +10,7 @@
     
     
     
-    <title>各种错误 | ObsidianY&#39;s blog</title>
+    <title>2.20Test | ObsidianY&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -166,40 +166,89 @@
     <div class="cube-content">
         <div class="cube-left">
             <div class="cube-article">
-    <h1 class="title">各种错误</h1>
+    <h1 class="title">2.20Test</h1>
     
     <div class="cube-article-header">
-        <div class="cube-article-date page">
+        <div class="cube-article-date">
             <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
             <!-- moment.js对象 -->
-            2020-12-30
+            2021-02-21
         </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/%E8%80%83%E8%AF%95/">#考试</a>
+    
+    <a href="/tags/dp/">#dp</a>
+    
+    <a href="/tags/LCT/">#LCT</a>
+    
+    <a href="/tags/%E7%9B%B4%E5%BE%84/">#直径</a>
+    
+    <a href="/tags/%E5%8D%95%E8%B0%83/">#单调</a>
+    
+    <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">#线性代数</a>
+    
+</div>
     </div>
     
     <div class="cube-article-content cube-markdown">
         
-        <p>对各种错误的总结。</p>
-<p>本页面将持续更新</p>
-<a id="more"></a>
-<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><ol>
-<li>单调队列 dp 弹出队尾 <code>while(l &lt;= r &amp;&amp; q[l] &lt; ...) ++l;</code> 不是 <code>while(l &lt;= r &amp;&amp; l &lt; ...) ++l;</code> !!!</li>
-</ol>
-<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><ol>
-<li><p>$01trie$ 记得在算 $id$ 的时候加 <code>bool</code></p>
-</li>
-<li><p>线段树 <code>pushdown</code> 是 <code>Add</code> 两个儿子（丢人</p>
-</li>
-</ol>
-<h2 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h2><h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><ol>
-<li>树上差分是 $l,r (+1);lca,fa[lca] (-1)$</li>
-</ol>
-<h3 id="网络流"><a href="#网络流" class="headerlink" title="网络流"></a>网络流</h3><ol>
-<li>记得注意初始化的范围，一定要跑满。</li>
-</ol>
+        <h3 id="2-20Test"><a href="#2-20Test" class="headerlink" title="2.20Test"></a>2.20Test</h3><a id="more"></a>
+<h4 id="hike"><a href="#hike" class="headerlink" title="hike"></a>hike</h4><p>LCT 维护直径。</p>
+<p>然而我的 $50$ 分做法也卡过了2333~</p>
+<h4 id="jewelry"><a href="#jewelry" class="headerlink" title="jewelry"></a>jewelry</h4><p>论文题。</p>
+<p>发现 $c$ 很小，所以把价值为 $c_i$ 的归一类。</p>
+<p>利用决策单调性 dp 即可。</p>
+<h4 id="mat"><a href="#mat" class="headerlink" title="mat"></a>mat</h4><p>设 $dp[i][j]$ 表示 $i\times i$ 的秩为 $j$ 的矩阵个数。</p>
+<p>则 </p>
+<script type="math/tex; mode=display">
+dp[i][0]=dp[i-1][0]</script><script type="math/tex; mode=display">
+dp[i][j]=dp[i-1][j-1]\times (2^n-2^{j-1}) + dp[i-1][j]\times 2^j</script><p>发现每个秩相同的 $C$ 答案相同（分配率可证），所以我们只要求出所有秩为 $rkc$ 的答案和并除以 $dp[n][rkc]$ 就好了。</p>
+<p>假设我确定了 $A$，$A$ 的秩为 $rka$，则 $B$ 的方案数为 $2^{n\times(n-rka)}$(把 $A$ 消扁，然后 $B$ 的每一列都有 $2^{n-rka}$ 种可能性）</p>
+<p>然后由于 $C$ 要由 $A$ 经过一系列变换得到，可以新建一个 $n\times rka$ 的矩阵，每一位 $1/0$ 表示 用/不用 $A$ 中这个向量。</p>
+<p>所以我们只用枚举 $A$ 的秩，$sum=\sum\limits_{i=rkc}^ndp[n][i]\times dp[i][rkc]\times2^{n\times(n-rka)}$</p>
+<p>最后 $Ans=\frac{sum}{dp[n][rkc]}$。</p>
 
     </div>
 </div>
 
+<div class="cube-article-nav">
+    <ul>
+        
+        
+        <li class="next">
+            <a href="/2021/02/20/%E5%88%86%E6%95%A3%E5%B1%82%E5%8F%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                分散层叠学习笔记
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+    <!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
+<div class="gitment-comment">
+    <div id="container"></div>
+</div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id default is location.href
+        owner: 'ObsidianY',
+        repo: 'blog_comments',
+        oauth: {
+            client_id: '6603691d184d0907e56a',
+            client_secret: '848f8ccf2e7d7c87cd892ba59b464cef8e58a784',
+        },
+    })
+    gitment.render('container')
+</script>
+    
 
 
         </div>
@@ -424,22 +473,22 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/">#欧拉定理</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%95%B0%E5%AD%A6/">#数学</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/gu/">#gu</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
         </div>
         
@@ -459,7 +508,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/TEST/">#TEST</a>
         </div>
         
@@ -474,7 +523,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/">#二分图</a>
         </div>
         
@@ -484,7 +533,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%A0%91/">#树</a>
         </div>
         
@@ -504,7 +553,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">#线性代数</a>
         </div>
         
