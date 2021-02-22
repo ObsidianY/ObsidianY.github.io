@@ -10,7 +10,7 @@
     
     
     
-    <title>标签: 挂分 | ObsidianY&#39;s blog</title>
+    <title>2-SAT学习笔记 | ObsidianY&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -165,33 +165,73 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">2-SAT学习笔记</h1>
     
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">挂分</h1>
-        
-        <ul class="posts">
-            
-            <li class="post">
-                <a href="/2020/12/27/12-27Test/">12.27Test</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/12/03/12-3Test/">12.3Test</a>
-            </li>
-            
-        </ul>
-        
-    </div>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2021-02-22
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h3 id="2-SAT学习笔记"><a href="#2-SAT学习笔记" class="headerlink" title="2-SAT学习笔记"></a>2-SAT学习笔记</h3><p>其实很简单。</p>
+<a id="more"></a>
+<p>对于每个变量开两个点表示取 $1/0$，然后对应连边就行。</p>
+<p>例如要 $x_1=1$ 或 $x_2=0$，那就从 $not\ x_1$ 连向 $not\ x_2$，$x_2$ 连向 $x_1$。</p>
+<p>然后跑一遍 <code>tarjan</code>，如果 $x$ 和 $not\ x$ 在同一个强联通分量里就无解。</p>
+<p>构造的话倒着一遍 <code>topsort</code> 就好了。 </p>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        
+        <li class="next">
+            <a href="/2021/02/21/2-20Test/">
+                2.20Test
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+    <!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
+<div class="gitment-comment">
+    <div id="container"></div>
+</div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id default is location.href
+        owner: 'ObsidianY',
+        repo: 'blog_comments',
+        oauth: {
+            client_id: '6603691d184d0907e56a',
+            client_secret: '848f8ccf2e7d7c87cd892ba59b464cef8e58a784',
+        },
+    })
+    gitment.render('container')
+</script>
+    
+
+
         </div>
         <div class="cube-right">
             
@@ -373,7 +413,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
@@ -414,12 +454,12 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
         </div>
         
@@ -439,7 +479,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
         </div>
         
@@ -449,7 +489,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
         </div>
         
@@ -459,7 +499,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/TEST/">#TEST</a>
         </div>
         
@@ -504,17 +544,17 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">#线性代数</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E4%B8%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8A%80%E5%B7%A7/">#不常见的技巧</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
