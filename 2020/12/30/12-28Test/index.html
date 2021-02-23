@@ -182,23 +182,20 @@
     
     <div class="cube-article-content cube-markdown">
         
-        <h3 id="12-28Test"><a href="#12-28Test" class="headerlink" title="12.28Test"></a>12.28Test</h3><p>得分：$14$x$/300$</p>
-<p>弃了一个多小时赛</p>
-<a id="more"></a>
-<p>考试经历：</p>
-<p>$T2$ 是讲过的原题，赶紧先写了。其他两道题印象里都很恶心，就只写了 $T1$ 的一点部分分。</p>
-<h3 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h3><p>一个树形 $dp$。</p>
-<p>大力讨论转移。</p>
-<h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p>每个开关所影响的灯都是不同的。</p>
-<p>所以有几个必须按的。</p>
-<p>记 $dp[i]$ 表示从 $i$ 个要按的到 $i-1$ 个要按的期望操作次数。</p>
-<p>有 </p>
-<script type="math/tex; mode=display">
-dp[i-1]=\dfrac{i}{n}+\dfrac{n-i}{n}(dp[i]+dp[i-1]+1)</script><p>所以有</p>
-<script type="math/tex; mode=display">
-dp[i]=\dfrac{n+(n-i)dp[i+1]}{i}</script><p>显然 $dp[n]=1$</p>
-<h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><p>gu</p>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="请输入密码以访问" />
+    <label for="pass">请输入密码以访问</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+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
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
     </div>
 </div>
 
@@ -423,12 +420,12 @@ dp[i]=\dfrac{n+(n-i)dp[i+1]}{i}</script><p>显然 $dp[n]=1$</p>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E4%B9%B1%E6%90%9E/">#乱搞</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
@@ -454,37 +451,37 @@ dp[i]=\dfrac{n+(n-i)dp[i+1]}{i}</script><p>显然 $dp[n]=1$</p>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%9E%84%E9%80%A0/">#构造</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%A6%BB%E7%BA%BF/">#离线</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%8C%82%E5%88%86/">#挂分</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/">#欧拉定理</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%95%B0%E5%AD%A6/">#数学</a>
         </div>
         
@@ -494,17 +491,17 @@ dp[i]=\dfrac{n+(n-i)dp[i+1]}{i}</script><p>显然 $dp[n]=1$</p>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/dp/">#dp</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
         </div>
         
@@ -539,22 +536,22 @@ dp[i]=\dfrac{n+(n-i)dp[i+1]}{i}</script><p>显然 $dp[n]=1$</p>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%A0%91/">#树</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/LCT/">#LCT</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%9B%B4%E5%BE%84/">#直径</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%8D%95%E8%B0%83/">#单调</a>
         </div>
         
@@ -569,7 +566,7 @@ dp[i]=\dfrac{n+(n-i)dp[i+1]}{i}</script><p>显然 $dp[n]=1$</p>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
@@ -579,7 +576,7 @@ dp[i]=\dfrac{n+(n-i)dp[i+1]}{i}</script><p>显然 $dp[n]=1$</p>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/bitset/">#bitset</a>
         </div>
         

@@ -188,26 +188,20 @@
     
     <div class="cube-article-content cube-markdown">
         
-        <h3 id="11-28Test"><a href="#11-28Test" class="headerlink" title="11-28Test"></a>11-28Test</h3><p>得分：$135/400$</p>
-<p>$T3$ 没调完</p>
-<a id="more"></a>
-<h4 id="T1-color"><a href="#T1-color" class="headerlink" title="T1.color"></a>T1.color</h4><p>送分题。</p>
-<p>容易发现 $n\ge7$ 时答案为 $4$。$1,2,3,4\ldots$ 循环即可。</p>
-<p>$n\le7$ 时打表输出。</p>
-<h4 id="T2-array"><a href="#T2-array" class="headerlink" title="T2 array"></a>T2 array</h4><p>显然贪心的让大 $b$ 配小 $a$。</p>
-<p>把 $a$ 升序排序，发现序列 $b$ 一定是形如 $n,n,\ldots,x,minn,minn,\ldots$  的。</p>
-<p>考虑枚举那个特殊点 $x$ 的位置 $p$，则贡献为 </p>
-<script type="math/tex; mode=display">
-n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+m-p)</script><p>由于枚举了 $p$ 所以这个是一个形如 $f(x)=x+a\lfloor\dfrac{bx+c}{d}\rfloor(a\ge0)$的函数。它大概长这样：</p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/4ukjctxm.png" alt=""></p>
-<p>对于左边那种，最大值在最靠右的点或最右边的尖取得；对于右边那种，最大值一定在最左边的点取得。</p>
-<p>枚举位置取最值计算即可。</p>
-<h4 id="T3-query"><a href="#T3-query" class="headerlink" title="T3 query"></a>T3 query</h4><p>树上差分写错了……</p>
-<p>考虑每个询问都能拆成 $l\to1-lca\to1,1\to r-1\to fa[lca]$</p>
-<p>把每个询问离线下来，记录步数与编号的差/和最后在树上跑一遍开桶记一下。</p>
-<h4 id="T4-network"><a href="#T4-network" class="headerlink" title="T4 network"></a>T4 network</h4><p>神奇的题目。</p>
-<p>对线两两分组，大力讨论获得较优解。</p>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="请输入密码以访问" />
+    <label for="pass">请输入密码以访问</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+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
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
     </div>
 </div>
 
@@ -432,7 +426,7 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E4%B9%B1%E6%90%9E/">#乱搞</a>
         </div>
         
@@ -473,12 +467,12 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%8C%82%E5%88%86/">#挂分</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
         </div>
         
@@ -503,17 +497,17 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/dp/">#dp</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
         </div>
         
@@ -533,7 +527,7 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86/">#矩阵树定理</a>
         </div>
         
@@ -588,12 +582,12 @@ n(p-1)+x+\lfloor\dfrac{D-n\sum_{i=1}^{p-1}a_i-xa_p}{\sum_{i=p+1}^ma_i}\rfloor(k+
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/bitset/">#bitset</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/">#多项式</a>
         </div>
         

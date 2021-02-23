@@ -196,22 +196,20 @@
     
     <div class="cube-article-content cube-markdown">
         
-        <h3 id="12-3Test"><a href="#12-3Test" class="headerlink" title="12.3Test"></a>12.3Test</h3><p>又挂了？！</p>
-<a id="more"></a>
-<h4 id="T1-algebra"><a href="#T1-algebra" class="headerlink" title="T1 algebra"></a>T1 algebra</h4><p>就是一个五进制的状压 dp,（本来用十进制以为想假了）跑不过的就打个表。<br>转化思想： $0,1$ 其实是等价的。</p>
-<h4 id="T2-bondorudo"><a href="#T2-bondorudo" class="headerlink" title="T2 bondorudo"></a>T2 bondorudo</h4><p>就是在没割点的情况下尽可能让每个点度数最大。</p>
-<p>稍微注意一下，很好写的。</p>
-<p>可惜挂分了……</p>
-<h4 id="T3-delta"><a href="#T3-delta" class="headerlink" title="T3 delta"></a>T3 delta</h4><p>还不会</p>
-<p>暴力也没有得分。</p>
-<h4 id="T4-history"><a href="#T4-history" class="headerlink" title="T4 history"></a>T4 history</h4><p>暴力也挂了一些……</p>
-<p>好题啊。</p>
-<p>直接讲正解。</p>
-<p>考虑区间 $[l,mid]$ 做贡献，那么被它做贡献的区间的右端点 $r$ 要先于 $mid$ 断开。</p>
-<p>发现右端点断开的概率和为 $1$，所以不用考虑右端点。</p>
-<p>枚举 $len=mid-l+1$ 用两次前缀和记录，这样差分的时候就是长度为 $len$ 的所有区间之和了。</p>
-<p>然后分类讨论，计算可能做贡献的概率并乘上差分后的值累加。</p>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="请输入密码以访问" />
+    <label for="pass">请输入密码以访问</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+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
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
     </div>
 </div>
 
@@ -487,7 +485,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
         </div>
         
@@ -497,12 +495,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%95%B0%E5%AD%A6/">#数学</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/gu/">#gu</a>
         </div>
         
@@ -512,7 +510,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/dp/">#dp</a>
         </div>
         
@@ -522,12 +520,12 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/TEST/">#TEST</a>
         </div>
         
@@ -537,7 +535,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86/">#矩阵树定理</a>
         </div>
         
@@ -562,7 +560,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%9B%B4%E5%BE%84/">#直径</a>
         </div>
         
@@ -572,22 +570,22 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">#线性代数</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E4%B8%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8A%80%E5%B7%A7/">#不常见的技巧</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0/">#生成函数</a>
         </div>
         
