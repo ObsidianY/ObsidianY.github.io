@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="ObsidianY">
+    
+    
+    
+    
+    
+    
+    <title>2020.12.3Test | ObsidianY&#39;s blog</title>
+    <!-- inject:style -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- endinject -->
+    <style>
+        .cube-loading {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('/images/lg/loading.gif') no-repeat center center;
+            background-color: rgba(0,0,0,.7);
+        }
+
+        .cube-loading.out {
+            display: none;
+        }
+
+        .cube-loading:before {
+            display: block;
+            content: '加载中';
+            position: relative;
+            width: 100%;
+            top: 50%;
+            right: -50%;
+            color: #fff;
+        }
+
+        @media(max-width: 768px) {
+            .cube-loading:before {
+                font-size: 1.2em;
+                transform: translate(-24px,20px);
+                -webkit-transform: translate(-24px,20px);
+                -o-transform: translate(-24px,20px);
+                -ms-transform: translate(-24px,20px);
+            }
+        }
+
+        @media(min-width: 768px) {
+            .cube-loading:before {
+
+            }
+        }
+    </style>
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+<div class="cube-body">
+    <nav id="cube-top-memu" class="cube-menu">
+    <ul class="cube-menu-collapse">
+        
+        <li>
+            <i class="cube-icon cube-icon-home" aria-hidden="true"></i>
+            <a href="/">主页</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-" aria-hidden="true"></i>
+            <a href="/archives/">归档</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-" aria-hidden="true"></i>
+            <a href="/mistakes">错误总结</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-" aria-hidden="true"></i>
+            <a href="/lostpoints">挂分总结</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-" aria-hidden="true"></i>
+            <a href="/none">专题</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-" aria-hidden="true"></i>
+            <a href="/about">关于</a>
+        </li>
+        
+    </ul>
+</nav>
+<nav class="cube-side-menu" id="cube-side-menu">
+    <ul class="cube-menu-list">
+        
+        <li>
+            <a class="lrc-control">开启歌词</a>
+        </li>
+        
+        <li>
+            <a class="scroll-to-top">回到顶部</a>
+        </li>
+    </ul>
+</nav>
+    <header class="cube-header" id="cube-header">
+    <img src=" /images/background.png " alt="头部背景图片">
+    
+    <div class="cube-type">
+        <span class="cube-typed-title">ObsidianY&#39;s blog</span>
+        <span class="cube-typed-cursor">|</span>
+    </div>
+    
+</header>
+
+    <style>
+        nav.cube-menu:before {
+            content: '';
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 44px;
+        
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+        
+            z-index: -1;
+            background-image: url('/images/background.jpg');
+            background-repeat: no-repeat;
+            background-position: center -156px;
+            background-size: cover;
+            background-color: transparent;
+        }
+
+        header.cube-background.cube-header-background {
+            visibility: hidden;
+            background-image: url('/images/background.jpg');
+            background-position: center -200px;
+        }
+    </style>
+    <header class="cube-background cube-header-background">
+        
+        <div class="cube-type">
+            <span class="cube-typed-title">ObsidianY&#39;s blog</span>
+            <span class="cube-typed-cursor">|</span>
+        </div>
+        
+    </header>
+    <div class="load-header-background"></div>
+    <script>
+        (function (window) {
+
+            window.headerModule = {}
+            window.headerModule.image = {
+                width: '2000',
+                height: '1414'
+            }
+
+        })(window)
+    </script>
+    
+    <div class="cube-content">
+        <div class="cube-left">
+            <div class="cube-article">
+    <h1 class="title">2020.12.3Test</h1>
+    
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2020-12-03
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/%E8%80%83%E8%AF%95/">#考试</a>
+    
+    <a href="/tags/%E6%9E%84%E9%80%A0/">#构造</a>
+    
+    <a href="/tags/%E6%8C%82%E5%88%86/">#挂分</a>
+    
+    <a href="/tags/gu/">#gu</a>
+    
+    <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
+    
+    <a href="/tags/dp/">#dp</a>
+    
+    <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
+    
+</div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="请输入密码以访问" />
+    <label for="pass">请输入密码以访问</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+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
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        <li class="prev">
+            <a href="/2020/12/11/noip2020%E5%8F%8D%E6%80%9D%E8%AE%B0/">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                noip2020反思记
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2020/12/03/%E8%BD%AC%E5%8E%8Bdp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                转压dp学习笔记
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+    <!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
+<div class="gitment-comment">
+    <div id="container"></div>
+</div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id default is location.href
+        owner: 'ObsidianY',
+        repo: 'blog_comments',
+        oauth: {
+            client_id: '6603691d184d0907e56a',
+            client_secret: '848f8ccf2e7d7c87cd892ba59b464cef8e58a784',
+        },
+    })
+    gitment.render('container')
+</script>
+    
+
+
+        </div>
+        <div class="cube-right">
+            
+
+<div class="cube-search cube-sidebar" id="cube-search">
+    <div class="search-container">
+        <input type="text" placeholder="搜索" class="cube-search-input" id="cube-search-input">
+        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
+    </div>
+    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
+</div>
+<script>
+    (function (window) {
+        'use strict';
+        window.searchModule = {}
+        window.searchModule.JSONUrl = '/content.json'
+        window.searchModule.rootUrl = '/'
+    })(window)
+</script>
+<div class="cube-search-form">
+    <div class="cube-search-control">
+        <input type="text" placeholder="搜索" class="search-input">
+        <a class="close-button">
+            <i class="cube-icon cube-close" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="cube-search-result"></div>
+</div>
+
+
+<div class="cube-author cube-sidebar" id="cube-author">
+    
+    
+    <style>
+        @media(min-width: 768px) {
+            .cube-author img {
+                margin-top: 40px;
+                margin-bottom: 10px;
+            }
+        }
+        @media(max-width: 1120px) and (min-width: 768px) {
+            .cube-author img {
+                width: 128px;
+                height: 128px;
+            }
+        }
+        @media(min-width: 1120px) {
+            .cube-author img {
+                width: 160px;
+                height: 160px;
+            }
+        }
+    </style>
+    
+    <img src="/images/avatar.png" alt="avatar" class="cube-avatar">
+    
+    
+    <span>ObsidianY</span>
+    
+    
+    <div class="count">
+        <a class="count articles"><span>25</span>文章</a>
+        <a class="count tags"><span>30</span>标签</a>
+        <a class="count categories"><span>3</span>分类</a>
+    </div>
+</div>
+
+
+
+<div class="cube-music cube-sidebar" id="cube-music">
+    <div class="cube-player aplayer" id="cube-player"></div>
+</div>
+<script>
+    (function (window) {
+        window.musicModule = {}
+        window.musicModule.musicConfig = '{"narrow":false,"autoplay":false,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Sweden","author":"c418","url":"https://obsidiany.github.io/music/Sweden.mp3","pic":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=469673353,535287263&fm=26&gp=0.jpg"},{"title":"Wet Hands","author":"c418","url":"https://obsidiany.github.io/music/WetHands.mp3","pic":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=469673353,535287263&fm=26&gp=0.jpg"},{"title":"Minecraft","author":"c418","url":"https://obsidiany.github.io/music/Minecraft.mp3","pic":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=469673353,535287263&fm=26&gp=0.jpg"},{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"}]}'
+        window.musicModule.lrcConfig = {
+            open: '开启歌词',
+            close: '关闭歌词'
+        }
+    })(window)
+</script>
+
+
+
+<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
+    <div class="title">
+        <a>近期文章</a>
+    </div>
+    <ul class="list">
+        
+        
+        <li>
+            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
+            
+            <div class="normal">
+                <p class="index first">
+                    <span>1</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/02/26/2021-2-25Test/" title="2021.2.25Test">2021.2.25Test</a>
+                </p>
+            </div>
+            
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>2</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/02/25/2021-2-24Test/" title="2021.2.24Test">2021.2.24Test</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>3</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/02/25/ideas/" title="ideas">ideas</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>4</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/02/23/2021-2-22Test/" title="2021.2.22Test">2021.2.22Test</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>5</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/02/22/2021-2-18Test/" title="2021.2.18Test">2021.2.18Test</a>
+                </p>
+            </div>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-categories cube-sidebar" id="cube-categories">
+    <div class="title">
+        <a href="/categories">分类</a>
+    </div>
+    <div class="cube-boxs">
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">#学习笔记</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/%E4%B9%B1%E6%90%9E/">#乱搞</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/">#图论</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="cube-tagcloud cube-sidebar" id="cube-tagcloud">
+    <div class="title">
+        <a href="/tags">标签云</a>
+    </div>
+    <div class="cube-boxs">
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E8%80%83%E8%AF%95/">#考试</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%9E%84%E9%80%A0/">#构造</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E7%A6%BB%E7%BA%BF/">#离线</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E6%8C%82%E5%88%86/">#挂分</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/">#欧拉定理</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%95%B0%E5%AD%A6/">#数学</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/gu/">#gu</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/dp/">#dp</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/TEST/">#TEST</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E9%94%99%E5%9B%A0/">#错因</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86/">#矩阵树定理</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/">#二分图</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E5%88%86%E5%9D%97/">#分块</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%A0%91/">#树</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/LCT/">#LCT</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E7%9B%B4%E5%BE%84/">#直径</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E5%8D%95%E8%B0%83/">#单调</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">#线性代数</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0/">#生成函数</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/bitset/">#bitset</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/">#多项式</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%9C%9F%E6%9C%9B/">#期望</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/">#计算几何</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%9D%82%E9%A1%B9/">#杂项</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="cube-links cube-sidebar" id="cube-links">
+    <div class="title">
+        <a>个人链接</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png">
+            
+            <a href="https://github.com/ObsidianY" target="_blank">GitHub</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="/images/loj.svg">
+            
+            <a href="https://loj.ac/u/ObsidianY" target="_blank">LOJ</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="https://www.luogu.com.cn/fe/logo.png">
+            
+            <a href="https://www.luogu.com.cn/user/108098" target="_blank">洛谷</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
+    <div class="title">
+        <a>友情链接</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="https://i.loli.net/2021/02/17/23wtOEGMbaCroFl.jpg">
+            <a href="https://cnblogs.com/zcus" target="_blank">Zcus</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="https://ycpedef.github.io/image/avatar.png">
+            <a href="https://ycpedef.github.io/" target="_blank">ycpedef</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="https://img.gejiba.com/images/d48d0fca73d2a2e7567890c582a0e1ce.jpg">
+            <a href="http://chaos1018.rinue.top/" target="_blank">Chaos1018</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+    </div>
+</div>
+<footer class="cube-footer">
+    
+© 2017 ObsidianY
+
+<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+</footer>
+<!-- inject:script -->
+<script src="/js/script.js"></script>
+<!-- endinject -->
+<div class="cube-loading out"></div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+</body>
+</html>
