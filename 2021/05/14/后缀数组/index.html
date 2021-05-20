@@ -217,6 +217,7 @@
 		<span class="hljs-keyword">if</span>(num == n) <span class="hljs-keyword">return</span>;
 		m = num;
 	&#125;
+    <span class="hljs-keyword">return</span>;
 &#125;</code></pre>
 <p>首先对每个位置计数排序：</p>
 <pre><code class="hljs c++">For(i, <span class="hljs-number">1</span>, n) ++c[x[i] = s[i]];
@@ -253,9 +254,33 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
 </ol>
 <p>显然可知。</p>
 <ol>
-<li>$\forall 1\le i\le j\le k\le n,lcp(i,k)=min(lcp(i,j),lcp(j,k))$</li>
+<li>$\forall 1\le i\le j\le k\le n,lcp(i,k)=\min(lcp(i,j),lcp(j,k))$</li>
 </ol>
-<p>感性证明：因为 $i\le j\le k$，所以 $sa[i]$ 与 $sa[j]$ 的前缀相似程度会更大。那么 </p>
+<p>感性证明：因为 $i\le j\le k$，所以 $sa[i]$ 与 $sa[j]$ 的前缀相似程度会更大。那么 $lcp(i,k)\le lcp(i,j),lcp(i,k)\le lcp(j,k)$</p>
+<p>然后因为 $sa[i]$，$sa[j]$ 至少前 $\min(lcp(i,j),lcp(j,k))$ 个字符相等， $sa[j],sa[k]$ 也是。所以 $lcp(i,k)\ge \min(lcp(i,j),lcp(j,k))$</p>
+<p>所以 $3$ 成立</p>
+<ol>
+<li>$\forall 1\le i&lt; j\le k\le n,lcp(i,k)=\min\{lcp(j-1,j)\}$</li>
+</ol>
+<p>由 $3$，$lcp(i,k)=\min(lcp(i,i+1),lcp(i+1,k))$ 这样一直拆下去就好了。</p>
+<h4 id="height"><a href="#height" class="headerlink" title="height"></a>height</h4><p>定义 $height[i]=lcp(i-1,i)$。</p>
+<p>由 $4$ 知，$lcp(i,k)=\min \{height[j],i&lt;j\le k\}$。</p>
+<p>设 $h[i]=height[rk[i]]$，则有 $height[i]=h[sa[i]]$。</p>
+<p><strong>此时有</strong>： $\texttt{h[i]}\ge \texttt{h[i-1]-1}$</p>
+<h4 id="code"><a href="#code" class="headerlink" title="code"></a>code</h4><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">GetHeight</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>;
+    For(i, <span class="hljs-number">1</span>, n) rk[sa[i]]=i;
+    For(i, <span class="hljs-number">1</span>, n)
+    &#123;
+        <span class="hljs-keyword">if</span> (rk[i] == <span class="hljs-number">1</span>) <span class="hljs-keyword">continue</span>; 
+        <span class="hljs-keyword">if</span>(k) --k;
+        <span class="hljs-keyword">int</span> j = sa[rk[i] - <span class="hljs-number">1</span>];
+        <span class="hljs-keyword">while</span>(j + k &lt;= n &amp;&amp; i + k &lt;= n &amp;&amp; s[i + k] == s[j + k]) ++k;
+        height[rk[i]] = k;
+    &#125;
+    <span class="hljs-keyword">return</span>;
+&#125;</code></pre>
 
     </div>
 </div>
@@ -474,7 +499,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
@@ -500,7 +525,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%A6%BB%E7%BA%BF/">#离线</a>
         </div>
         
@@ -510,7 +535,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
         </div>
         
@@ -520,7 +545,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/">#欧拉定理</a>
         </div>
         
@@ -545,7 +570,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
         </div>
         
@@ -555,12 +580,12 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/TEST/">#TEST</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E9%94%99%E5%9B%A0/">#错因</a>
         </div>
         
@@ -605,17 +630,17 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0/">#生成函数</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/bitset/">#bitset</a>
         </div>
         
@@ -625,27 +650,27 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%9C%9F%E6%9C%9B/">#期望</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/">#计算几何</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%9D%82%E9%A1%B9/">#杂项</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E8%B4%AA%E5%BF%83/">#贪心</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/mark/">#mark</a>
         </div>
         
@@ -655,7 +680,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%90%9C%E7%B4%A2/">#搜索</a>
         </div>
         
@@ -665,7 +690,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/marked/">#marked</a>
         </div>
         
@@ -685,7 +710,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
@@ -776,24 +801,5 @@ Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a
 <script src="/js/script.js"></script>
 <!-- endinject -->
 <div class="cube-loading out"></div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-
 </body>
 </html>
