@@ -185,8 +185,25 @@
     <div class="cube-article-content cube-markdown">
         
         <p>一直学了就忘，所以记一下。</p>
-<!--toc-->
 <span id="more"></span>
+<!-- toc -->
+<ul>
+<li><a href="#定义">定义</a></li>
+<li><a href="#后缀排序">后缀排序</a><ul>
+<li><a href="#思想">思想</a></li>
+<li><a href="#实现">实现</a></li>
+</ul>
+</li>
+<li><a href="#最长公共前缀">最长公共前缀</a><ul>
+<li><a href="#定义-1">定义</a></li>
+<li><a href="#性质">性质</a></li>
+<li><a href="#height">height</a></li>
+<li><a href="#code">code</a></li>
+<li><a href="#应用">应用</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
 <h3><span id="定义">定义</span></h3><p>定义 $sa[i]$ 表示将所有后缀排序后第 $i$ 小的后缀的编号，$rk[i]$ 表示后缀 $i$ 的排名。</p>
 <p>则 $sa[rk[i]]=rk[sa[i]]=k$。</p>
 <h3><span id="后缀排序">后缀排序</span></h3><h4><span id="思想">思想</span></h4><p>运用了倍增的方法。</p>
@@ -247,22 +264,14 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
 		m = num;</code></pre>
 <hr>
 <h3><span id="最长公共前缀">最长公共前缀</span></h3><h4><span id="定义">定义</span></h4><p>定义 $lcp(i,j)$ 表示后缀 $sa[i]$ 和 $sa[j]$ 的最长公共前缀。</p>
-<h4><span id="性质">性质</span></h4><ol>
-<li><p>$lcp(i,j)=lcp(j,i)$</p>
-</li>
-<li><p>$lcp(i,i)=n-sa[i]+1$</p>
-</li>
-</ol>
+<h4><span id="性质">性质</span></h4><p>1.$lcp(i,j)=lcp(j,i)$</p>
+<p>2.$lcp(i,i)=n-sa[i]+1$</p>
 <p>显然可知。</p>
-<ol>
-<li>$\forall 1\le i\le j\le k\le n,lcp(i,k)=\min(lcp(i,j),lcp(j,k))$</li>
-</ol>
+<p>3.$\forall 1\le i\le j\le k\le n,lcp(i,k)=\min(lcp(i,j),lcp(j,k))$</p>
 <p>感性证明：因为 $i\le j\le k$，所以 $sa[i]$ 与 $sa[j]$ 的前缀相似程度会更大。那么 $lcp(i,k)\le lcp(i,j),lcp(i,k)\le lcp(j,k)$</p>
 <p>然后因为 $sa[i]$，$sa[j]$ 至少前 $\min(lcp(i,j),lcp(j,k))$ 个字符相等， $sa[j],sa[k]$ 也是。所以 $lcp(i,k)\ge \min(lcp(i,j),lcp(j,k))$</p>
 <p>所以 $3$ 成立</p>
-<ol>
-<li>$\forall 1\le i&lt; j\le k\le n,lcp(i,k)=\min\{lcp(j-1,j)\}$</li>
-</ol>
+<p>4.$\forall 1\le i&lt; j\le k\le n,lcp(i,k)=\min\{lcp(j-1,j)\}$</p>
 <p>由 $3$，$lcp(i,k)=\min(lcp(i,i+1),lcp(i+1,k))$ 这样一直拆下去就好了。</p>
 <h4><span id="height">height</span></h4><p>定义 $height[i]=lcp(i-1,i)$。</p>
 <p>由 $4$ 知，$lcp(i,k)=\min \{height[j],i&lt;j\le k\}$。</p>
@@ -274,7 +283,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
     For(i, <span class="hljs-number">1</span>, n) rk[sa[i]]=i;
     For(i, <span class="hljs-number">1</span>, n)
     &#123;
-        <span class="hljs-keyword">if</span> (rk[i] == <span class="hljs-number">1</span>) <span class="hljs-keyword">continue</span>; 
+        <span class="hljs-keyword">if</span>(rk[i] == <span class="hljs-number">1</span>) <span class="hljs-keyword">continue</span>; 
         <span class="hljs-keyword">if</span>(k) --k;
         <span class="hljs-keyword">int</span> j = sa[rk[i] - <span class="hljs-number">1</span>];
         <span class="hljs-keyword">while</span>(j + k &lt;= n &amp;&amp; i + k &lt;= n &amp;&amp; s[i + k] == s[j + k]) ++k;
@@ -282,6 +291,15 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
     &#125;
     <span class="hljs-keyword">return</span>;
 &#125;</code></pre>
+<h4><span id="应用">应用</span></h4><ol>
+<li><p>求最长公共前缀。由 $3$ 可知求两个后缀的 $lcp$ 可以转化为 <code>RMQ</code> 问题。</p>
+</li>
+<li><p>比较两子串大小。显然。</p>
+</li>
+<li><p>不同子串个数</p>
+</li>
+</ol>
+<p>To be continued….</p>
 
     </div>
 </div>
@@ -385,8 +403,8 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
     
     
     <div class="count">
-        <a class="count articles"><span>40</span>文章</a>
-        <a class="count tags"><span>41</span>标签</a>
+        <a class="count articles"><span>39</span>文章</a>
+        <a class="count tags"><span>40</span>标签</a>
         <a class="count categories"><span>2</span>分类</a>
     </div>
 </div>
@@ -495,7 +513,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
     <div class="cube-boxs">
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">#学习笔记</a>
         </div>
         
@@ -521,7 +539,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%9E%84%E9%80%A0/">#构造</a>
         </div>
         
@@ -541,7 +559,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
         </div>
         
@@ -551,7 +569,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%95%B0%E5%AD%A6/">#数学</a>
         </div>
         
@@ -561,7 +579,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
         </div>
         
@@ -571,7 +589,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
         </div>
         
@@ -581,13 +599,8 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/TEST/">#TEST</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E9%94%99%E5%9B%A0/">#错因</a>
         </div>
         
         
@@ -596,7 +609,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/">#二分图</a>
         </div>
         
@@ -606,12 +619,12 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%A0%91/">#树</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/LCT/">#LCT</a>
         </div>
         
@@ -626,7 +639,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">#线性代数</a>
         </div>
         
@@ -636,7 +649,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0/">#生成函数</a>
         </div>
         
@@ -671,12 +684,12 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/mark/">#mark</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">#数据结构</a>
         </div>
         
@@ -686,12 +699,12 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/">#博弈论</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/marked/">#marked</a>
         </div>
         
@@ -701,7 +714,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E4%BA%8C%E5%88%86/">#二分</a>
         </div>
         
@@ -711,7 +724,7 @@ For(i, <span class="hljs-number">2</span>, n) x[sa[i]] = (y[sa[i]] == y[sa[i - <
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
