@@ -188,58 +188,58 @@
 <p>带 * 的是口糊的。</p>
 <span id="more"></span>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/ObsidianY/dp-zhuan-ti">DP专题</a></p>
-<h1 id="2020-10"><a href="#2020-10" class="headerlink" title="2020.10"></a>2020.10</h1><h3 id="10-3"><a href="#10-3" class="headerlink" title="10.3"></a>10.3</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF27E">CF27E Number With The Given Amount Of Divisors</a></p>
+<h1><span id="202010">2020.10</span></h1><h3><span id="103">10.3</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF27E">CF27E Number With The Given Amount Of Divisors</a></p>
 <p>令答案为 $ans$。</p>
-<p>则 $ans= \prod p_i^{c_i}$，其中 $p_i$ 为连续的质数，且 $\forall i<j, c_i>=c_j$。</p>
+<p>则 $ans= \prod p_i^{c_i}$，其中 $p_i$ 为连续的质数，且 $\forall i<j, c_i>=c_j$。</j,></p>
 <p>那么暴力搜索，剪一下枝就好啦。</p>
-<h3 id="10-4"><a href="#10-4" class="headerlink" title="10.4"></a>10.4</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3225">P3225 [HNOI2012]矿场搭建</a></p>
+<h3><span id="104">10.4</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3225">P3225 [HNOI2012]矿场搭建</a></p>
 <p>跑一遍圆方树，考虑连了两个及以上方点的圆点为割点，可以搜索每个方点，若没连割点就在点双内建两个，若连了一个就在点双内建一个，若连了两个就不用建，简单统计一下答案就行。</p>
-<h3 id="10-7"><a href="#10-7" class="headerlink" title="10.7"></a>10.7</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4630">P4630 [APIO2018] Duathlon 铁人两项</a></p>
+<h3><span id="107">10.7</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4630">P4630 [APIO2018] Duathlon 铁人两项</a></p>
 <p>一个性质：对于点双内的任意三点 $u,v,c$，一定存在一条从 $u$ 到 $v$ 的简单路径经过 $c$。</p>
 <p>建出圆方树，将方点权值设为与它相连的所有点双的点数之和，圆点的权值设为 $-1$，统计一下所有圆点的贡献。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1822">P1822 魔法指纹</a></p>
 <p>分段打表。暴力跑就行。</p>
-<h3 id="10-8"><a href="#10-8" class="headerlink" title="10.8"></a>10.8</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4396">P4396 [AHOI2013]作业</a></p>
+<h3><span id="108">10.8</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4396">P4396 [AHOI2013]作业</a></p>
 <p>莫队套树状数组就行。</p>
-<h3 id="10-9"><a href="#10-9" class="headerlink" title="10.9"></a>10.9</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3806">CF161D Distance in Tree</a></p>
+<h3><span id="109">10.9</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3806">CF161D Distance in Tree</a></p>
 <p>新学的换根 dp。</p>
 <p>设 $dp[i][j]$ 表示以 $i$ 为根向下走长度为 $j$ 的路径条数。</p>
 <p>先以 $1$ 为根 dfs 一遍，求出每个点向下走长度为 $j$ 的路径条数。</p>
 <p>观察到把一个点换为根，它以 $1$ 在为根时在子树内的贡献是不变的。所以只要考虑它父亲连着的那块就行。</p>
 <p>就是把 $dp[u][i]$ 加上 $dp[fa[u]][i-1]-dp[u][i-2]$（这里记得 $i$ 要从大到小枚）。</p>
 <p>最后的答案就是 $\sum\limits_{i=1}^ndp[i][k]/2$（每条路径都会被两端点各算一次）。</p>
-<h3 id="10-10"><a href="#10-10" class="headerlink" title="10.10"></a>10.10</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2986">P2986 [USACO10MAR]Great Cow Gathering G</a></p>
+<h3><span id="1010">10.10</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2986">P2986 [USACO10MAR]Great Cow Gathering G</a></p>
 <p>换根 dp。设 $dp[i]$ 为在 $i$ 集合的价值，用换根的经典处理就行了。</p>
 <p>错误 $v==fa$ 时直接 continue 了，$ans$ 初值设得不够大。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3674">P3674 小清新人渣的本愿</a></p>
 <p>莫队 $+$ bitset。</p>
 <p>bitset: 类似状压的思想。还要把加转化成减。</p>
-<h3 id="10-11"><a href="#10-11" class="headerlink" title="10.11"></a>10.11</h3><p>我可能真的要从头学 dp 了。</p>
+<h3><span id="1011">10.11</span></h3><p>我可能真的要从头学 dp 了。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2858">P2858 [USACO06FEB]Treats for the Cows G/S</a></p>
 <p>区间 dp。设 $dp[i][j]$ 表示最后取得的一段是 $[i,j]$ 时的最大值。枚举长度与左端点，每次取 max 求解。</p>
-<h3 id="10-12"><a href="#10-12" class="headerlink" title="10.12"></a>10.12</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1439">P1439 【模板】最长公共子序列</a></p>
+<h3><span id="1012">10.12</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1439">P1439 【模板】最长公共子序列</a></p>
 <p>将 $LCS$ 转化为 $LIS$。（就是记录下标）</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1233">P1233 木棍加工</a></p>
 <p>按长度从大到小排序（若相同则按宽度），求一遍 $LIS$ 的长度即可。</p>
-<h3 id="10-13"><a href="#10-13" class="headerlink" title="10.13"></a>10.13</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1280">P1280 尼克的任务</a></p>
+<h3><span id="1013">10.13</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1280">P1280 尼克的任务</a></p>
 <p>设 $dp[i]$ 表示前 $i$ 时间内最大休息时间，发现不好转移，则设 $dp[i]$ 表示后 $i$ 时间内最大休息时间。将开始时间从大到小排序，再从后向前枚举时间，若当前不是任务的开始点，则 $dp[i]=dp[i+1]+1$;否则枚举所有开始点在 $i$ 的任务，用它们结尾的 dp 值与当前值取 max 即可。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4933">P4933 大师</a></p>
 <p>设 $dp[i][j]$ 表示前 $i$ 个中公差为 $j$ 的方案数，特殊处理一下相等的情况就好。</p>
-<h3 id="10-14"><a href="#10-14" class="headerlink" title="10.14"></a>10.14</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3146">P3146 [USACO16OPEN]248 G</a></p>
+<h3><span id="1014">10.14</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3146">P3146 [USACO16OPEN]248 G</a></p>
 <p>发现区间判断能否合并过于麻烦，可以设 $dp[i][j]$ 表示区间 $[i,j]$ <strong>完全合并</strong> 的价值，枚举长度、左端点、断点，每次判断两个区间能否合并，若无法完全合并就跳过，能合并就更新答案。</p>
-<h3 id="10-15"><a href="#10-15" class="headerlink" title="10.15"></a>10.15</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1220">P1220 关路灯</a></p>
+<h3><span id="1015">10.15</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1220">P1220 关路灯</a></p>
 <p>观察到关掉的一定是连续的一段，考虑区间 dp。</p>
 <p>设 $dp[i][j][0/1]$ 表示关掉区间 $[i,j]$，留在左/右端时最少耗的电量。</p>
 <p>此处固定了出发点，所以从 $c$ 向左右枚举左端点和右端点。</p>
 <p>每次转移讨论到左端还是右端。</p>
 <p>最后输出 $min(dp[1][n][0], dp[1][n][1])$。</p>
-<p>复杂度 $O(n^2)$。</p>
+<p>复杂度 $O\left(n^2\right)$。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF372C">CF372C Watching Fireworks is Fun</a></p>
 <p>设 $dp[i][j]$ 表示第 $i$ 个烟花时在区域 $j$ 的最大值。</p>
 <p>暴力的想法是枚举第几个烟花，上一个到的点和这个点能在限制时间内能到的所有点。</p>
 <p>然后我们发现这就是一个滑动窗口，用单调队列优化。</p>
 <p>开不下，用滚动数组。</p>
-<h3 id="10-16"><a href="#10-16" class="headerlink" title="10.16"></a>10.16</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5858">P5858 「SWTR-03」Golden Sword</a></p>
+<h3><span id="1016">10.16</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5858">P5858 「SWTR-03」Golden Sword</a></p>
 <p>设 $dp[i][j]$ 表示放第 $i$ 个原料时锅里已经有 $j- 1$ 个。</p>
 <p>暴力考虑枚举 $i,j$ 和从 $k$ 转移过来 $(j-1&lt;=k&lt;=min(j+s-1,w))$。</p>
 <p>然后用单调队列优化。</p>
@@ -255,13 +255,13 @@
 <p>设 $dp[i][j]$ 表示区间合并的最小步数。</p>
 <p>预处理出长度为 $1$ 和 $2$ 的情况。</p>
 <p>再进行枚举，讨论两端是否相同。</p>
-<h3 id="10-18"><a href="#10-18" class="headerlink" title="10.18"></a>10.18</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3147">P3147 [USACO16OPEN]262144 P</a></p>
+<h3><span id="1018">10.18</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3147">P3147 [USACO16OPEN]262144 P</a></p>
 <p>设 $dp[i][j]$ 为在前 $i$ 个数中，合出 $j$ 的最右端的值。</p>
 <p>$dp[i][j]=dp[dp[i][j-1]][j-1]$。<br>初值 $dp[i][a[i]]=i+1$。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5851">P5851 [USACO19DEC]Greedy Pie Eaters P</a></p>
 <p>设 $dp[i][j]$ 表示区间 $[l,r]$ 间最大可能的重量；<br>$maxn[i][j][k]$ 表示吃的区间 $[l,r]$ 为 $[i, j]$ 的子区间且 $k$ 在 $[l,r]$ 中。</p>
 <p>先处理出 $maxn$， 再递推处理 $dp$， $dp[i][j] = max(dp[i][k-1]+maxn[i][j][k]+dp[k+1][j])$</p>
-<h3 id="10-20"><a href="#10-20" class="headerlink" title="10.20"></a>10.20</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA1292">UVA1292 Strategic game</a></p>
+<h3><span id="1020">10.20</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA1292">UVA1292 Strategic game</a></p>
 <p>设 $dp[i][0/1]$ 表示节点 $i$ 放/不放的最小需求。</p>
 <p>易得 $dp[i][0] = \sum\limits_j^{son} dp[j][1]$</p>
 <p>$dp[i][1] = \sum\limits_j^{son} max(dp[j][0],dp[j][1])$</p>
@@ -274,7 +274,7 @@
 <p>先把字母转化为数字。</p>
 <p>设 $dp[i][j][1/2/3/4]$ 表示区间 $[i,j]$ 能否合成第三维数字对应的字母，简单维护。</p>
 <p>最后判断一下。</p>
-<h3 id="10-23"><a href="#10-23" class="headerlink" title="10.23"></a>10.23</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA10140">UVA10140 Prime Distance</a></p>
+<h3><span id="1023">10.23</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA10140">UVA10140 Prime Distance</a></p>
 <p>值域很大，但询问的区间较小。</p>
 <p>一个数若是合数，则必然有一个质因子 $p \le \sqrt n$。</p>
 <p>筛出 $\sqrt n$ 以下的质因子，暴力覆盖。</p>
@@ -284,13 +284,13 @@
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4310">P4310 绝世好题</a></p>
 <p>设 $dp[i]$ 表示结尾的数 <code>&amp; (1 &lt;&lt; i) == 1)</code> 的最长子序列长度。</p>
 <p>每次枚举将每一位是一的取最大值再加一。</p>
-<h3 id="10-24"><a href="#10-24" class="headerlink" title="10.24"></a>10.24</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2158">P2158 [SDOI2008]仪仗队</a></p>
+<h3><span id="1024">10.24</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2158">P2158 [SDOI2008]仪仗队</a></p>
 <p>就是 $\sum\limits_{i=2}^{n}\varphi(i) + 3$。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1082">P1082 同余方程</a></p>
 <p>Exgcd 板子1。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA10104">UVA10104 Euclid Problem</a></p>
 <p>Exgcd 板子2。</p>
-<h3 id="10-25"><a href="#10-25" class="headerlink" title="10.25"></a>10.25</h3><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/204/">AcWing 202. 最幸运的数字</a></p>
+<h3><span id="1025">10.25</span></h3><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/204/">AcWing 202. 最幸运的数字</a></p>
 <p>$x$ 个 $8$ 可表示为 $8 \times(10^x-1)/9$。</p>
 <p>求最小的 $x$，使得 $n|8 \times(10^x-1)/9$。</p>
 <p>设 $d=gcd(n,8)$。</p>
@@ -301,7 +301,7 @@
 <p>那么 $gcd(ap,bp)=p$。</p>
 <p>所以 $gcd=p$ 的个数为 $\sum\limits_{i=1}^{\lfloor\frac{n}{p}\rfloor}\varphi(i)\times2-1$。（$(k,k)$ 计算了两遍，要减掉一个）。</p>
 <p>可以用一个前缀和记录。</p>
-<h3 id="10-26"><a href="#10-26" class="headerlink" title="10.26"></a>10.26</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF906D">CF906D Power Tower</a></p>
+<h3><span id="1026">10.26</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF906D">CF906D Power Tower</a></p>
 <p>显然的一点是，如果我们令 $n=\varphi(n)$,那么这个式子在 $O(logn)$ 次操作后就会变成 $1$。</p>
 <p>所以我们可以用递归的方式求解，复杂度是可以保证的。</p>
 <p>但是要注意一定要满足拓展欧拉定理。</p>
@@ -311,24 +311,24 @@
 <p>这题就是 Power Tower 的带修版。</p>
 <p>但是我们可以线性筛了。</p>
 <p>再套一个树状数组，差分一下，每次单点查值就行。</p>
-<h3 id="10-30"><a href="#10-30" class="headerlink" title="10.30"></a>10.30</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2054">P2054 [AHOI2005]洗牌</a></p>
+<h3><span id="1030">10.30</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2054">P2054 [AHOI2005]洗牌</a></p>
 <p>这道题比较 trick。</p>
 <p>发现在位置 $x$ 的牌经过 $1$ 次变换后位置为 $2x \small\%$ $(n+1)$。</p>
 <p>经过 $m$ 次变换后位置为 $2^mx \small\%$ $(n+1)$。</p>
 <p>所以 $m$ 次变换后位置为 $l$ 的牌应该为 $l\times(2^m)^{-1} \small\%$ $(n+1)$。</p>
 <p>注意求逆元不能用费马小定理，要用拓欧。</p>
-<h2 id="2020-11"><a href="#2020-11" class="headerlink" title="2020.11"></a>2020.11</h2><h3 id="11-2"><a href="#11-2" class="headerlink" title="11.2"></a>11.2</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5658">P5658 括号树</a></p>
+<h2><span id="202011">2020.11</span></h2><h3><span id="112">11.2</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5658">P5658 括号树</a></p>
 <p>令 $con_i$ 表示编号为 $i$ 的括号对答案新增的贡献。</p>
 <p>观察到每个右括号（编号为 $r$ ）和与它匹配的左括号（编号为 $l$）对答案的贡献 $dp[r]=dp[fa[r]]+con[r]$</p>
 <p>然后 $con[r]=con[fa[l]]+1$</p>
 <p>用栈维护左括号，模拟括号匹配，每次要回溯时进行相反操作还原栈。</p>
-<h3 id="11-3"><a href="#11-3" class="headerlink" title="11.3"></a>11.3</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1279">P1279 字串距离</a></p>
+<h3><span id="113">11.3</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1279">P1279 字串距离</a></p>
 <p>设 $dp[i][j]$ 表示匹配到 $S_1$ 的第 $i$ 位，$S_2$ 的第 $j$ 位。</p>
 <p>$dp[i][j]=min(dp[i-1][j-1]+abs(s1[i]-s2[j]), dp[i][j-1]+k,dp[i-1][j]+k)$</p>
 <p>注意赋初值的时候 $dp[i][0]=dp[i-1][0]+k, dp[0][j]=dp[0][j-1]+k$。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF359D">CF359D Pair of Numbers</a></p>
 <p>用 ST 表维护一下区间 $gcd$ 和区间 $min$，二分长度每次 $O(n)$ 判断。</p>
-<h3 id="11-4"><a href="#11-4" class="headerlink" title="11.4"></a>11.4</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1541">P1541 乌龟棋</a></p>
+<h3><span id="114">11.4</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1541">P1541 乌龟棋</a></p>
 <p>简单 DP?</p>
 <p>观察到每种卡片的数量都比较少可以设 $dp[i][j][k][l]$ 表示四种卡分别用了 $i,j,k,l$ 张时的最大得分。</p>
 <p>枚举 $i,j,k,l$ 计算位置并转移即可。</p>
@@ -339,7 +339,7 @@
 <p>设 $dp[i][j]$ 为选了 $i$ 个集合，已经选过的数集二进制表示为 $j$。</p>
 <p>枚举 $i$，$j$ 和 $k$，如果 $j|(1&lt;&lt;k)$ （选过）就 continue，不然讨论 $dp[i][j]+v[k]$ 是否大于 $V$，如果是就另开一次，不然直接放入。</p>
 <p>最后枚举 $i$，找到第一个 $dp[i][(1&lt;&lt;n)-1]$ 的值是推出的值的 $i$ 输出。</p>
-<h3 id="11-5"><a href="#11-5" class="headerlink" title="11.5"></a>11.5</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3959">P3959 宝藏</a></p>
+<h3><span id="115">11.5</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3959">P3959 宝藏</a></p>
 <p>考虑将这个图分层。</p>
 <p>预处理出 $to[i]$ 表示集合 $i$ 尽可能拓展所得到的最大子集。</p>
 <p>设 $dp[i][j]$ 表示选了 $i$ 层，已选集合为 $j$ 的最小花费。显然 $dp[0][1&lt;&lt;k]=0$。</p>
@@ -357,13 +357,13 @@
 <p>所以我们要建虚树。</p>
 <p>我们用栈维护建树，栈中的元素代表当前树的最右链。</p>
 <p>然后跑一跑 dp 之类的东西就好啦！</p>
-<h3 id="11-6"><a href="#11-6" class="headerlink" title="11.6"></a>11.6</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2150">P2150 [NOI2015]寿司晚宴</a></p>
+<h3><span id="116">11.6</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2150">P2150 [NOI2015]寿司晚宴</a></p>
 <p>分析题目性质可知，题目要求两个人选的质因数集无交。</p>
 <p>然后可以发现对于任意一个小于等于 $500$ 的数，它最多只有一个大于等于 $23$ 的质因子，而小于 $23$ 的质因子只有 $8$ 个。</p>
 <p>我们可以对每一个数分解质因子并将其小于 $23$ 的质因子状压。</p>
 <p>对于有大于等于 $23$ 的质因子的数，我们对它们按照这个大质因子从大到小排序。</p>
 <p>然后枚举两个状态，依次转移。</p>
-<h3 id="11-8"><a href="#11-8" class="headerlink" title="11.8"></a>11.8</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1955">P1955 [NOI2015]程序自动分析</a></p>
+<h3><span id="118">11.8</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1955">P1955 [NOI2015]程序自动分析</a></p>
 <p>开了个 <code>unordered_map</code> 离散化。</p>
 <p>用并查集维护相同的值，</p>
 <p>最后扫一遍不同的。</p>
@@ -380,13 +380,13 @@
 <p>莫队 + 平衡树。</p>
 <p>十分板子。</p>
 <p>但要开大平衡树空间。</p>
-<h3 id="11-10"><a href="#11-10" class="headerlink" title="11.10"></a>11.10</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3165">P3165 [CQOI2014]排序机械臂</a></p>
+<h3><span id="1110">11.10</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3165">P3165 [CQOI2014]排序机械臂</a></p>
 <p>平衡树记录父亲。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1486">P1486 [NOI2004]郁闷的出纳员</a></p>
 <p>平衡树板子。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3165">P3165 [CQOI2014]排序机械臂</a></p>
 <p>统计答案时先跑到父亲，并下传标记。</p>
-<h3 id="11-11"><a href="#11-11" class="headerlink" title="11.11"></a>11.11</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1903">P1903 [国家集训队]数颜色 / 维护队列</a></p>
+<h3><span id="1111">11.11</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1903">P1903 [国家集训队]数颜色 / 维护队列</a></p>
 <p>带修莫队板子。</p>
 <p>少写了一个 $=$ 调了好久……</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1000F">CF1000F One Occurrence</a></p>
@@ -405,7 +405,7 @@
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/AT1219">AT1219 歴史の研究</a></p>
 <p>可以说是回滚莫队板子。</p>
 <p>记得开 long long。</p>
-<h3 id="11-12"><a href="#11-12" class="headerlink" title="11.12"></a>11.12</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF911F">CF911F Tree Destruction</a></p>
+<h3><span id="1112">11.12</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF911F">CF911F Tree Destruction</a></p>
 <p>显然不在直径上的点要答案最大肯定是与直径的一个端点产生贡献。</p>
 <p>否则如果存在值更大的一条路径，那么它应该是直径，与原设矛盾。</p>
 <p>而对于直径上的点，依次删就好了。</p>
@@ -419,21 +419,21 @@
 <p>考虑直径外的点对答案的贡献，容易发现当且仅当直径上离这个点最近的点被选中时才可能有贡献。</p>
 <p>所以我们可以记录一下每个直径上的点不走直径的其它点能到达的最远距离 $mx[u]$。</p>
 <p>用单调队列维护一下即可。</p>
-<h3 id="11-17"><a href="#11-17" class="headerlink" title="11.17"></a>11.17</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3157">P3157 [CQOI2011]动态逆序对</a></p>
+<h3><span id="1117">11.17</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3157">P3157 [CQOI2011]动态逆序对</a></p>
 <p>加上时间轴，就是一个三维偏序。</p>
-<h3 id="11-18"><a href="#11-18" class="headerlink" title="11.18"></a>11.18</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4169">P4169 [Violet]天使玩偶/SJY摆棋子</a></p>
+<h3><span id="1118">11.18</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4169">P4169 [Violet]天使玩偶/SJY摆棋子</a></p>
 <p>时间轴变三维偏序。</p>
 <p>树状数组维护 $max$。</p>
 <p>为了卡常将 <code>sort</code> 换成归并。</p>
 <p>注意 $x==0||y==0$ 的情况树状数组可能死循环，要加 $1$。</p>
-<h3 id="11-20"><a href="#11-20" class="headerlink" title="11.20"></a>11.20</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1972">P1972 [SDOI2009]HH的项链</a></p>
+<h3><span id="1120">11.20</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1972">P1972 [SDOI2009]HH的项链</a></p>
 <p>先将询问按右端点从小到大排序。</p>
 <p>从前往后扫一遍，对于每一个值在树状数组里把这种元素的 $lastpos$ 上 $-1$，每个询问用两个前缀和减一下就好了。</p>
-<h3 id="11-25"><a href="#11-25" class="headerlink" title="11.25"></a>11.25</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF103D">CF103D Time to Raid Cowavans</a></p>
+<h3><span id="1125">11.25</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF103D">CF103D Time to Raid Cowavans</a></p>
 <p>根号分治。</p>
 <p>对于距离小于 $\sqrt n$ 的记录前缀和，大于就暴力跑。</p>
 <p>卡空间，所以按长度排序依次处理。</p>
-<h3 id="11-30"><a href="#11-30" class="headerlink" title="11.30"></a>11.30</h3><p><a target="_blank" rel="noopener" href="https://loj.ac/p/2559">「HNOI2003」消防局的设立</a></p>
+<h3><span id="1130">11.30</span></h3><p><a target="_blank" rel="noopener" href="https://loj.ac/p/2559">「HNOI2003」消防局的设立</a></p>
 <p>设 $dp[u][sta]$ 为点 $u$ 覆盖到它 $+2-sta$ 层最小需要的点数。</p>
 <p>讨论转移即可。</p>
 <p><a target="_blank" rel="noopener" href="https://loj.ac/p/517">「LibreOJ β Round #2」计算几何瞎暴力</a></p>
@@ -441,34 +441,34 @@
 <p>全局异或可以记一个值来存，每次插入时异或上它。</p>
 <p>用一个 $01trie$ 维护前面那段排过序的，后面无序的用拆位的前缀和维护。</p>
 <p>每次排序将前缀和里的东西插到 $01trie$ 里。</p>
-<h2 id="2020-12"><a href="#2020-12" class="headerlink" title="2020.12"></a>2020.12</h2><h3 id="12-14"><a href="#12-14" class="headerlink" title="12.14"></a>12.14</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1375G">CF1375G Tree Modification</a></p>
+<h2><span id="202012">2020.12</span></h2><h3><span id="1214">12.14</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1375G">CF1375G Tree Modification</a></p>
 <p>妙题。</p>
 <p>最后树的形态是一朵菊花，考虑将树节点黑白染色，那么要求某个颜色的数量为 $1$。</p>
 <p>考虑每次操作，只会改变 $a$ 点的颜色。</p>
 <p>而只要有颜色出现次数大于 $1$ 就一定可以操作。</p>
 <p>所以答案就是 $min(cnt[0], cnt[1]) - 1$。</p>
-<h2 id="2021-1"><a href="#2021-1" class="headerlink" title="2021.1"></a>2021.1</h2><h3 id="1-15"><a href="#1-15" class="headerlink" title="1.15"></a>1.15</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3396">P3396 哈希冲突</a></p>
+<h2><span id="20211">2021.1</span></h2><h3><span id="115">1.15</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3396">P3396 哈希冲突</a></p>
 <p>紫题100祭！</p>
 <p>一道根号分治大水题（一开始还看难了</p>
 <p>就是对小于 $\sqrt n$ 的记个 $ans$ 数组。</p>
-<h3 id="1-17"><a href="#1-17" class="headerlink" title="1.17"></a>1.17</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5356">P5356 [Ynoi2017] 由乃打扑克</a></p>
+<h3><span id="117">1.17</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5356">P5356 [Ynoi2017] 由乃打扑克</a></p>
 <p>分块。块内排序。</p>
 <p>维护块内有序用归并。</p>
 <p>然后套个二分。</p>
 <p>再加上奇怪优化。</p>
-<h3 id="1-27"><a href="#1-27" class="headerlink" title="1.27"></a>1.27</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF711D">CF711D Directed Roads</a></p>
+<h3><span id="127">1.27</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF711D">CF711D Directed Roads</a></p>
 <p>定义 $len$ 为环长度。</p>
 <p>答案就是 $2^{n-\sum len} \prod (2^{len} - 2)$</p>
-<h2 id="2021-3"><a href="#2021-3" class="headerlink" title="2021.3"></a>2021.3</h2><h3 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2962">P2962 [USACO09NOV]Lights G</a></p>
+<h2><span id="20213">2021.3</span></h2><h3><span id="33">3.3</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2962">P2962 [USACO09NOV]Lights G</a></p>
 <p>meet in the middle 入门。</p>
 <p>分成两半暴搜 + <code>map</code> 判定。</p>
-<h3 id="3-5"><a href="#3-5" class="headerlink" title="3.5"></a>3.5</h3><p><a target="_blank" rel="noopener" href="https://cometoj.com/contest/73/problem/C">CometOJ - Contest14-C</a></p>
+<h3><span id="35">3.5</span></h3><p><a target="_blank" rel="noopener" href="https://cometoj.com/contest/73/problem/C">CometOJ - Contest14-C</a></p>
 <p>试着做做 $Ynoi$ 出的题</p>
 <p>感觉很水，完全可以加强的。</p>
 <p>维护 $f_x$ 表示有多少个序列中存在最大连续子段右端点为 $x$。</p>
 <p>对于一次修改，</p>
 <script type="math/tex; mode=display">
-f_{l-1}+=2^{i-1},f_r+=2^{i-1}\\f_1\to f_{l-2}，f_{r+1}\to f_n*=2</script><h3 id="3-12"><a href="#3-12" class="headerlink" title="3.12"></a>3.12</h3><p>学线段树分治</p>
+f_{l-1}+=2^{i-1},f_r+=2^{i-1}\\f_1\to f_{l-2}，f_{r+1}\to f_n*=2</script><h3><span id="312">3.12</span></h3><p>学线段树分治</p>
 <p>*<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF603E">CF603E Pastoral Oddities</a></p>
 <p>首先有一个结论：满足存在子图使得每个点度数都为奇数的充要条件是这个连通块点数为偶数。</p>
 <p>证明：最开始所有点的值都为偶数（$0$），而每加一条边进入使用集合，都不会改变每个点的度数之和的奇偶性，也就是说，每个点的度数之和总是膜 $2$ 余 $0$，因此结论成立。</p>
@@ -480,7 +480,7 @@ f_{l-1}+=2^{i-1},f_r+=2^{i-1}\\f_1\to f_{l-2}，f_{r+1}\to f_n*=2</script><h3 id
 <p>*<a target="_blank" rel="noopener" href="http://uoj.ac/problem/266">UOJ 266 [清华集训2016] Alice和Bob又在玩游戏</a></p>
 <p>神仙题目（UOJ题都挺好的，以后要多在上面做题）</p>
 <p>显然这是一道博弈论。考虑 $SG$ 函数，设 $SG[x]$ 表示子树 $x$ 的 $SG$ 值。那么考虑</p>
-<h3 id="3-21"><a href="#3-21" class="headerlink" title="3.21"></a>3.21</h3><p>开始玩多项式了。</p>
+<h3><span id="321">3.21</span></h3><p>开始玩多项式了。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3338">P3338 [ZJOI2014]力</a></p>
 <script type="math/tex; mode=display">
 E_j=\sum\limits_{i=1}^{j}\frac{q_i}{(i-j)^2}-\sum\limits_{i=j}^{n}\frac{q_i}{(i-j)^2}</script><p>求每个 $E_i$ 的值。</p>
@@ -490,13 +490,13 @@ E_j=\sum\limits_{i=1}^{j}\frac{q_i}{(i-j)^2}-\sum\limits_{i=j}^{n}\frac{q_i}{(i-
 \sum\limits_{i=1}^{j}{q_i}\times{p_{j-i}}-\sum\limits_{i=j}^{n}{q_i}\times{p_{i-j}}</script><p>发现前面已经是一个卷积形式了，考虑化后面的。</p>
 <p>套路：翻转</p>
 <p>令 $f_i=p_{n-i+1}$，那么后面也可以卷了。</p>
-<h3 id="3-22"><a href="#3-22" class="headerlink" title="3.22"></a>3.22</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3723">P3723 [AH2017/HNOI2017]礼物</a></p>
+<h3><span id="322">3.22</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3723">P3723 [AH2017/HNOI2017]礼物</a></p>
 <p>直接拆式子。</p>
 <p>化成</p>
 <script type="math/tex; mode=display">
 \sum\limits_{i=1}^n(a_i+b_i)+n\Delta^2+2\Delta\sum\limits_{i=1}^n(a_i-b_i)-2\sum\limits_{i=1}^na_ib_i</script><p>前面是定值，关于 $\Delta$ 的就是二次函数求最值，最后一项翻转一下卷积求 max。</p>
 <p>记得断环为链倍长数组。</p>
-<h3 id="3-24"><a href="#3-24" class="headerlink" title="3.24"></a>3.24</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3426">P3426 [POI2005]SZA-Template</a></p>
+<h3><span id="324">3.24</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3426">P3426 [POI2005]SZA-Template</a></p>
 <p>设长度为 $i$ 的前缀答案为 $ans[i]$。</p>
 <p>一个引理：一个前缀的答案 $ans[i]$ 的取值只有 $i$ 和 $ans[p[i]]$ 两种可能。</p>
 <p>分类考虑：</p>
@@ -505,7 +505,7 @@ E_j=\sum\limits_{i=1}^{j}\frac{q_i}{(i-j)^2}-\sum\limits_{i=j}^{n}\frac{q_i}{(i-
 <li>若 $p[i]&lt;ans[i]\le i$ ，那么说明 $i$ 有更长的相同前后缀，但为了符合 $p$ 数组定义，这个值只能取 $i$。</li>
 </ol>
 <p>考虑什么时候取 $ans[p[i]]$ ，设 $lst[i]$ 表示当前满足 $ans[x]=i$ 的最大 $x$，发现当 $lst[ans[p[i]]]&gt;=i-p[i]$ 是才能覆盖到。所以 <code>KMP</code> 扫一遍再推一遍就好了。</p>
-<h2 id="2021-4"><a href="#2021-4" class="headerlink" title="2021.4"></a>2021.4</h2><h3 id="4-22"><a href="#4-22" class="headerlink" title="4.22"></a>4.22</h3><p>推柿子练习</p>
+<h2><span id="20214">2021.4</span></h2><h3><span id="422">4.22</span></h3><p>推柿子练习</p>
 <p>设 $m$ 为总数。$\sum\limits_if(a_i)-1=$</p>
 <script type="math/tex; mode=display">
 \sum\limits_i\frac{a_i(a_i-1)}{m(m-1)}\sum\limits_kf(a_k)+\sum\limits_i\sum\limits_{j\not= i}\frac{a_ia_j}{m(m-1)}(f(a_i+1)+f(a_j-1)+\sum\limits_{k\not=i,j}f(a_k))</script><p>拆开</p>
@@ -531,13 +531,13 @@ f(x)=f(0)+xg(0)-(m-1)x+(m-1)(x-m)\sum\limits_{i=1}^x\frac1{m-i}</script><p>令 $
 <script type="math/tex; mode=display">
 f(x)=(m-1)(x-m)\sum\limits_{i=1}^x\frac{1}{m-i}</script><p>设停时为 $t$，则 $\Phi(A_t)=f(m)+(n-1)f(0)=0$，是常数。</p>
 <p>$E(t)=E(\Phi(A_0))-\Phi(A_t)$</p>
-<h3 id="4-23"><a href="#4-23" class="headerlink" title="4.23"></a>4.23</h3><script type="math/tex; mode=display">
+<h3><span id="423">4.23</span></h3><script type="math/tex; mode=display">
 \sum\limits_if(a_i)-1=\sum\limits_i\sum\limits_{j\not= i}\frac{a_i}{m(n-1)}(f(a_i-1)+f(a_j+1)+\sum_{k\not=i,j}f(a_k))</script><script type="math/tex; mode=display">
 \sum\limits_if(a_i)-1=\sum_i\frac {a_i}mf(a_i-1)+\sum_i\frac{m-a_i}{m(n-1)}f(a_i+1)+\sum_i\frac{(n-2)(m-a_i)}{m(n-1)}f(a_i)</script><script type="math/tex; mode=display">
 f(x)-\frac{x}{m}=\frac{x}{m}f(x-1)+\frac{m-x}{m(n-1)}f(x+1)+\frac{(n-2)(m-x)}{m(n-1)}f(x)</script><script type="math/tex; mode=display">
 f(x+1)=(\frac{m(n-1)}{m-x}-(n-2))f(x)-\frac{(n-1)x}{m-x}f(x-1)-\frac{(n-1)x}{m-x}</script><p>设 $f(0)=0$ 把 $x=0$ 带入得 $f(1)=0$。</p>
 <p>$A_t=f(m)+(n-1)f(0)$，是常数。</p>
-<h3 id="4-25"><a href="#4-25" class="headerlink" title="4.25"></a>4.25</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1028G">CF1028G Guess the number</a></p>
+<h3><span id="425">4.25</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1028G">CF1028G Guess the number</a></p>
 <p>好题。</p>
 <p>考虑猜出答案的大致流程。</p>
 <p>首先我们只能猜一个数，因为最小值是 $1$。</p>
@@ -555,7 +555,7 @@ f(x+1)=(\frac{m(n-1)}{m-x}-(n-2))f(x)-\frac{(n-1)x}{m-x}f(x-1)-\frac{(n-1)x}{m-x
 	For(i, <span class="hljs-number">1</span>, y) x = f(x + <span class="hljs-number">1</span>, c - <span class="hljs-number">1</span>); <span class="hljs-comment">//向后跳尽可能远</span>
 	<span class="hljs-keyword">return</span> x;
 &#125;</code></pre>
-<h3 id="4-26"><a href="#4-26" class="headerlink" title="4.26"></a>4.26</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1032F">CF1032F Vasya and Maximum Matching</a></p>
+<h3><span id="426">4.26</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1032F">CF1032F Vasya and Maximum Matching</a></p>
 <p>树形dp。</p>
 <p>发现最大匹配唯一，当且仅当除了单点以外每个点都找到了匹配。</p>
 <p>设 $dp[0/1/2][u]$ 分别表示一个点 <strong>是单点/和儿子匹配/和父亲匹配</strong> 的方案数。</p>
@@ -564,6 +564,8 @@ dp[0][u]=\prod\limits_{v}(dp[0][v]+dp[1][v])\\
 dp[1][u]=\prod_v(dp[0][v]+2\times dp[1][v])\times\sum_v\frac{dp[2][v]}{dp[0][v]+2\times dp[1][v]}\\
 dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与孙子匹配了的时候，与儿子的边可断可不断。</p>
 <p>答案就是 $dp[0][1]+dp[1][1]$。</p>
+<h2><span id="20216">2021.6</span></h2><h3><span id="622">6.22</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3586">P3586 [POI2015]LOG</a></p>
+<p>首先把大于 $s$ 的值都找出来去掉。然后有个结论就是如果剩下的元素和 $\ge$ 剩下的要求减去的和就可以。具体可以考虑贪心选择那么最后剩下的那一些就应该 $\ge s$。用了一个动态开点值域线段树解决。</p>
 
     </div>
 </div>
@@ -674,7 +676,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
     
     
     <div class="count">
-        <a class="count articles"><span>39</span>文章</a>
+        <a class="count articles"><span>43</span>文章</a>
         <a class="count tags"><span>40</span>标签</a>
         <a class="count categories"><span>2</span>分类</a>
     </div>
@@ -713,7 +715,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
                     <span>1</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/05/14/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/" title="后缀数组">后缀数组</a>
+                    <a href="/2021/07/03/%E6%95%B0%E6%95%B0/" title="数数">数数</a>
                 </p>
             </div>
             
@@ -727,7 +729,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
                     <span>2</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/05/05/%E6%AF%8F%E5%A4%A9%E4%B8%80%E4%B8%AA%E7%88%86%E9%9B%B6%E5%B0%8F%E6%8A%80%E5%B7%A7/" title="每天一个爆零小技巧">每天一个爆零小技巧</a>
+                    <a href="/2021/06/22/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/" title="概率与期望">概率与期望</a>
                 </p>
             </div>
         </li>
@@ -740,7 +742,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
                     <span>3</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/04/13/Contest&amp;VP/" title="Contest&amp;VP">Contest&amp;VP</a>
+                    <a href="/2021/06/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构选做">数据结构选做</a>
                 </p>
             </div>
         </li>
@@ -753,7 +755,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
                     <span>4</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/04/01/UOJContests/" title="UOJContests">UOJContests</a>
+                    <a href="/2021/05/27/%E5%9B%BD%E9%9B%86%E4%BD%9C%E4%B8%9A%E9%80%89%E5%81%9A/" title="国集作业选做">国集作业选做</a>
                 </p>
             </div>
         </li>
@@ -766,7 +768,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
                     <span>5</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/04/01/%E8%80%83%E8%AF%95%E7%AD%96%E7%95%A5/" title="考试策略">考试策略</a>
+                    <a href="/2021/05/14/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/" title="后缀数组">后缀数组</a>
                 </p>
             </div>
         </li>
@@ -784,12 +786,12 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">#学习笔记</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
@@ -830,7 +832,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
         </div>
         
@@ -840,7 +842,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%95%B0%E5%AD%A6/">#数学</a>
         </div>
         
@@ -855,27 +857,27 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/dp/">#dp</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/TEST/">#TEST</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86/">#矩阵树定理</a>
         </div>
         
@@ -890,12 +892,12 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%A0%91/">#树</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/LCT/">#LCT</a>
         </div>
         
@@ -915,7 +917,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
@@ -940,7 +942,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/">#计算几何</a>
         </div>
         
@@ -955,12 +957,12 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/mark/">#mark</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">#数据结构</a>
         </div>
         
@@ -990,17 +992,17 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/myself/">#myself</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%95%B0%E8%AE%BA/">#数论</a>
         </div>
         
