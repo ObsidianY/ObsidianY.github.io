@@ -504,7 +504,7 @@ E_j=\sum\limits_{i=1}^{j}\frac{q_i}{(i-j)^2}-\sum\limits_{i=j}^{n}\frac{q_i}{(i-
 <li>若 $ans[i]\le p[i]$ 那么我显然取 $ans[p[i]]$ 这个最优值。</li>
 <li>若 $p[i]&lt;ans[i]\le i$ ，那么说明 $i$ 有更长的相同前后缀，但为了符合 $p$ 数组定义，这个值只能取 $i$。</li>
 </ol>
-<p>考虑什么时候取 $ans[p[i]]$ ，设 $lst[i]$ 表示当前满足 $ans[x]=i$ 的最大 $x$，发现当 $lst[ans[p[i]]]&gt;=i-p[i]$ 是才能覆盖到。所以 <code>KMP</code> 扫一遍再推一遍就好了。</p>
+<p>考虑什么时候取 $ans[p[i]]$ ，设 $lst[i]$ 表示当前满足 $ans[x]=i$ 的最大 $x$，发现当 $lst[ans[p[i]]]&gt;=i-p[i]$ 时才能覆盖到。所以 <code>KMP</code> 扫一遍再推一遍就好了。</p>
 <h2><span id="20214">2021.4</span></h2><h3><span id="422">4.22</span></h3><p>推柿子练习</p>
 <p>设 $m$ 为总数。$\sum\limits_if(a_i)-1=$</p>
 <script type="math/tex; mode=display">
@@ -574,16 +574,16 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
     <ul>
         
         <li class="prev">
-            <a href="/2021/03/09/tricks/">
+            <a href="/2021/02/27/%E5%A5%BD%E9%A2%98/">
                 <i class="cube-icon cube-prev" aria-hidden="true"></i>
-                tricks
+                好题
             </a>
         </li>
         
         
         <li class="next">
-            <a href="/2021/02/27/%E5%A5%BD%E9%A2%98/">
-                好题
+            <a href="/2021/02/26/2021-2-25Test/">
+                2021.2.25Test
                 <i class="cube-icon cube-next" aria-hidden="true"></i>
             </a>
         </li>
@@ -676,9 +676,9 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
     
     
     <div class="count">
-        <a class="count articles"><span>43</span>文章</a>
-        <a class="count tags"><span>40</span>标签</a>
-        <a class="count categories"><span>2</span>分类</a>
+        <a class="count articles"><span>46</span>文章</a>
+        <a class="count tags"><span>42</span>标签</a>
+        <a class="count categories"><span>4</span>分类</a>
     </div>
 </div>
 
@@ -755,7 +755,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
                     <span>4</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/05/27/%E5%9B%BD%E9%9B%86%E4%BD%9C%E4%B8%9A%E9%80%89%E5%81%9A/" title="国集作业选做">国集作业选做</a>
+                    <a href="/2021/05/27/%E8%8E%AB%E5%8F%8D%E7%BB%83%E4%B9%A0/" title="a">a</a>
                 </p>
             </div>
         </li>
@@ -768,7 +768,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
                     <span>5</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/05/14/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/" title="后缀数组">后缀数组</a>
+                    <a href="/2021/05/27/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%80%BB%E7%BB%93/" title="字符串总结">字符串总结</a>
                 </p>
             </div>
         </li>
@@ -786,13 +786,23 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
     <div class="cube-boxs">
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">#学习笔记</a>
         </div>
         
         
         <div class="cube-box ">
             <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/">#图论</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/%E8%AE%B0%E5%BD%95/">#记录</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/a/">#a</a>
         </div>
         
     </div>
@@ -812,7 +822,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%9E%84%E9%80%A0/">#构造</a>
         </div>
         
@@ -832,7 +842,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
         </div>
         
@@ -857,7 +867,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/dp/">#dp</a>
         </div>
         
@@ -872,12 +882,12 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/TEST/">#TEST</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86/">#矩阵树定理</a>
         </div>
         
@@ -887,7 +897,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%88%86%E5%9D%97/">#分块</a>
         </div>
         
@@ -917,7 +927,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
@@ -932,7 +942,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/">#多项式</a>
         </div>
         
@@ -942,7 +952,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/">#计算几何</a>
         </div>
         
@@ -952,7 +962,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E8%B4%AA%E5%BF%83/">#贪心</a>
         </div>
         
@@ -972,7 +982,7 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/">#博弈论</a>
         </div>
         
@@ -992,18 +1002,28 @@ dp[2][u]=\prod_v(dp[0][v]+2\times dp[1][v])</script><p>×2原因：当儿子与�
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/myself/">#myself</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
         
         <div class="cube-box-bg ">
             <a href="/tags/%E6%95%B0%E8%AE%BA/">#数论</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">#学习记录</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/a/">#a</a>
         </div>
         
     </div>
