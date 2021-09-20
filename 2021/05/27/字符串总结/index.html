@@ -83,7 +83,7 @@
         
         <li>
             <i class="cube-icon cube-icon-" aria-hidden="true"></i>
-            <a href="/none">专题</a>
+            <a href="/zhuanti">专题</a>
         </li>
         
         <li>
@@ -199,6 +199,7 @@
 <li><a href="#子序列自动机">子序列自动机</a></li>
 <li><a href="#z-函数">$z$ 函数</a></li>
 <li><a href="#manacher">Manacher</a></li>
+<li><a href="#后缀数组">后缀数组</a></li>
 <li><a href="#后缀自动机">后缀自动机</a></li>
 </ul>
 </li>
@@ -257,6 +258,23 @@
 <h3><span id="manacher">Manacher</span></h3><p>和 $z$ 函数差不多。这里只讨论回文子串长度为奇数的情况。</p>
 <p>记 $r[i]$ 表示以 $i$ 为中心的最长回文子串的半径，$[l,r]$ 表示当前右端点最靠右的回文子串的左右端点。</p>
 <p>$i&gt;r$ 暴力匹配。$i\le r$ 时，先找到 $i$ 在 $[l,r]$ 关于 $\frac{l+r}{2}$ 对称的点 $l+r-i$，然后将其回文半径设为 $min(r[l+r-i], r-i+1)$ 接着尝试暴力匹配就行了。</p>
+<h3><span id="后缀数组">后缀数组</span></h3><p>称起始位置为 $i$ 的后缀为后缀 $i$。</p>
+<p>定义 $sa[i]$ 表示将所有后缀排序后第 $i$ 小的后缀的起始位置，$rk[i]$ 表示后缀 $i$ 的排名。</p>
+<p>有 $sa[rk[i]]=rk[sa[i]]=i$。</p>
+<p>常用构建方法是倍增法。首先比较第一位。然后以第一位为第一关键字，第二位为第二关键字排序，再以第一、二位为第一关键字，第三、四位为第二关键字排序。以此类推。</p>
+<p>排序用计数排序，时间复杂度 $O(n\log n)$。</p>
+<p>定义 $\mathrm{lcp}(i,j)$ 表示后缀 $sa[i]$ 和 $sa[j]$ 的最长公共前缀长度。</p>
+<p>有 $\forall 1\le i\le j\le k\le n,\mathrm{lcp}(i,k)=\min(\mathrm{lcp}(i,j),\mathrm{lcp}(j,k))$</p>
+<p>因为 $i\le j\le k$，所以 $sa[i]$ 与 $sa[j]$ 的前缀相似程度会更大。那么 $\mathrm{lcp}(i,k)\le \mathrm{lcp}(i,j),\mathrm{lcp}(i,k)\le \mathrm{lcp}(j,k)$。$\mathrm{lcp}(i,k)&lt;\min(\mathrm{lcp}(i,j),\mathrm{lcp}(j,k))$ 显然不成立。 </p>
+<p>由上式也有 $\forall 1\le i&lt; j\le k\le n,\mathrm{lcp}(i,k)=\min\{\mathrm{lcp}(j-1,j)\}$</p>
+<p>根据 $\mathrm{lcp}(i,k)=\min(\mathrm{lcp}(i,i+1),\mathrm{lcp}(i+1,k))$ 拆开可证。</p>
+<p>定义 $height[i]=\mathrm{lcp}(i-1,i)$。</p>
+<p>有 $height[rk[i]]\ge height[rk[i-1]]-1$，即 $\mathrm{lcp}(rk[i]-1,rk[i])\ge \mathrm{lcp}(rk[i-1]-1,rk[i-1])$ 。考虑如何证明。</p>
+<p>当 $height[rk[i-1]]\le 1$ 时显然成立。</p>
+<p>否则，设后缀 $sa[rk[i-1]]$ （即后缀 $i-1$ ）为 $c+A+D$，后缀 $sa[rk[i-1]-1]$ 为 $c+A+B$。那么后缀 $i$ 是 $A+D$，后缀 $sa[rk[i-1]-1]+1$ 是 $A+B$。</p>
+<p>因为后缀 $sa[rk[i]-1]$ 排在后缀 $sa[rk[i]]$ 前。 </p>
+<p>$height[rk[i-1]]=\mathrm{lcp}(rk[i-1]-1, rk[i-1])=|c+A|=|A|+1$</p>
+<p>$\mathrm{lcp}(i,k)=\min \{height[j]\}\ \ \ \ (i&lt;j\le k)$。</p>
 <h3><span id="后缀自动机">后缀自动机</span></h3><p>后缀自动机上的一条路径对应着原串的一些子串。</p>
 <p>定义一个子串的 $\mathrm {endpos}$ 集合：这个子串在原串中所有出现位置的集合。</p>
 <p>$\mathrm {endpos}$ 等价类：所有 $\mathrm {endpos}$ 集合相同的子串属于一个$\mathrm {endpos}$ 等价类。</p>
@@ -285,16 +303,16 @@
     <ul>
         
         <li class="prev">
-            <a href="/2021/05/27/%E8%8E%AB%E5%8F%8D%E7%BB%83%E4%B9%A0/">
+            <a href="/2021/05/27/Poly/">
                 <i class="cube-icon cube-prev" aria-hidden="true"></i>
-                a
+                Poly
             </a>
         </li>
         
         
         <li class="next">
-            <a href="/2021/05/27/Poly/">
-                Poly
+            <a href="/2021/05/27/%E5%9B%BD%E9%9B%86%E4%BD%9C%E4%B8%9A%E9%80%89%E5%81%9A/">
+                国集作业选做
                 <i class="cube-icon cube-next" aria-hidden="true"></i>
             </a>
         </li>
@@ -387,9 +405,9 @@
     
     
     <div class="count">
-        <a class="count articles"><span>46</span>文章</a>
-        <a class="count tags"><span>42</span>标签</a>
-        <a class="count categories"><span>4</span>分类</a>
+        <a class="count articles"><span>21</span>文章</a>
+        <a class="count tags"><span>7</span>标签</a>
+        <a class="count categories"><span>3</span>分类</a>
     </div>
 </div>
 
@@ -426,7 +444,7 @@
                     <span>1</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/07/03/%E6%95%B0%E6%95%B0/" title="数数">数数</a>
+                    <a href="/2021/09/20/%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/" title="考试总结">考试总结</a>
                 </p>
             </div>
             
@@ -440,7 +458,7 @@
                     <span>2</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/06/22/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/" title="概率与期望">概率与期望</a>
+                    <a href="/2021/07/16/%E8%8E%AB%E5%8F%8D%E7%BB%83%E4%B9%A0/" title="莫反练习">莫反练习</a>
                 </p>
             </div>
         </li>
@@ -453,7 +471,7 @@
                     <span>3</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/06/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构选做">数据结构选做</a>
+                    <a href="/2021/07/03/%E6%95%B0%E6%95%B0/" title="数数">数数</a>
                 </p>
             </div>
         </li>
@@ -466,7 +484,7 @@
                     <span>4</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/05/27/%E8%8E%AB%E5%8F%8D%E7%BB%83%E4%B9%A0/" title="a">a</a>
+                    <a href="/2021/06/22/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/" title="概率与期望">概率与期望</a>
                 </p>
             </div>
         </li>
@@ -479,7 +497,7 @@
                     <span>5</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/05/27/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%80%BB%E7%BB%93/" title="字符串总结">字符串总结</a>
+                    <a href="/2021/06/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构选做">数据结构选做</a>
                 </p>
             </div>
         </li>
@@ -511,11 +529,6 @@
             <a href="/categories/%E8%AE%B0%E5%BD%95/">#记录</a>
         </div>
         
-        
-        <div class="cube-box ">
-            <a href="/categories/a/">#a</a>
-        </div>
-        
     </div>
 </div>
 
@@ -528,63 +541,8 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box-bg ">
-            <a href="/tags/%E8%80%83%E8%AF%95/">#考试</a>
-        </div>
-        
-        
-        <div class="cube-box-bg ">
-            <a href="/tags/%E6%9E%84%E9%80%A0/">#构造</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E7%A6%BB%E7%BA%BF/">#离线</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E6%8C%82%E5%88%86/">#挂分</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
-        </div>
-        
-        
-        <div class="cube-box-bg ">
-            <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/">#欧拉定理</a>
-        </div>
-        
-        
         <div class="cube-box ">
             <a href="/tags/%E6%95%B0%E5%AD%A6/">#数学</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/gu/">#gu</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/dp/">#dp</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
         </div>
         
         
@@ -594,92 +552,7 @@
         
         
         <div class="cube-box ">
-            <a href="/tags/TEST/">#TEST</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86/">#矩阵树定理</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/">#二分图</a>
-        </div>
-        
-        
-        <div class="cube-box-bg ">
-            <a href="/tags/%E5%88%86%E5%9D%97/">#分块</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E6%A0%91/">#树</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/LCT/">#LCT</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E7%9B%B4%E5%BE%84/">#直径</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E5%8D%95%E8%B0%83/">#单调</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">#线性代数</a>
-        </div>
-        
-        
-        <div class="cube-box-bg ">
             <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0/">#生成函数</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/bitset/">#bitset</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/">#多项式</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E6%9C%9F%E6%9C%9B/">#期望</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/">#计算几何</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E6%9D%82%E9%A1%B9/">#杂项</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E8%B4%AA%E5%BF%83/">#贪心</a>
-        </div>
-        
-        
-        <div class="cube-box-bg ">
-            <a href="/tags/mark/">#mark</a>
         </div>
         
         
@@ -689,52 +562,17 @@
         
         
         <div class="cube-box ">
-            <a href="/tags/%E6%90%9C%E7%B4%A2/">#搜索</a>
-        </div>
-        
-        
-        <div class="cube-box-bg ">
-            <a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/">#博弈论</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/marked/">#marked</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E5%88%86%E6%B2%BB/">#分治</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E4%BA%8C%E5%88%86/">#二分</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/myself/">#myself</a>
-        </div>
-        
-        
-        <div class="cube-box ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%95%B0%E8%AE%BA/">#数论</a>
         </div>
         
         
         <div class="cube-box ">
             <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">#学习记录</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/a/">#a</a>
         </div>
         
     </div>
