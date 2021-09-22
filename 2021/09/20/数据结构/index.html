@@ -189,6 +189,7 @@
 <!-- toc -->
 <ul>
 <li><a href="#cf19d-points">CF19D Points</a></li>
+<li><a href="#cf145d-lucky-pair">CF145D Lucky Pair</a></li>
 <li><a href="#cf150e-freezing-with-style">CF150E Freezing with Style</a></li>
 <li><a href="#cf526f-pudding-monsters">CF526F Pudding Monsters</a><ul>
 <li><a href="#法一">法一</a></li>
@@ -205,6 +206,11 @@
 <h3><span id="cf19d-points">CF19D Points</span></h3><p>其实是一道 SB 题，但是看到是三维问题一个 $\log$ 就没敢想。</p>
 <p>直接离散化，接着横坐标记为序列维，纵坐标记为值域维，线段树二分可以确定横坐标，然后对于每个横坐标开个 <code>set</code> 就可以确定纵坐标。</p>
 <p>其实这个东西也不能说是三维，因为它不是让你数点而是求最值。这样的问题似乎就可以很方便地做了。 </p>
+<h3><span id="cf145d-lucky-pair">CF145D Lucky Pair</span></h3><p>十分不会做这种题，只好翻译官方题解了。</p>
+<p>首先发现幸运数字个数不超过 $1000$，这个性质肯定要利用。</p>
+<p>然后考虑对于固定的右线段的左端点 $i$ ，枚举这个右线段的右端点 $j$，每次加入 $a[j]$，如果它在右端点里还没出现过并且它是幸运数字，那么 $a[j]$ 就会把 $[1:i-1]$ 这段划分成若干小段，左线段只能是这些小段的子串。所以对于 $[1:i-1]$ 这段开一个 $set$ 维护连续段就可以做到 $O(n^2\log n)$。</p>
+<p>发现 $i$​ 和 $j$​ 可以只与幸运数字有关，所以只用 $O(1000^2\log n+)$​ 的复杂度了。</p>
+<p>但是这个东西只能处理右线段中有幸运数字的，考虑没有的怎么做。设 $F(i)$​ 表示 $i$​ 右边第一个幸运数字的位置，枚举每个非幸运数字为右线段的左端点，就可以算出不包含幸运数字的右线段的个数，此时左线段就可以任取了。</p>
 <h3><span id="cf150e-freezing-with-style">CF150E Freezing with Style</span></h3><p>看到中位数，想到 $+1-1$。</p>
 <p>这里我们可以二分一下，然后如果存在一条合法且边权 $\ge 0$ 的路径就说明可以继续变大。</p>
 <p>然后考虑点分治，每次扫完一棵子树就把所有信息更新到一棵线段树上，查询合法路径就是一段区间询问了。这是                $O(n\log^3n)$ 的。</p>
@@ -463,12 +469,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E8%AE%B0%E5%BD%95/">#记录</a>
         </div>
         
@@ -504,12 +510,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%95%B0%E8%AE%BA/">#数论</a>
         </div>
         
