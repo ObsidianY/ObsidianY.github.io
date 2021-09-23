@@ -224,9 +224,10 @@
 <p>然后把询问从大到小排序，把 $rk$ 大于两人 $rk$ 的人都插入候选集合。</p>
 <p>接着把 $\pm k$ 的操作贡献到那两个人的上面，这样那两个人的信息还是一个区间，而候选人的信息只是单点。</p>
 <p>这样插在线段树上维护区间最大值就好了。 </p>
-<h3><span id="cf176e-archaeology">CF176E Archaeology</span></h3><p>一个性质——关键点的导出子树边权和为：</p>
-<p>设所有关键点按 $dfn$ 排序后的序列为 $u_1,u_2,\ldots,u_m$，则边权和为 $\dfrac{dis(u_1,u_2)+dis(u_2,u_3)+\ldots+dis(u_{m-1},u_m)+dis(u_m,u1)}{2}$。</p>
-<p>这个式子的理解方式是，考虑</p>
+<h3><span id="cf176e-archaeology">CF176E Archaeology</span></h3><p>一个性质——关键点的导出子树边权和。设所有关键点按 $dfn$​ 排序后的序列为 $u_1,u_2,\ldots,u_m$​，则边权和为：</p>
+<script type="math/tex; mode=display">
+\dfrac{dis(u_1,u_2)+dis(u_2,u_3)+\ldots+dis(u_{m-1},u_m)+dis(u_m,u1)}{2}</script><p>这个式子的理解方式是，考虑 $dfs$ 这棵导出子树，每条边都会被恰好算到 $2$ 次。</p>
+<p>然后直接 <code>set</code> 维护即可。</p>
 <h3><span id="cf526f-pudding-monsters">CF526F Pudding Monsters</span></h3><h4><span id="法一">法一</span></h4><p>首先进行题意转化。考虑把矩阵拍扁，那么问题就转化为：给你一个排列，询问有多少区间满足 $\max-\min=\mathrm{len}-1$。</p>
 <p>可以发现用单调栈单调队列维护 $\min/\max$。</p>
 <hr>
@@ -486,7 +487,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
@@ -507,7 +508,7 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%95%B0%E5%AD%A6/">#数学</a>
         </div>
         
@@ -527,7 +528,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
@@ -537,7 +538,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">#学习记录</a>
         </div>
         
