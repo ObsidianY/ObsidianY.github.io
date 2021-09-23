@@ -191,6 +191,7 @@
 <li><a href="#cf19d-points">CF19D Points</a></li>
 <li><a href="#cf145d-lucky-pair">CF145D Lucky Pair</a></li>
 <li><a href="#cf150e-freezing-with-style">CF150E Freezing with Style</a></li>
+<li><a href="#cf173e-camping-groups">CF173E Camping Groups</a></li>
 <li><a href="#cf526f-pudding-monsters">CF526F Pudding Monsters</a><ul>
 <li><a href="#法一">法一</a></li>
 <li><a href="#法二">法二</a></li>
@@ -211,12 +212,17 @@
 <p>然后考虑对于固定的右线段的左端点 $i$ ，枚举这个右线段的右端点 $j$，每次加入 $a[j]$，如果它在右端点里还没出现过并且它是幸运数字，那么 $a[j]$ 就会把 $[1:i-1]$ 这段划分成若干小段，左线段只能是这些小段的子串。所以对于 $[1:i-1]$ 这段开一个 $set$ 维护连续段就可以做到 $O(n^2\log n)$。</p>
 <p>发现 $i$​ 和 $j$​ 可以只与幸运数字有关，所以只用 $O(1000^2\log n+)$​ 的复杂度了。</p>
 <p>但是这个东西只能处理右线段中有幸运数字的，考虑没有的怎么做。设 $F(i)$​ 表示 $i$​ 右边第一个幸运数字的位置，枚举每个非幸运数字为右线段的左端点，就可以算出不包含幸运数字的右线段的个数，此时左线段就可以任取了。</p>
-<h3><span id="cf150e-freezing-with-style">CF150E Freezing with Style</span></h3><p>看到中位数，想到 $+1-1$。</p>
+<h3><span id="cf150e-freezing-with-style">CF150E Freezing with Style</span></h3><p>没写</p>
+<p>看到中位数，想到 $+1-1$。</p>
 <p>这里我们可以二分一下，然后如果存在一条合法且边权 $\ge 0$ 的路径就说明可以继续变大。</p>
 <p>然后考虑点分治，每次扫完一棵子树就把所有信息更新到一棵线段树上，查询合法路径就是一段区间询问了。这是                $O(n\log^3n)$ 的。</p>
 <p>然后我们又发现路径长度的限制就像一个滑动窗口，考虑单调队列。</p>
 <p>点分治<strong>常见技巧</strong>单调队列按秩合并：把子树大小从小到大排序，依次扫描构建单调队列。</p>
 <p>这样复杂度就是 $\sum siz$ 了，可以少一个 $\log$。</p>
+<h3><span id="cf173e-camping-groups">CF173E Camping Groups</span></h3><p>首先可以很方便地用树状数组把每个人当队长时团队人数的最大值求出来。</p>
+<p>然后把询问从大到小排序，把 $rk$ 大于两人 $rk$ 的人都插入候选集合。</p>
+<p>接着把 $\pm k$ 的操作贡献到那两个人的上面，这样那两个人的信息还是一个区间，而候选人的信息只是单点。</p>
+<p>这样插在线段树上维护区间最大值就好了。 </p>
 <h3><span id="cf526f-pudding-monsters">CF526F Pudding Monsters</span></h3><h4><span id="法一">法一</span></h4><p>首先进行题意转化。考虑把矩阵拍扁，那么问题就转化为：给你一个排列，询问有多少区间满足 $\max-\min=\mathrm{len}-1$。</p>
 <p>可以发现用单调栈单调队列维护 $\min/\max$。</p>
 <hr>
@@ -481,7 +487,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E8%AE%B0%E5%BD%95/">#记录</a>
         </div>
         
@@ -502,12 +508,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
@@ -517,12 +523,12 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%95%B0%E8%AE%BA/">#数论</a>
         </div>
         
