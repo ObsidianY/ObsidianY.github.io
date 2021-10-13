@@ -10,7 +10,7 @@
     
     
     
-    <title>InterestingProblems | FourteenObsidian&#39;s blog</title>
+    <title>标签: ST表 | FourteenObsidian&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -165,85 +165,29 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <div class="cube-article">
-    <h1 class="title">InterestingProblems</h1>
+            <style>
+    @media(max-width: 768px) {
+        body {
+            background-color: #fff!important;
+        }
+    }
+</style>
+<div class="cube-archives">
     
-    <div class="cube-article-header">
-        <div class="cube-article-date">
-            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-            <!-- moment.js对象 -->
-            2021-09-23
-        </div>
-        <div class="cube-article-tags">
-    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-    
-</div>
+    <div class="cube-archive" style="margin-top: 0;">
+        <h1 class="title">ST表</h1>
+        
+        <ul class="posts">
+            
+            <li class="post">
+                <a href="/2021/10/13/CF1332G/">CF1332G</a>
+            </li>
+            
+        </ul>
+        
     </div>
     
-    <div class="cube-article-content cube-markdown">
-        
-        <p>nb 的妙题</p>
-<span id="more"></span>
-<h3><span id="cf1204d2">CF1204D2</span></h3><p>定义一个串 $s$ 是固定的，当且仅当不存在与它不同的串 $t$ 满足 $s$ 的每个子串的最长不降子序列长度都等于对应的 $t$ 的。</p>
-<p>以下默认串 $p,q$ 都是固定的。</p>
-<p>那么有以下性质：</p>
-<ul>
-<li>$10$ 是固定的；</li>
-<li>$p+q$ 是固定的，如果有任意一位能改那 $p$ 或 $q$ 就不是固定的了。</li>
-<li>$1+p+0$​ 是固定的，首先考虑证明 $1+1010\ldots10+0$ 是固定的且只有这种方式是固定的，然后此性质得证。</li>
-</ul>
-<p>我们可以发现，如果把 $1$ 看成 “$($”，把 $0$ 看成 “$)$”，那么固定的串一定是一段合法的括号序列！</p>
-<p>同时，固定的串的最长不降子序列的长度一定是 $\frac{|s|}{2}$ 的。并且全选 $0$ 或全选 $1$ 是可以做到这个上界的。</p>
-<p>考虑把原序列中所有固定的串都删掉，那么剩下的就只有一段前缀 $0$​ 和后缀 $1$​ 了。根据题意，我们只要把所有 $1$​ 改为 $0$​ 就好了。不难发现这就是合法的。</p>
-
-    </div>
 </div>
-
-<div class="cube-article-nav">
-    <ul>
-        
-        <li class="prev">
-            <a href="/2021/09/26/record/">
-                <i class="cube-icon cube-prev" aria-hidden="true"></i>
-                训练
-            </a>
-        </li>
-        
-        
-        <li class="next">
-            <a href="/2021/09/20/CF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                CF数据结构选做
-                <i class="cube-icon cube-next" aria-hidden="true"></i>
-            </a>
-        </li>
-        
-    </ul>
-</div>
-
-
-<!-- TODO 根据theme.comment的内容进行入口选择 -->
-
-    <!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
-<div class="gitment-comment">
-    <div id="container"></div>
-</div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-    var gitment = new Gitment({
-        // id default is location.href
-        owner: 'ObsidianY',
-        repo: 'blog_comments',
-        oauth: {
-            client_id: '6603691d184d0907e56a',
-            client_secret: '848f8ccf2e7d7c87cd892ba59b464cef8e58a784',
-        },
-    })
-    gitment.render('container')
-</script>
-    
-
-
         </div>
         <div class="cube-right">
             
@@ -425,7 +369,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E8%AE%B0%E5%BD%95/">#记录</a>
         </div>
         
@@ -451,12 +395,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
@@ -466,7 +410,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
@@ -476,7 +420,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">#学习记录</a>
         </div>
         
