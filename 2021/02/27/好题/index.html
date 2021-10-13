@@ -189,20 +189,20 @@
 <p>带 * 的是口糊的。</p>
 <span id="more"></span>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/ObsidianY/dp-zhuan-ti">DP专题</a></p>
-<h1 id="2020-10"><a href="#2020-10" class="headerlink" title="2020.10"></a>2020.10</h1><h3 id="10-3"><a href="#10-3" class="headerlink" title="10.3"></a>10.3</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF27E">CF27E Number With The Given Amount Of Divisors</a></p>
+<h1><span id="202010">2020.10</span></h1><h3><span id="103">10.3</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF27E">CF27E Number With The Given Amount Of Divisors</a></p>
 <p>令答案为 $ans$。</p>
-<p>则 $ans= \prod p_i^{c_i}$，其中 $p_i$ 为连续的质数，且 $\forall i<j, c_i>=c_j$。</p>
+<p>则 $ans= \prod p_i^{c_i}$，其中 $p_i$ 为连续的质数，且 $\forall i<j, c_i>=c_j$。</j,></p>
 <p>那么暴力搜索，剪一下枝就好啦。</p>
-<h3 id="10-4"><a href="#10-4" class="headerlink" title="10.4"></a>10.4</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3225">P3225 [HNOI2012]矿场搭建</a></p>
+<h3><span id="104">10.4</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3225">P3225 [HNOI2012]矿场搭建</a></p>
 <p>跑一遍圆方树，考虑连了两个及以上方点的圆点为割点，可以搜索每个方点，若没连割点就在点双内建两个，若连了一个就在点双内建一个，若连了两个就不用建，简单统计一下答案就行。</p>
-<h3 id="10-7"><a href="#10-7" class="headerlink" title="10.7"></a>10.7</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4630">P4630 [APIO2018] Duathlon 铁人两项</a></p>
+<h3><span id="107">10.7</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4630">P4630 [APIO2018] Duathlon 铁人两项</a></p>
 <p>一个性质：对于点双内的任意三点 $u,v,c$，一定存在一条从 $u$ 到 $v$ 的简单路径经过 $c$。</p>
 <p>建出圆方树，将方点权值设为与它相连的所有点双的点数之和，圆点的权值设为 $-1$，统计一下所有圆点的贡献。</p>
-<h3 id="10-13"><a href="#10-13" class="headerlink" title="10.13"></a>10.13</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1280">P1280 尼克的任务</a></p>
+<h3><span id="1013">10.13</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1280">P1280 尼克的任务</a></p>
 <p>设 $dp[i]$ 表示前 $i$ 时间内最大休息时间，发现不好转移，则设 $dp[i]$ 表示后 $i$ 时间内最大休息时间。将开始时间从大到小排序，再从后向前枚举时间，若当前不是任务的开始点，则 $dp[i]=dp[i+1]+1$;否则枚举所有开始点在 $i$ 的任务，用它们结尾的 dp 值与当前值取 max 即可。</p>
-<h3 id="10-14"><a href="#10-14" class="headerlink" title="10.14"></a>10.14</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3146">P3146 [USACO16OPEN]248 G</a></p>
+<h3><span id="1014">10.14</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3146">P3146 [USACO16OPEN]248 G</a></p>
 <p>发现区间判断能否合并过于麻烦，可以设 $dp[i][j]$ 表示区间 $[i,j]$ <strong>完全合并</strong> 的价值，枚举长度、左端点、断点，每次判断两个区间能否合并，若无法完全合并就跳过，能合并就更新答案。</p>
-<h3 id="10-15"><a href="#10-15" class="headerlink" title="10.15"></a>10.15</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1220">P1220 关路灯</a></p>
+<h3><span id="1015">10.15</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1220">P1220 关路灯</a></p>
 <p>观察到关掉的一定是连续的一段，考虑区间 dp。</p>
 <p>设 $dp[i][j][0/1]$ 表示关掉区间 $[i,j]$，留在左/右端时最少耗的电量。</p>
 <p>此处固定了出发点，所以从 $c$ 向左右枚举左端点和右端点。</p>
@@ -214,7 +214,7 @@
 <p>暴力的想法是枚举第几个烟花，上一个到的点和这个点能在限制时间内能到的所有点。</p>
 <p>然后我们发现这就是一个滑动窗口，用单调队列优化。</p>
 <p>开不下，用滚动数组。</p>
-<h3 id="10-16"><a href="#10-16" class="headerlink" title="10.16"></a>10.16</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5858">P5858 「SWTR-03」Golden Sword</a></p>
+<h3><span id="1016">10.16</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5858">P5858 「SWTR-03」Golden Sword</a></p>
 <p>设 $dp[i][j]$ 表示放第 $i$ 个原料时锅里已经有 $j- 1$ 个。</p>
 <p>暴力考虑枚举 $i,j$ 和从 $k$ 转移过来 $(j-1&lt;=k&lt;=min(j+s-1,w))$。</p>
 <p>然后用单调队列优化。</p>
@@ -226,13 +226,13 @@
 <p>设 $dp[i][j]$ 表示区间合并的最小步数。</p>
 <p>预处理出长度为 $1$ 和 $2$ 的情况。</p>
 <p>再进行枚举，讨论两端是否相同。</p>
-<h3 id="10-18"><a href="#10-18" class="headerlink" title="10.18"></a>10.18</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3147">P3147 [USACO16OPEN]262144 P</a></p>
+<h3><span id="1018">10.18</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3147">P3147 [USACO16OPEN]262144 P</a></p>
 <p>设 $dp[i][j]$ 为在前 $i$ 个数中，合出 $j$ 的最右端的值。</p>
 <p>$dp[i][j]=dp[dp[i][j-1]][j-1]$。<br>初值 $dp[i][a[i]]=i+1$。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5851">P5851 [USACO19DEC]Greedy Pie Eaters P</a></p>
 <p>设 $dp[i][j]$ 表示区间 $[l,r]$ 间最大可能的重量；<br>$maxn[i][j][k]$ 表示吃的区间 $[l,r]$ 为 $[i, j]$ 的子区间且 $k$ 在 $[l,r]$ 中。</p>
 <p>先处理出 $maxn$， 再递推处理 $dp$， $dp[i][j] = max(dp[i][k-1]+maxn[i][j][k]+dp[k+1][j])$</p>
-<h3 id="10-20"><a href="#10-20" class="headerlink" title="10.20"></a>10.20</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA1292">UVA1292 Strategic game</a></p>
+<h3><span id="1020">10.20</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA1292">UVA1292 Strategic game</a></p>
 <p>设 $dp[i][0/1]$ 表示节点 $i$ 放/不放的最小需求。</p>
 <p>易得 $dp[i][0] = \sum\limits_j^{son} dp[j][1]$</p>
 <p>$dp[i][1] = \sum\limits_j^{son} max(dp[j][0],dp[j][1])$</p>
@@ -245,7 +245,7 @@
 <p>先把字母转化为数字。</p>
 <p>设 $dp[i][j][1/2/3/4]$ 表示区间 $[i,j]$ 能否合成第三维数字对应的字母，简单维护。</p>
 <p>最后判断一下。</p>
-<h3 id="10-23"><a href="#10-23" class="headerlink" title="10.23"></a>10.23</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA10140">UVA10140 Prime Distance</a></p>
+<h3><span id="1023">10.23</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA10140">UVA10140 Prime Distance</a></p>
 <p>值域很大，但询问的区间较小。</p>
 <p>一个数若是合数，则必然有一个质因子 $p \le \sqrt n$。</p>
 <p>筛出 $\sqrt n$ 以下的质因子，暴力覆盖。</p>
@@ -255,7 +255,7 @@
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4310">P4310 绝世好题</a></p>
 <p>设 $dp[i]$ 表示结尾的数  <code>&amp; (1 &lt;&lt; i) == 1)​</code> 的最长子序列长度。</p>
 <p>每次枚举将每一位是一的取最大值再加一。</p>
-<h3 id="10-25"><a href="#10-25" class="headerlink" title="10.25"></a>10.25</h3><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/204/">AcWing 202. 最幸运的数字</a></p>
+<h3><span id="1025">10.25</span></h3><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/204/">AcWing 202. 最幸运的数字</a></p>
 <p>$x$ 个 $8$ 可表示为 $8 \times(10^x-1)/9$。</p>
 <p>求最小的 $x$，使得 $n|8 \times(10^x-1)/9$。</p>
 <p>设 $d=gcd(n,8)$。</p>
@@ -266,24 +266,24 @@
 <p>那么 $gcd(ap,bp)=p$。</p>
 <p>所以 $gcd=p$ 的个数为 $\sum\limits_{i=1}^{\lfloor\frac{n}{p}\rfloor}\varphi(i)\times2-1$。（$(k,k)$ 计算了两遍，要减掉一个）。</p>
 <p>可以用一个前缀和记录。</p>
-<h3 id="10-30"><a href="#10-30" class="headerlink" title="10.30"></a>10.30</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2054">P2054 [AHOI2005]洗牌</a></p>
+<h3><span id="1030">10.30</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2054">P2054 [AHOI2005]洗牌</a></p>
 <p>这道题比较 trick。</p>
 <p>发现在位置 $x$ 的牌经过 $1$ 次变换后位置为 $2x \small\%$ $(n+1)$。</p>
 <p>经过 $m$ 次变换后位置为 $2^mx \small\%$ $(n+1)$。</p>
 <p>所以 $m$ 次变换后位置为 $l$ 的牌应该为 $l\times(2^m)^{-1} \small\%$ $(n+1)$。</p>
 <p>注意求逆元不能用费马小定理，要用拓欧。</p>
-<h2 id="2020-11"><a href="#2020-11" class="headerlink" title="2020.11"></a>2020.11</h2><h3 id="11-2"><a href="#11-2" class="headerlink" title="11.2"></a>11.2</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5658">P5658 括号树</a></p>
+<h2><span id="202011">2020.11</span></h2><h3><span id="112">11.2</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5658">P5658 括号树</a></p>
 <p>令 $con_i$ 表示编号为 $i$ 的括号对答案新增的贡献。</p>
 <p>观察到每个右括号（编号为 $r$ ）和与它匹配的左括号（编号为 $l$）对答案的贡献 $dp[r]=dp[fa[r]]+con[r]$</p>
 <p>然后 $con[r]=con[fa[l]]+1$</p>
 <p>用栈维护左括号，模拟括号匹配，每次要回溯时进行相反操作还原栈。</p>
-<h3 id="11-3"><a href="#11-3" class="headerlink" title="11.3"></a>11.3</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1279">P1279 字串距离</a></p>
+<h3><span id="113">11.3</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1279">P1279 字串距离</a></p>
 <p>设 $dp[i][j]$ 表示匹配到 $S_1$ 的第 $i$ 位，$S_2$ 的第 $j$ 位。</p>
 <p>$dp[i][j]=min(dp[i-1][j-1]+abs(s1[i]-s2[j]), dp[i][j-1]+k,dp[i-1][j]+k)$</p>
 <p>注意赋初值的时候 $dp[i][0]=dp[i-1][0]+k, dp[0][j]=dp[0][j-1]+k$。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF359D">CF359D Pair of Numbers</a></p>
 <p>用 ST 表维护一下区间 $gcd$ 和区间 $min$，二分长度每次 $O(n)$ 判断。</p>
-<h3 id="11-4"><a href="#11-4" class="headerlink" title="11.4"></a>11.4</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1541">P1541 乌龟棋</a></p>
+<h3><span id="114">11.4</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1541">P1541 乌龟棋</a></p>
 <p>简单 DP?</p>
 <p>观察到每种卡片的数量都比较少可以设 $dp[i][j][k][l]$ 表示四种卡分别用了 $i,j,k,l$ 张时的最大得分。</p>
 <p>枚举 $i,j,k,l$ 计算位置并转移即可。</p>
@@ -294,7 +294,7 @@
 <p>设 $dp[i][j]$ 为选了 $i$ 个集合，已经选过的数集二进制表示为 $j$。</p>
 <p>枚举 $i$，$j$ 和 $k$，如果 $j|(1&lt;&lt;k)$ （选过）就 continue，不然讨论 $dp[i][j]+v[k]$ 是否大于 $V$，如果是就另开一次，不然直接放入。</p>
 <p>最后枚举 $i$，找到第一个 $dp[i][(1&lt;&lt;n)-1]$ 的值是推出的值的 $i$ 输出。</p>
-<h3 id="11-5"><a href="#11-5" class="headerlink" title="11.5"></a>11.5</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3959">P3959 宝藏</a></p>
+<h3><span id="115">11.5</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3959">P3959 宝藏</a></p>
 <p>考虑将这个图分层。</p>
 <p>预处理出 $to[i]$ 表示集合 $i$ 尽可能拓展所得到的最大子集。</p>
 <p>设 $dp[i][j]$ 表示选了 $i$ 层，已选集合为 $j$ 的最小花费。显然 $dp[0][1&lt;&lt;k]=0$。</p>
@@ -312,13 +312,13 @@
 <p>所以我们要建虚树。</p>
 <p>我们用栈维护建树，栈中的元素代表当前树的最右链。</p>
 <p>然后跑一跑 dp 之类的东西就好啦！</p>
-<h3 id="11-6"><a href="#11-6" class="headerlink" title="11.6"></a>11.6</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2150">P2150 [NOI2015]寿司晚宴</a></p>
+<h3><span id="116">11.6</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2150">P2150 [NOI2015]寿司晚宴</a></p>
 <p>分析题目性质可知，题目要求两个人选的质因数集无交。</p>
 <p>然后可以发现对于任意一个小于等于 $500$ 的数，它最多只有一个大于等于 $23$ 的质因子，而小于 $23$ 的质因子只有 $8$ 个。</p>
 <p>我们可以对每一个数分解质因子并将其小于 $23$ 的质因子状压。</p>
 <p>对于有大于等于 $23$ 的质因子的数，我们对它们按照这个大质因子从大到小排序。</p>
 <p>然后枚举两个状态，依次转移。</p>
-<h3 id="11-8"><a href="#11-8" class="headerlink" title="11.8"></a>11.8</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA11987">UVA11987 Almost Union-Find</a></p>
+<h3><span id="118">11.8</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/UVA11987">UVA11987 Almost Union-Find</a></p>
 <p>思路还是可以借鉴的。</p>
 <p>如果没有操作 <code>2</code>，那么它就是一个并查集板子（<strong>Almost Union-Find</strong>）。</p>
 <p>但每次操作 <code>2</code> 都可能使从属关系被打乱。</p>
@@ -327,22 +327,22 @@
 <p>莫队 + 平衡树。</p>
 <p>十分板子。</p>
 <p>但要开大平衡树空间。</p>
-<h2 id="2020-12"><a href="#2020-12" class="headerlink" title="2020.12"></a>2020.12</h2><h3 id="12-14"><a href="#12-14" class="headerlink" title="12.14"></a>12.14</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1375G">CF1375G Tree Modification</a></p>
+<h2><span id="202012">2020.12</span></h2><h3><span id="1214">12.14</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1375G">CF1375G Tree Modification</a></p>
 <p>妙题。</p>
 <p>最后树的形态是一朵菊花，考虑将树节点黑白染色，那么要求某个颜色的数量为 $1$。</p>
 <p>考虑每次操作，只会改变 $a$ 点的颜色。</p>
 <p>而只要有颜色出现次数大于 $1$ 就一定可以操作。</p>
 <p>所以答案就是 $min(cnt[0], cnt[1]) - 1$。</p>
-<h2 id="2021-1"><a href="#2021-1" class="headerlink" title="2021.1"></a>2021.1</h2><h3 id="1-27"><a href="#1-27" class="headerlink" title="1.27"></a>1.27</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF711D">CF711D Directed Roads</a></p>
+<h2><span id="20211">2021.1</span></h2><h3><span id="127">1.27</span></h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF711D">CF711D Directed Roads</a></p>
 <p>定义 $len$ 为环长度。</p>
 <p>答案就是 $2^{n-\sum len} \prod (2^{len} - 2)$</p>
-<h2 id="2021-3"><a href="#2021-3" class="headerlink" title="2021.3"></a>2021.3</h2><h3 id="3-5"><a href="#3-5" class="headerlink" title="3.5"></a>3.5</h3><p><a target="_blank" rel="noopener" href="https://cometoj.com/contest/73/problem/C">CometOJ - Contest14-C</a></p>
+<h2><span id="20213">2021.3</span></h2><h3><span id="35">3.5</span></h3><p><a target="_blank" rel="noopener" href="https://cometoj.com/contest/73/problem/C">CometOJ - Contest14-C</a></p>
 <p>试着做做 $Ynoi$ 出的题</p>
 <p>感觉很水，完全可以加强的。</p>
 <p>维护 $f_x$ 表示有多少个序列中存在最大连续子段右端点为 $x$。</p>
 <p>对于一次修改，</p>
 <script type="math/tex; mode=display">
-f_{l-1}+=2^{i-1},f_r+=2^{i-1}\\f_1\to f_{l-2}，f_{r+1}\to f_n*=2</script><h3 id="3-12"><a href="#3-12" class="headerlink" title="3.12"></a>3.12</h3><p>学线段树分治</p>
+f_{l-1}+=2^{i-1},f_r+=2^{i-1}\\f_1\to f_{l-2}，f_{r+1}\to f_n*=2</script><h3><span id="312">3.12</span></h3><p>学线段树分治</p>
 <p>*<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF603E">CF603E Pastoral Oddities</a></p>
 <p>首先有一个结论：满足存在子图使得每个点度数都为奇数的充要条件是这个连通块点数为偶数。</p>
 <p>证明：最开始所有点的值都为偶数（$0$），而每加一条边进入使用集合，都不会改变每个点的度数之和的奇偶性，也就是说，每个点的度数之和总是膜 $2$ 余 $0$，因此结论成立。</p>
@@ -527,7 +527,7 @@ f_{l-1}+=2^{i-1},f_r+=2^{i-1}\\f_1\to f_{l-2}，f_{r+1}\to f_n*=2</script><h3 id
                     <span>3</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/09/26/record/" title="训练">训练</a>
+                    <a href="/2021/09/26/record/" title="record">record</a>
                 </p>
             </div>
         </li>
@@ -598,12 +598,12 @@ f_{l-1}+=2^{i-1},f_r+=2^{i-1}\\f_1\to f_{l-2}，f_{r+1}\to f_n*=2</script><h3 id
         
         
         <div class="cube-box ">
-            <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
+            <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
         
         <div class="cube-box ">
-            <a href="/tags/%E6%95%B0%E5%AD%A6/">#数学</a>
+            <a href="/tags/ST%E8%A1%A8/">#ST表</a>
         </div>
         
         
@@ -613,32 +613,32 @@ f_{l-1}+=2^{i-1},f_r+=2^{i-1}\\f_1\to f_{l-2}，f_{r+1}\to f_n*=2</script><h3 id
         
         
         <div class="cube-box ">
-            <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">#数据结构</a>
+            <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">#学习记录</a>
         </div>
         
         
         <div class="cube-box-bg ">
-            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">#数据结构</a>
         </div>
         
         
         <div class="cube-box ">
+            <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%95%B0%E8%AE%BA/">#数论</a>
         </div>
         
         
         <div class="cube-box ">
-            <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">#学习记录</a>
-        </div>
-        
-        
-        <div class="cube-box ">
-            <a href="/tags/ST%E8%A1%A8/">#ST表</a>
+            <a href="/tags/%E6%95%B0%E5%AD%A6/">#数学</a>
         </div>
         
     </div>
