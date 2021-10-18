@@ -187,6 +187,11 @@
         
            <h2><span id="arc058c">ARC058C</span></h2><p>这题 $n$ 比较小，但这个 $X+Y+Z$ 看着更舒服。</p>
 <p>正着考虑发现会算重，所以考虑状压。</p>
+<p>设 $dp[i][S]$ 表示算到了点 $i$ ，且末尾拼出来的状态为 $S$。</p>
+<p>这里的 $S$ 的含义是：设从一个后面没有 $0$ 的 $0$ 开始，向前走找到第一个 $1$，这中间包含的数为 $x$，那么就是之前插入了 $x$。这样维护最后 $X+Y+Z$ 位可以维护最后放了什么。</p>
+<p>比如 $10010001$ 对应的是最后放了 $3,4,1$。</p>
+<p>这样判断一个状态是否合法就只要看它 $Z-1,Y+Z-1,X+Y+Z-1$ 这三位是否都为 $1$ 就行了。</p>
+<p>然后发现正着做还是容易算重，所以考虑统计非法串个数。这个就可以容易地根据这个状态 $dp$ 一遍求解了。</p>
 
         
     </article>
@@ -533,7 +538,7 @@
     <div class="count">
         <a class="count articles"><span>24</span>文章</a>
         <a class="count tags"><span>13</span>标签</a>
-        <a class="count categories"><span>4</span>分类</a>
+        <a class="count categories"><span>5</span>分类</a>
     </div>
 </div>
 
@@ -641,7 +646,7 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E5%9B%BE%E8%AE%BA/">#图论</a>
         </div>
         
@@ -651,13 +656,18 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E6%95%B0%E5%AD%A6/">#数学</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/">#树上问题</a>
         </div>
         
     </div>
@@ -687,12 +697,12 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/2-SAT/">#2-SAT</a>
         </div>
         
@@ -712,7 +722,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%A0%86/">#堆</a>
         </div>
         
