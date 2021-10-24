@@ -10,7 +10,7 @@
     
     
     
-    <title>左偏树学习笔记 | FourteenObsidian&#39;s blog</title>
+    <title>ARC061C | FourteenObsidian&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -166,44 +166,28 @@
     <div class="cube-content">
         <div class="cube-left">
             <div class="cube-article">
-    <h1 class="title">左偏树学习笔记</h1>
+    <h1 class="title">ARC061C</h1>
     
     <div class="cube-article-header">
         <div class="cube-article-date">
             <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
             <!-- moment.js对象 -->
-            2021-03-16
+            2021-10-24
         </div>
         <div class="cube-article-tags">
     <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
     
-    <a href="/tags/%E5%A0%86/">#堆</a>
+    <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">#最短路</a>
     
 </div>
     </div>
     
     <div class="cube-article-content cube-markdown">
         
-        <span id="more"></span>
-<p>今天学了一下左偏树。</p>
-<p>其实也很容易。</p>
-<p>我们定义 $dis_i$ 。</p>
-<p> 空节点 $dis$ 值为 $0$，其他点 $dis$ 值为他右儿子的 $dis$ 值 $+1$。同时保证：$dis_{ls}\ge dis_{rs}$。</p>
-<p>由于此性质，容易发现根节点 $dis$ 约为 $\log n$。（$n$ 为节点个数）</p>
-<p>然后我们要合并两个点。</p>
-<pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>
-<span class="hljs-function"></span>&#123;
-	<span class="hljs-keyword">if</span>(!x || !y) <span class="hljs-keyword">return</span> x | y;
-	<span class="hljs-keyword">if</span>(heap[x].val &gt; heap[y].val) swap(x, y);
-	heap[x].rs = Merge(heap[x].rs, y);
-	<span class="hljs-keyword">if</span>(heap[heap[x].rs].dis &gt; heap[heap[x].ls].dis) swap(heap[x].ls, heap[x].rs);
-	heap[x].dis = heap[heap[x].rs].dis + <span class="hljs-number">1</span>;
-	<span class="hljs-keyword">return</span> x;
-&#125;</code></pre>
-<p>递归合并右儿子，总复杂度 $O(\log n+\log m)$。</p>
-<p>删除根就是合并两个儿子并清空根的信息。</p>
-<p>删除任意节点：合并左右儿子，自底向上维护左偏性质。</p>
-<p>全局修改什么的就是在根上打一个 $tag$，更新时向下传递即可。</p>
+        <h2><span id="arc061c">ARC061C</span></h2><span id="more"></span>
+<p>有非常 naive 的套路建图做法，但是也有一个奇怪的直接最短路做法。</p>
+<p>直接跑 <code>dijkstra</code>，用 <code>map</code> 记录到当前点是最短路的有那些颜色的边。直接转移即可。</p>
+<p>正确性证明：考虑即使不用最短边更新，就算这条边为最短的贡献 $+1$，那么最短边切换颜色也只会使答案 $+1$，总是不劣。</p>
 
     </div>
 </div>
@@ -211,17 +195,10 @@
 <div class="cube-article-nav">
     <ul>
         
-        <li class="prev">
-            <a href="/2021/03/16/Splay&amp;LCT/">
-                <i class="cube-icon cube-prev" aria-hidden="true"></i>
-                Splay&amp;LCT
-            </a>
-        </li>
-        
         
         <li class="next">
-            <a href="/2021/03/09/tricks/">
-                tricks
+            <a href="/2021/10/19/ARC060B/">
+                ARC060B
                 <i class="cube-icon cube-next" aria-hidden="true"></i>
             </a>
         </li>
@@ -434,12 +411,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E6%95%B0%E5%AD%A6/">#数学</a>
         </div>
         
@@ -485,12 +462,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/2-SAT/">#2-SAT</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
         </div>
         
@@ -500,7 +477,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/LCT/">#LCT</a>
         </div>
         
@@ -510,7 +487,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E8%AE%A1%E6%95%B0/">#计数</a>
         </div>
         
@@ -530,7 +507,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%A0%B9%E5%8F%B7%E5%88%86%E6%B2%BB/">#根号分治</a>
         </div>
         
