@@ -10,7 +10,7 @@
     
     
     
-    <title>标签: ST表 | FourteenObsidian&#39;s blog</title>
+    <title>ARC061D | FourteenObsidian&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -165,29 +165,90 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">ARC061D</h1>
     
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">ST表</h1>
-        
-        <ul class="posts">
-            
-            <li class="post">
-                <a href="/2021/10/13/CF1332G/">CF1332G</a>
-            </li>
-            
-        </ul>
-        
-    </div>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2021-10-27
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/%E8%AE%A1%E6%95%B0/">#计数</a>
+    
+    <a href="/tags/%E7%BB%84%E5%90%88/">#组合</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h2><span id="arc061d">ARC061D</span></h2><span id="more"></span>
+<p>神奇题。</p>
+<p>这个奇怪的操作看上去十分不可做，考虑构造一些东西。</p>
+<p>比如说，一个长度为 $x$ 的序列表示打出的牌的顺序。容易发现这个序列决定了，对应的局面只有 $3^{n+m+k-x}$ 种。</p>
+<p>那么对于一个我们要统计的出牌序列，它肯定包含 $n$ 个 $\texttt a$，且最后一个位置上放的一定是 $\texttt a$。</p>
+<p>那么对于长度 $x$，枚举 $\texttt b$ 的个数可得满足条件的序列数为</p>
+<script type="math/tex; mode=display">
+\binom{x-1}{n-1}\sum_{i=0}^{n-x}[i\le m][x-n-i\le k]\binom{n-x}{i}</script><p>为了方便记 $L=x-n$​，式子可以写成</p>
+<script type="math/tex; mode=display">
+\binom{L+n-1}{n-1}\sum_{i=0}^{L}[i\le m][i\ge L-k]\binom{L}{i}</script><p>考虑后面这个式子十分不方便做，所以考虑递推。</p>
+<p>设</p>
+<script type="math/tex; mode=display">
+S_L=\sum_{i=L-k}^{m}\binom{L}{i}</script><p>因为是关于 $L$ 的递推，所以拆组合数</p>
+<script type="math/tex; mode=display">
+S_L=\sum_{i=L-k}^{m}\binom{L-1}{i}+\binom{L-1}{i-1}\\
+S_{L-1}=\sum_{i={L-1}-k}^{m}\binom{L-1}{i}\\
+S_L=\sum_{i=L-k}^{m}\binom{L-1}{i}+\sum_{i=L-k}^{m}\binom{L-1}{i-1}\\
+=2\sum_{i=L-1-k}^{m}\binom{L-1}{i}-\binom{L-1}{m}-\binom{L-1}{L-1-k}\\
+=2S_{L-1}-\binom{L-1}{m}-\binom{L-1}{L-1-k}\\</script><p>这样就可以 $O(n)$ 递推了。</p>
+<p>代回去答案就为</p>
+<script type="math/tex; mode=display">
+\sum_{L=0}^{m+k}3^{m+k-L}\binom{L+n-1}{n-1}S_L</script>
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        
+        <li class="next">
+            <a href="/2021/10/24/ARC061C/">
+                ARC061C
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+    <!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
+<div class="gitment-comment">
+    <div id="container"></div>
+</div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id default is location.href
+        owner: 'ObsidianY',
+        repo: 'blog_comments',
+        oauth: {
+            client_id: '6603691d184d0907e56a',
+            client_secret: '848f8ccf2e7d7c87cd892ba59b464cef8e58a784',
+        },
+    })
+    gitment.render('container')
+</script>
+    
+
+
         </div>
         <div class="cube-right">
             
@@ -374,12 +435,12 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E6%95%B0%E5%AD%A6/">#数学</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/">#树上问题</a>
         </div>
         
@@ -395,7 +456,7 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/ST%E8%A1%A8/">#ST表</a>
         </div>
         
@@ -405,12 +466,12 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
@@ -435,7 +496,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/LCT/">#LCT</a>
         </div>
         
@@ -445,7 +506,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E8%AE%A1%E6%95%B0/">#计数</a>
         </div>
         
@@ -455,7 +516,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86/">#矩阵树定理</a>
         </div>
         
@@ -475,7 +536,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%BB%84%E5%90%88/">#组合</a>
         </div>
         
