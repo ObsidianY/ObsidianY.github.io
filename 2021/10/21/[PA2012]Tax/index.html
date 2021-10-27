@@ -10,7 +10,7 @@
     
     
     
-    <title>分类: 字符串 | FourteenObsidian&#39;s blog</title>
+    <title>PA2012Tax | FourteenObsidian&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -165,29 +165,80 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">PA2012Tax</h1>
     
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">字符串</h1>
-        
-        <ul class="posts">
-            
-            <li class="post">
-                <a href="/2021/05/27/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%80%BB%E7%BB%93/">字符串总结</a>
-            </li>
-            
-        </ul>
-        
-    </div>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2021-10-21
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">#最短路</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h2><span id="pa2012tax">[PA2012]Tax</span></h2><span id="more"></span>
+<p>首先考虑暴力：边转点，然后一个点上周围的边相互连边。</p>
+<p>然后就是经典套路。</p>
+<p>考虑把一个点周围的所有边从小到大排序串起来，然后小到大连权值为差的边，大到小连权值为 $0$ 的边。</p>
+<p>然后再把一条边对应分裂出来的两个点正常连边，同时注意连出超级源汇。</p>
+<p>这种套路在边权贡献比较奇怪的时候十分常用，本质就是把一个关于一维的函数差分（<del>有限导数</del>）。</p>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        <li class="prev">
+            <a href="/2021/10/24/ARC061C/">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                ARC061C
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2021/10/19/ARC060B/">
+                ARC060B
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+    <!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
+<div class="gitment-comment">
+    <div id="container"></div>
+</div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id default is location.href
+        owner: 'ObsidianY',
+        repo: 'blog_comments',
+        oauth: {
+            client_id: '6603691d184d0907e56a',
+            client_secret: '848f8ccf2e7d7c87cd892ba59b464cef8e58a784',
+        },
+    })
+    gitment.render('container')
+</script>
+    
+
+
         </div>
         <div class="cube-right">
             
@@ -369,12 +420,12 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E6%95%B0%E5%AD%A6/">#数学</a>
         </div>
         
@@ -410,12 +461,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
@@ -430,7 +481,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
         </div>
         
@@ -440,7 +491,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/LCT/">#LCT</a>
         </div>
         
@@ -450,7 +501,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E8%AE%A1%E6%95%B0/">#计数</a>
         </div>
         
@@ -470,7 +521,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%A0%B9%E5%8F%B7%E5%88%86%E6%B2%BB/">#根号分治</a>
         </div>
         
