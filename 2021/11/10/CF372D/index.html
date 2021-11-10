@@ -10,7 +10,7 @@
     
     
     
-    <title>左偏树学习笔记 | FourteenObsidian&#39;s blog</title>
+    <title>CF372D | FourteenObsidian&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -166,44 +166,32 @@
     <div class="cube-content">
         <div class="cube-left">
             <div class="cube-article">
-    <h1 class="title">左偏树学习笔记</h1>
+    <h1 class="title">CF372D</h1>
     
     <div class="cube-article-header">
         <div class="cube-article-date">
             <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
             <!-- moment.js对象 -->
-            2021-03-16
+            2021-11-10
         </div>
         <div class="cube-article-tags">
     <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
     
-    <a href="/tags/%E5%A0%86/">#堆</a>
+    <a href="/tags/%E4%BA%8C%E5%88%86/">#二分</a>
+    
+    <a href="/tags/set/">#set</a>
     
 </div>
     </div>
     
     <div class="cube-article-content cube-markdown">
         
-        <span id="more"></span>
-<p>今天学了一下左偏树。</p>
-<p>其实也很容易。</p>
-<p>我们定义 $dis_i$ 。</p>
-<p> 空节点 $dis$ 值为 $0$，其他点 $dis$ 值为他右儿子的 $dis$ 值 $+1$。同时保证：$dis_{ls}\ge dis_{rs}$。</p>
-<p>由于此性质，容易发现根节点 $dis$ 约为 $\log n$。（$n$ 为节点个数）</p>
-<p>然后我们要合并两个点。</p>
-<pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>
-<span class="hljs-function"></span>&#123;
-	<span class="hljs-keyword">if</span>(!x || !y) <span class="hljs-keyword">return</span> x | y;
-	<span class="hljs-keyword">if</span>(heap[x].val &gt; heap[y].val) swap(x, y);
-	heap[x].rs = Merge(heap[x].rs, y);
-	<span class="hljs-keyword">if</span>(heap[heap[x].rs].dis &gt; heap[heap[x].ls].dis) swap(heap[x].ls, heap[x].rs);
-	heap[x].dis = heap[heap[x].rs].dis + <span class="hljs-number">1</span>;
-	<span class="hljs-keyword">return</span> x;
-&#125;</code></pre>
-<p>递归合并右儿子，总复杂度 $O(\log n+\log m)$。</p>
-<p>删除根就是合并两个儿子并清空根的信息。</p>
-<p>删除任意节点：合并左右儿子，自底向上维护左偏性质。</p>
-<p>全局修改什么的就是在根上打一个 $tag$，更新时向下传递即可。</p>
+        <h2><span id="cf372d">CF372D</span></h2><span id="more"></span>
+<p>前置知识：CF176E</p>
+<p>这题初看完全没有思路啊，结果是可以二分的。。。</p>
+<p>二分就可以让我们做一些暴力一点的东西。</p>
+<p>比如说这题，点集大小就是导出子树的边权和 $+1$。</p>
+<p>然后用 CF176E 的思路就可以直接 check 了。</p>
 
     </div>
 </div>
@@ -211,17 +199,10 @@
 <div class="cube-article-nav">
     <ul>
         
-        <li class="prev">
-            <a href="/2021/03/16/Splay&amp;LCT/">
-                <i class="cube-icon cube-prev" aria-hidden="true"></i>
-                Splay&amp;LCT
-            </a>
-        </li>
-        
         
         <li class="next">
-            <a href="/2021/03/09/tricks/">
-                tricks
+            <a href="/2021/11/07/CF286D/">
+                CF286D
                 <i class="cube-icon cube-next" aria-hidden="true"></i>
             </a>
         </li>
@@ -439,12 +420,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E6%95%B0%E5%AD%A6/">#数学</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/">#树上问题</a>
         </div>
         
@@ -465,7 +446,7 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/ST%E8%A1%A8/">#ST表</a>
         </div>
         
@@ -485,7 +466,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%95%B0%E8%AE%BA/">#数论</a>
         </div>
         
@@ -495,7 +476,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
         </div>
         
@@ -525,7 +506,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86/">#矩阵树定理</a>
         </div>
         
@@ -545,7 +526,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%BB%84%E5%90%88/">#组合</a>
         </div>
         
@@ -560,7 +541,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/dp/">#dp</a>
         </div>
         
@@ -570,7 +551,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/tarjan/">#tarjan</a>
         </div>
         
@@ -585,7 +566,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%9E%84%E9%80%A0/">#构造</a>
         </div>
         
@@ -605,7 +586,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/set/">#set</a>
         </div>
         
