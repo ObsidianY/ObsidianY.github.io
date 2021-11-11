@@ -190,14 +190,18 @@
 <p>完全没思路，翻译一下官方题解~</p>
 <p>称一个操作是 <strong>有效的</strong> 当且仅当它是对它操作的那个数的最后一次操作。</p>
 <p>假设用了 $L$ 个有效的前移操作，$R$ 个有效的后移操作，那么显然，最后的 $a_{L+1}\sim a_{n-R}$ 是从未被操作过的。这段序列也应该保持初始的状态，单调递增。</p>
-<p>容易发现，第 $i$ 个有效的前移操作选择的数一定是 $a_i$，第 $i$ 个有效的后移操作选择的数一定是 $a_{n-i+1}$，而非有效操作则可以选择任意一个将来会被移动的数。据此，我们可以得出一个 $O(n^2m)$ 的 dp ：</p>
+<p>容易发现，第 $i$ 个有效的前移操作选择的数一定是 $a_i$，第 $i$ 个有效的后移操作选择的数一定是 $a_{n-i+1}$，而非有效操作则可以选择任意一个将来会被移动的数。据此，我们可以得出一个 $O(n^2m)$ 的 dp：</p>
 <p>设 $dp[i][L][R]$ 表示当前进行了 $i$ 次操作，其中有 $L$ 次有效的前移操作，$R$ 次有效的后移操作。</p>
 <p>转移：</p>
 <script type="math/tex; mode=display">
 dp[i][L][R]=2(L+R)\times dp[i-1][L][R]+dp[i-1][L-1][R]+dp[i-1][L][R-1]</script><p>就是进行了一次新的操作，可以考虑增加一次无效操作，那么就在之前的 $L+R$ 有效操作中选一个变成无效的，然后可以前移或后移。如果是增加一次前移或后移直接继承即可。</p>
 <p>对于统计答案，我们只要把所有满足 $L+R\le n$ 且 $a_{L+1}\sim a_{n-R}$ 严格单调递增的 $L,R$对应的 $dp[m][L][R]$ 加起来即可。</p>
 <hr>
-<p>第一部分完工！</p>
+<p>接着考虑优化这个 dp。观察到状态的后两位一脸可以合并的样子，令 $j=L+R$ 表示总共的有效操作个数，上述转移式可写为：</p>
+<script type="math/tex; mode=display">
+dp[i][j]=2\times j\times dp[i-1][j]+2\times dp[i-1][j-1]</script><p>这个其实也比较好解释。此时 $dp[i][j]$ 表示的就是用了 $i$ 次操作，其中有 $j$ 个有效操作。选择增加一个无效操作就是在原来 $j$ 个有效操作里挑一个变成无效操作，而增加一个有效操作则有前移和后移两种可能。</p>
+<p>这样直接 dp 的复杂度就是 $O(nm)$ 的了。</p>
+<p>统计答案的话，和之前一样计算即可。对于合法区间 $[L,R]$，它的贡献为 $\binom{L+R}{L}dp[m][L+R]$。即在 $L+R$ 个有效操作中选择 $L$ 个有效操作。</p>
 
     </div>
 </div>
@@ -416,17 +420,17 @@ dp[i][L][R]=2(L+R)\times dp[i-1][L][R]+dp[i-1][L-1][R]+dp[i-1][L][R-1]</script><
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">#数据结构</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E6%95%B0%E5%AD%A6/">#数学</a>
         </div>
         
@@ -436,7 +440,7 @@ dp[i][L][R]=2(L+R)\times dp[i-1][L][R]+dp[i-1][L-1][R]+dp[i-1][L][R-1]</script><
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E5%BB%BA%E5%9B%BE%E5%A5%97%E8%B7%AF/">#建图套路</a>
         </div>
         
@@ -452,22 +456,22 @@ dp[i][L][R]=2(L+R)\times dp[i-1][L][R]+dp[i-1][L-1][R]+dp[i-1][L][R-1]</script><
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/ST%E8%A1%A8/">#ST表</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
@@ -477,7 +481,7 @@ dp[i][L][R]=2(L+R)\times dp[i-1][L][R]+dp[i-1][L-1][R]+dp[i-1][L][R-1]</script><
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/2-SAT/">#2-SAT</a>
         </div>
         
@@ -487,17 +491,17 @@ dp[i][L][R]=2(L+R)\times dp[i-1][L][R]+dp[i-1][L-1][R]+dp[i-1][L][R-1]</script><
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/Splay/">#Splay</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/LCT/">#LCT</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%A0%86/">#堆</a>
         </div>
         
@@ -507,7 +511,7 @@ dp[i][L][R]=2(L+R)\times dp[i-1][L][R]+dp[i-1][L-1][R]+dp[i-1][L][R-1]</script><
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
         </div>
         
@@ -532,17 +536,17 @@ dp[i][L][R]=2(L+R)\times dp[i-1][L][R]+dp[i-1][L-1][R]+dp[i-1][L][R-1]</script><
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%BB%84%E5%90%88/">#组合</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%9A%B4%E5%8A%9B/">#暴力</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/Z%E5%87%BD%E6%95%B0/">#Z函数</a>
         </div>
         
@@ -577,22 +581,22 @@ dp[i][L][R]=2(L+R)\times dp[i-1][L][R]+dp[i-1][L-1][R]+dp[i-1][L][R-1]</script><
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%AE%B9%E6%96%A5/">#容斥</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/">#扫描线</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E4%BA%8C%E5%88%86/">#二分</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/set/">#set</a>
         </div>
         
