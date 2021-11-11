@@ -10,7 +10,7 @@
     
     
     
-    <title>标签: 笛卡尔树 | FourteenObsidian&#39;s blog</title>
+    <title>ARC112E | FourteenObsidian&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -165,29 +165,81 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">ARC112E</h1>
     
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">笛卡尔树</h1>
-        
-        <ul class="posts">
-            
-            <li class="post">
-                <a href="/2021/11/05/CF1117G/">CF1117G</a>
-            </li>
-            
-        </ul>
-        
-    </div>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2021-11-11
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/%E8%AE%A1%E6%95%B0/">#计数</a>
+    
+    <a href="/tags/dp/">#dp</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h2><span id="arc112e">ARC112E</span></h2><span id="more"></span>
+<p>完全没思路，翻译一下官方题解~</p>
+<p>称一个操作是 <strong>有效的</strong> 当且仅当它是对它操作的那个数的最后一次操作。</p>
+<p>假设用了 $L$ 个有效的前移操作，$R$ 个有效的后移操作，那么显然，最后的 $a_{L+1}\sim a_{n-R}$ 是从未被操作过的。这段序列也应该保持初始的状态，单调递增。</p>
+<p>容易发现，第 $i$ 个有效的前移操作选择的数一定是 $a_i$，第 $i$ 个有效的后移操作选择的数一定是 $a_{n-i+1}$，而非有效操作则可以选择任意一个将来会被移动的数。据此，我们可以得出一个 $O(n^2m)$ 的 dp ：</p>
+<p>设 $dp[i][L][R]$ 表示当前进行了 $i$ 次操作，其中有 $L$ 次有效的前移操作，$R$ 次有效的后移操作。</p>
+<p>转移：</p>
+<script type="math/tex; mode=display">
+dp[i][L][R]=2(L+R)\times dp[i-1][L][R]+dp[i-1][L-1][R]+dp[i-1][L][R-1]</script><p>就是进行了一次新的操作，可以考虑增加一次无效操作，那么就在之前的 $L+R$ 有效操作中选一个变成无效的，然后可以前移或后移。如果是增加一次前移或后移直接继承即可。</p>
+<p>对于统计答案，我们只要把所有满足 $L+R\le n$ 且 $a_{L+1}\sim a_{n-R}$ 严格单调递增的 $L,R$对应的 $dp[m][L][R]$ 加起来即可。</p>
+<hr>
+<p>第一部分完工！</p>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        
+        <li class="next">
+            <a href="/2021/11/10/CF372D/">
+                CF372D
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+    <!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
+<div class="gitment-comment">
+    <div id="container"></div>
+</div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id default is location.href
+        owner: 'ObsidianY',
+        repo: 'blog_comments',
+        oauth: {
+            client_id: '6603691d184d0907e56a',
+            client_secret: '848f8ccf2e7d7c87cd892ba59b464cef8e58a784',
+        },
+    })
+    gitment.render('container')
+</script>
+    
+
+
         </div>
         <div class="cube-right">
             
@@ -369,12 +421,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E6%95%B0%E5%AD%A6/">#数学</a>
         </div>
         
@@ -384,7 +436,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E5%BB%BA%E5%9B%BE%E5%A5%97%E8%B7%AF/">#建图套路</a>
         </div>
         
@@ -400,22 +452,22 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/ST%E8%A1%A8/">#ST表</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
@@ -425,17 +477,17 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/2-SAT/">#2-SAT</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/Splay/">#Splay</a>
         </div>
         
@@ -445,7 +497,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%A0%86/">#堆</a>
         </div>
         
@@ -465,7 +517,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E8%8E%AB%E5%8F%8D/">#莫反</a>
         </div>
         
@@ -480,7 +532,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%BB%84%E5%90%88/">#组合</a>
         </div>
         
@@ -495,12 +547,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/dp/">#dp</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/">#平衡树</a>
         </div>
         
@@ -520,12 +572,12 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%9E%84%E9%80%A0/">#构造</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%AE%B9%E6%96%A5/">#容斥</a>
         </div>
         
