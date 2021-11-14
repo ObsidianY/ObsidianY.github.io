@@ -10,7 +10,7 @@
     
     
     
-    <title>分类: 图论 | FourteenObsidian&#39;s blog</title>
+    <title>ARC063D | FourteenObsidian&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -165,33 +165,78 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">ARC063D</h1>
     
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">图论</h1>
-        
-        <ul class="posts">
-            
-            <li class="post">
-                <a href="/2021/02/22/2-SAT%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">2-SAT学习笔记</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/11/27/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86/">矩阵树定理</a>
-            </li>
-            
-        </ul>
-        
-    </div>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2021-11-14
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
+    
+    <a href="/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/">#扫描线</a>
+    
+    <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/">#单调栈</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h2><span id="arc063d">ARC063D</span></h2><span id="more"></span>
+<p>这个题数据结构部分比较简单，但是这个性质怎么想得到啊/jk</p>
+<p><strong>关键性质</strong>：答案矩形一定经过 $y=\frac{H}{2}$ 或 $x=\frac{W}{2}$ 。</p>
+<p>这是因为我们一定可以构造出宽度为 $1$ 的一个横条或者一个竖条，所以答案至少也有 $2\cdot\max(H,W)+2$。</p>
+<p>然后如果一个矩形不经过那两个中线，那么它的面积最大也只是 $H+W$ 的，这个值显然不可能成为最优答案。</p>
+<p>有了以上性质，我们就可以简化这个问题了。以 $y=\frac{H}{2}$ 为例，我们可以发现在它上方的点覆盖方向不可能向下，在它下方的点覆盖方向不可能向上。据此，我们可以维护一个扫描线。枚举那一列是右端点，然后用线段树维护左端点的答案（矩形周长）。</p>
+<p>右边界向右移，会使全局答案 $+2$，也就是在线段树上全局 $+2$。同时这会使一段后缀离 $y=\frac{H}{2}$ 的距离减少，即 $\mathrm{chkmin}$ 一段后缀，那么这个只需要我们维护一个单调栈，每次弹栈就是一段区间减。</p>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        
+        <li class="next">
+            <a href="/2021/11/11/ARC112E/">
+                ARC112E
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+    <!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
+<div class="gitment-comment">
+    <div id="container"></div>
+</div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id default is location.href
+        owner: 'ObsidianY',
+        repo: 'blog_comments',
+        oauth: {
+            client_id: '6603691d184d0907e56a',
+            client_secret: '848f8ccf2e7d7c87cd892ba59b464cef8e58a784',
+        },
+    })
+    gitment.render('container')
+</script>
+    
+
+
         </div>
         <div class="cube-right">
             
@@ -373,12 +418,12 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E6%95%B0%E5%AD%A6/">#数学</a>
         </div>
         
@@ -409,17 +454,17 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
         </div>
         
@@ -444,7 +489,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/LCT/">#LCT</a>
         </div>
         
@@ -459,17 +504,17 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86/">#矩阵树定理</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E8%8E%AB%E5%8F%8D/">#莫反</a>
         </div>
         
@@ -484,7 +529,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%BB%84%E5%90%88/">#组合</a>
         </div>
         
@@ -529,27 +574,27 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E5%AE%B9%E6%96%A5/">#容斥</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/">#扫描线</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E4%BA%8C%E5%88%86/">#二分</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/set/">#set</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/">#单调栈</a>
         </div>
         
