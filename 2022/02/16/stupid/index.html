@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="FourteenObsidian">
+    
+    
+    
+    
+    
+    
+    <title>养傻记 | FourteenObsidian&#39;s blog</title>
+    <!-- inject:style -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- endinject -->
+    <style>
+        .cube-loading {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('/images/lg/loading.gif') no-repeat center center;
+            background-color: rgba(0,0,0,.7);
+        }
+
+        .cube-loading.out {
+            display: none;
+        }
+
+        .cube-loading:before {
+            display: block;
+            content: '加载中';
+            position: relative;
+            width: 100%;
+            top: 50%;
+            right: -50%;
+            color: #fff;
+        }
+
+        @media(max-width: 768px) {
+            .cube-loading:before {
+                font-size: 1.2em;
+                transform: translate(-24px,20px);
+                -webkit-transform: translate(-24px,20px);
+                -o-transform: translate(-24px,20px);
+                -ms-transform: translate(-24px,20px);
+            }
+        }
+
+        @media(min-width: 768px) {
+            .cube-loading:before {
+
+            }
+        }
+    </style>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+<div class="cube-body">
+    <nav id="cube-top-memu" class="cube-menu">
+    <ul class="cube-menu-collapse">
+        
+        <li>
+            <i class="cube-icon cube-icon-home" aria-hidden="true"></i>
+            <a href="/">主页</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-" aria-hidden="true"></i>
+            <a href="/archives/">归档</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-" aria-hidden="true"></i>
+            <a href="/mistakes">错误总结</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-" aria-hidden="true"></i>
+            <a href="/lostpoints">挂分总结</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-" aria-hidden="true"></i>
+            <a href="/zhuanti">专题</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-" aria-hidden="true"></i>
+            <a href="/about">关于</a>
+        </li>
+        
+    </ul>
+</nav>
+<nav class="cube-side-menu" id="cube-side-menu">
+    <ul class="cube-menu-list">
+        
+        <li>
+            <a class="lrc-control">开启歌词</a>
+        </li>
+        
+        <li>
+            <a class="scroll-to-top">回到顶部</a>
+        </li>
+    </ul>
+</nav>
+    <header class="cube-header" id="cube-header">
+    <img src=" /images/background.png " alt="头部背景图片">
+    
+    <div class="cube-type">
+        <span class="cube-typed-title">FourteenObsidian&#39;s blog</span>
+        <span class="cube-typed-cursor">|</span>
+    </div>
+    
+</header>
+
+    <style>
+        nav.cube-menu:before {
+            content: '';
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 44px;
+        
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+        
+            z-index: -1;
+            background-image: url('/images/background.jpg');
+            background-repeat: no-repeat;
+            background-position: center -156px;
+            background-size: cover;
+            background-color: transparent;
+        }
+
+        header.cube-background.cube-header-background {
+            visibility: hidden;
+            background-image: url('/images/background.jpg');
+            background-position: center -200px;
+        }
+    </style>
+    <header class="cube-background cube-header-background">
+        
+        <div class="cube-type">
+            <span class="cube-typed-title">FourteenObsidian&#39;s blog</span>
+            <span class="cube-typed-cursor">|</span>
+        </div>
+        
+    </header>
+    <div class="load-header-background"></div>
+    <script>
+        (function (window) {
+
+            window.headerModule = {}
+            window.headerModule.image = {
+                width: '2000',
+                height: '1414'
+            }
+
+        })(window)
+    </script>
+    
+    <div class="cube-content">
+        <div class="cube-left">
+            <div class="cube-article">
+    <h1 class="title">养傻记</h1>
+    
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2022-02-16
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+</div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <blockquote>
+<p>手持两把锟斤拷， 口中疾呼烫烫烫， 脚踏千朵屯屯屯， 笑看万物锘锘锘</p>
+</blockquote>
+<span id="more"></span>
+<h2><span id="on-o1-gcd">O(n)-O(1) gcd!!!</span></h2><p>$O(n)$ 预处理，$O(1)$ 查询值域在 $[1,n]$ 之间的每个整数的 $\gcd$。</p>
+<p>直接把每个数拆成三个数的乘积，那么这三个数可以满足：</p>
+<ul>
+<li><p>要么都 $\le \sqrt n$</p>
+</li>
+<li><p>要么有一个是 $&gt;\sqrt n$ 的质数，其他两个 $\le \sqrt n$</p>
+</li>
+</ul>
+<p>怎么把一个数拆成这样三个数的乘积呢？我们可以线性筛出所有数 $x$ 的最小质因子，设为 $p_x$，对于 $\frac{x}{p_x}$ 的分解设为 $(a,b,c)$。</p>
+<p>那么我们只要找到 $\min\{a,b,c\}$，把 $p_x$ 丢进去就可以了。</p>
+<p>证明就是大力分讨，如果不成立就会爆上界。</p>
+<p>然后预处理 $1\sim\sqrt n$ 这些数两两的 $\gcd$，这个直接递推即可。</p>
+<p>对于查询 $\gcd(x,y)$，把 $x$ 的分解拿出来，用预处理出的 $\sqrt n$ 以内的 $\gcd$ 直接算出相同因数，而对于分解出的大质数直接特判即可。</p>
+<h3><span id="cf1628d-game-on-sum">CF1628D Game on Sum</span></h3><p>看起来很高妙的博弈？其实是真傻了！</p>
+<hr>
+<p>盯着题面发呆良久后发现，woc！Easy Version 可以直接 DP！</p>
+<p>直接写出：$dp[i][j]$：操作 $i$ 次，至少加 $j$ 次的答案。</p>
+<p>则 $dp[i][0]=0,dp[i][i]=ki$。</p>
+<p>而对于剩下的情况，设选的是 $t$，则 $dp[i][j]=\min(dp[i-1][j]-t+dp[i-1][j-1]+t)$。显然最优解为 $\frac{dp[i-1][j]+dp[i-1][j-1]}2$。</p>
+<p>这个 $k$ 只是个比例，可以直接去掉，这样就可以过 Easy Version 了。</p>
+<p>再来看看这个递推的形式。不妨把它化一下，设 $dp[i][j]$ 表示 $i$ 次加，$j$ 次减的答案。边界条件是 $dp[i][0]=i,dp[0][i]=0$。</p>
+<p>那个转移式即为 $dp[i][j]=\frac{dp[i-1][j]+dp[i][j-1]}2$。<br>嘿！这是一个非常好看的二维递推形式。那么答案就是 $x$ 轴上的一些点，向上和向右，走到 $(m,n-m)$ 的方案数之和。当然，我们要把 $(i,0)$ 的答案乘上 $2^{i-n}i$。</p>
+<p>形式化地，答案为 $k\sum\limits_{i=0}^m 2^{i-n}i\binom{n-i-1}{m-i}$ 。这里是 $n-i-1$ 的原因是一个点开局只能向上走。</p>
+<hr>
+<p>麻了，Hard Version 没看到 $sum\le 1e6$……</p>
+<p>以为 DP 没用，然而思考暴力方法往往对正解的思考大有裨益。</p>
+<h3><span id="cf1559e-mocha-and-stars">CF1559E Mocha and Stars</span></h3><p>这都不会，可以cs了！</p>
+<p>忽略 $\gcd$ 条件，哇！我会 DP！设 $dp[i][j]$ 为前 $i$ 个数，和为 $j$，则有 $dp[i][j]=\sum\limits_{k=l_i}^{\min(r_i,j)}dp[i-1][j-k]$。 前缀和优化即可做到 $O(nm)$！</p>
+<p>然后我们发现这个 $\gcd$ 看着真的太难受了，于是设 $f(m,a_1,a_2,\ldots,a_n)$ 为一种拆分方法是否满足除 $\gcd$ 以外的其他条件。最终答案可以写成 $\sum\limits_{a_1=l_1}^{r_1}\sum\limits_{a_2=l_2}^{r_2}\cdots\sum\limits_{a_n=l_n}^{r_n}[\gcd(a_1,a_2,\ldots,a_n)=1]f(m,a_1,a_2,\ldots,a_n)$。</p>
+<p>哦，这不就是我们亲爱的 Möbius 反演的形式吗？</p>
+<script type="math/tex; mode=display">
+ans=\sum\limits_{a_1=l_1}^{r_1}\sum\limits_{a_2=l_2}^{r_2}\cdots\sum\limits_{a_n=l_n}^{r_n}[\gcd(a_1,a_2,\ldots,a_n)=1]f(m,a_1,a_2,\ldots,a_n)
+\\
+
+=\sum\limits_{a_1=l_1}^{r_1}\sum\limits_{a_2=l_2}^{r_2}\cdots\sum\limits_{a_n=l_n}^{r_n}f(m,a_1,a_2,\ldots,a_n)\sum_{d|\gcd(a_1,a_2,\ldots,a_n)}\mu(d)
+\\
+=\sum_{d=1}^m\mu(d)\sum\limits_{a_1=\lceil \frac{l_1}{d}\rceil }^{\lfloor\frac{r_1}{d}\rfloor}\sum\limits_{a_2=\lceil \frac{l_2}{d}\rceil }^{\lfloor\frac{r_2}{d}\rfloor}\cdots\sum\limits_{a_n=\lceil \frac{l_n}{d}\rceil }^{\lfloor\frac{r_n}{d}\rfloor}f(\lfloor\frac m d\rfloor,a_1,a_2,\ldots,a_n)</script><p>后面那个东西，就是可以 $O(\frac{nm}d)$ 直接算的啦！总复杂度 $O(nm\log m)$。</p>
+<hr>
+<p>难处理的部分拆出去，用常见套路处理掉。</p>
+<h3><span id="cf1542d-priority-queue">CF1542D Priority Queue</span></h3><p>直接做完全不会，考虑算贡献。</p>
+<p>这个贡献是可以 DP 的。考虑当前我们要算位置 $p$ 留到最后的方案数，设 $dp[i][j]$ 表示经过前 $i$ 个操作之后，还剩下了 $j$ 个比 $a_p$ 小的数的方案数。这里对于与 $a_p$ 相同的数的处理方式是：钦定优先队列中值相同的数，先进先出。即把 $a_x=a_p$ 而 $x&lt;p$ 的数视为 $&lt;a_p$。</p>
+<p>转移方程显然。注意在 <code>-</code> 且 $i&lt;p$ 的位置，$dp[i][0]=2\times dp[i-1][0]+dp[i-1][1]$。</p>
+<hr>
+<p>拆贡献！！！</p>
+<h3><span id="cf1515e-phoenix-and-computers">CF1515E Phoenix and Computers</span></h3><p>我会 $O(n^4)$ DP！</p>
+<p>寄！</p>
+<hr>
+<p>$O(n^3)$ DP：</p>
+<p>设 $dp[i][j]$ 表示长度为 $i$ 的区间，操作 $j$ 次的答案。</p>
+<p>没有自动开机的情况，钦定初始点，每次选择向左还是向右。$dp[i][i]=2^{i-1}$。</p>
+<p>有自动开机的情况，枚举从左到右第一个自动开机的是谁，有：</p>
+<script type="math/tex; mode=display">
+dp[i][j]=\sum\limits_{k=2}^{j-1}\binom{j}{k-1}dp[k-1][k-1]\times dp[i-k][j-k+1]</script><p>这样就做完了。</p>
+<hr>
+<p>$O(n^2)$ DP：</p>
+<h2><span id="一类相邻型dp的套路">一类相邻型DP的套路</span></h2><p>例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5999">[CEOI2016]kangaroo</a></p>
+<p>题意：给你 $n,s,t$，求 $\sum\limits_{P}[p_1=s][p_n=t]\prod\limits_{i=2}^{n-1}[[p_i&lt;p_{i-1}]=[p_i&lt;p_{i+1}]]$。</p>
+<p>其中 $P$ 为长度为 $n$ 的排列。</p>
+<p>考虑维护连续段。设 $dp[i][j]$ 表示 $1\sim i$ 中所有数排成一些连续段，考虑段间顺序，其中每个连续段中的数 $a_i$（两端除外）满足它要么同时小于左右两个数，要么大于左右两个数。</p>
+<p>插入有两种情况:</p>
+<ol>
+<li><p>合并相邻的两段。由于从小到大插入，这样一定是合法的。</p>
+</li>
+<li><p>加入一个新段。</p>
+</li>
+</ol>
+<p>其他细节就随便啦。</p>
+<pre><code class="hljs cpp">dp[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;
+For(i, <span class="hljs-number">2</span>, n) For(j, <span class="hljs-number">1</span>, i)
+&#123;
+	<span class="hljs-keyword">if</span>(i != s &amp;&amp; i != t)
+    dp[i][j] = Add(Mul(dp[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>], (j - (i &gt; s) - (i &gt; t))), Mul(dp[i - <span class="hljs-number">1</span>][j + <span class="hljs-number">1</span>], j));
+	<span class="hljs-keyword">else</span> dp[i][j] = Add(dp[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>], dp[i - <span class="hljs-number">1</span>][j]);
+&#125;
+</code></pre>
+<hr>
+<p>回到本题。设 $dp[i][j]$ 表示长度为开了 $i$ 台，连出了 $j$ 个连续段的方案数。当然，这些连续段之间空的距离至少为 $2$。</p>
+<p>然后也是大力分类就是 $O(n^2)$ 的了。</p>
+<pre><code class="hljs cpp">dp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;
+For(i, <span class="hljs-number">1</span>, n) For(j, <span class="hljs-number">0</span>, i)
+&#123;
+	<span class="hljs-keyword">if</span>(j) dp[i][j] = Add(dp[i][j], Mul(j, dp[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>]));
+	dp[i][j] = Add(dp[i][j], Mul(dp[i - <span class="hljs-number">1</span>][j], <span class="hljs-number">2</span> * j));
+	<span class="hljs-keyword">if</span>(i &gt; <span class="hljs-number">1</span>)
+	&#123;
+		dp[i][j] = Add(dp[i][j], Mul(dp[i - <span class="hljs-number">2</span>][j], <span class="hljs-number">2</span> * j));
+		dp[i][j] = Add(dp[i][j], Mul(<span class="hljs-number">2</span> * j, dp[i - <span class="hljs-number">2</span>][j + <span class="hljs-number">1</span>]));
+	&#125;
+	<span class="hljs-keyword">if</span>(i &gt; <span class="hljs-number">2</span>) dp[i][j] = Add(dp[i][j], Mul(j, dp[i - <span class="hljs-number">3</span>][j + <span class="hljs-number">1</span>]));
+&#125;
+
+</code></pre>
+<h3><span id="cf1178f-short-colorful-strip">CF1178F Short Colorful Strip</span></h3><p>果然是遇到计数 DP 就不会。。。</p>
+<h4><span id="easy-version">Easy Version</span></h4><p>呃，设 $dp[l][r]$ 表示 $[l,r]$ 初始时颜色相同，则我们要从当前颜色最小的位置向左向右拓展一段。设 $[l,r]$ 中颜色最小的位置为 $p$，枚举染色的左右端点，有：</p>
+<script type="math/tex; mode=display">
+dp[l][r]=\sum\limits_{i=l}^p\sum_{j=p}^rdp[l][i-1]\times dp[i][p-1]\times dp[p+1][j]\times dp[j+1][r]</script><p>（ 对于 $l&gt;r$ 的情况，$dp[l][r]=1$。）</p>
+<p>这样是 $O(n^4)$ 的，但是只要你有注意力的话，你会注意到转移式可以改写为：</p>
+<script type="math/tex; mode=display">
+dp[l][r]=\sum\limits_{i=l}^pdp[l][i-1]\times dp[i][p-1]\times \sum_{j=p}^rdp[p+1][j]\times dp[j+1][r]</script><p>时间复杂度 $O(n^3)$。</p>
+<h4><span id="hard-version">Hard Version</span></h4><p>这个 $n$ 还是这么小，所以我们还是想要 $O(n^3)$ 的做法。</p>
+<p>其实 $m$ 才是序列长度，所以我们可以考虑把一个连续段压成一个长度为 $1$ 的段。也就是说，只在颜色的交界处进行转移。原因是我总不可能在一种颜色条的内部切一段吧。。。</p>
+<p>规约到与 Easy Version 类似的情形，时间复杂度 $O(n^3+m)$。</p>
+<hr>
+<p>DP ：划分为子问题，观察待求物品的共同性质（忽略标号，观察本质），即可把复杂度和状态数压下来。</p>
+<hr>
+<h1><span id="计数做得审美疲劳了来写写-ds-放松放松吧">计数做得审美疲劳了，来写写 DS 放松放松吧！</span></h1><hr>
+<h3><span id="cf213e-two-permutations">CF213E Two Permutations</span></h3><p>动态逆序对！！！直接使用 CDQ 分治即可！！！</p>
+<p>什么智障（</p>
+<hr>
+<p>考虑维护删除一个数，加入一个数，判断序列是否有序的过程。</p>
+<p>使用 Hash 即可，动态维护 $a$ 的 Hash 值， $b$ 的用线段树或平衡树维护。其中线段树维护时间复杂度 $O(m\log m)$，而平衡树是 $O(m\log n)$的。当然实际上区别不会太大。</p>
+<hr>
+<p>不要莽啊，Hash 这种常见技巧还是可以想到的。。。</p>
+<p>类似题目：P5310 [Ynoi2011] 遥远的过去。</p>
+<h3><span id="cf241b-friends">CF241B Friends</span></h3><p>大家好呀，我做过异或粽子，是 $O((n+k)\log (nV))$ 的</p>
+<p>但是本题 $k$ 有点大。。。有个 $O(n(\log^2V+\log n))$ 的与 $k$ 无关的做法！</p>
+<p>（其实去年做异或粽子就看到这题了，然后就不会了）</p>
+<hr>
+<p>首先第 $k$ 相关的第一思路：binary search!</p>
+<p>直接对于每个数在 trie 上算就可以了。$O(n\log^2 V)$。</p>
+<p>现在找到了第 $k$ 大的值。查询时，提前把 $a$ 排序，然后 trie 上的一个子树就是原序列的一个区间。子树求异或和就只要拆位前缀预处理即可。</p>
+<hr>
+<p>求第 $k$ 大我为什么会先想到堆呢。。。</p>
+<h3><span id="cf351d-jeff-and-removing-periods">CF351D Jeff and Removing Periods</span></h3><p>越来越不会做数据结构了。。。</p>
+<hr>
+<p>区间询问是否有一种颜色，使得它们的位置构成一个等差序列。</p>
+<p>直接预处理出每个点等差向右最多延伸多长。显然可以做到 $O(n)$。</p>
+<p>然后上莫队，要维护每个颜色位置的最小值和最大值。使用不删除莫队或 <code>STL::deque</code> 即可。 </p>
+<hr>
+<p>预处理是个好东西，就像脑子一样。</p>
+<p>可惜我没有 :（</p>
+<h3><span id="cf452f-permutation">CF452F Permutation</span></h3><p>不会哈希。。。/ll</p>
+<hr>
+<p>考虑顺着扫，扫到一个点就把它对应的值打个访问标记。</p>
+<p>那么由于是等差数列，状态合法当且仅对于当这个位置对应的值 $a_i$，存在 $k$ 使得 $a_i-k$ 的状态与 $a_i+k$ 的不同。即不存在合法解当且仅当以 $i$ 为中心是回文的。权值线段树维护即可。</p>
+<h3><span id="cf860e-arkady-and-a-nobody-men">CF860E Arkady and a Nobody-men</span></h3><p>$O(n\log^2 n)$ 做法：</p>
+<p>考虑维护答案的增量。</p>
+<p>$g(u)=g(fa_u)+\sum\limits_{dep(u)=dep(v)}{dep(\mathrm{lca}(u,v))}-1$。</p>
+<p>分别处理深度相同的点，祖先加祖先求和即可。</p>
+<p>$O(n\log n)$ 做法：</p>
+<p>把点按照 $dfn$ 排列后，发现一个点对于它同层的前面的点，$lca$ 的深度是单调不减的。</p>
+<p>维护一个栈表示当前点与前面的 $lca$ 的序列，插入一个点 $u$ 时，如果最后一个和倒数第二个点与 $u$ 的 $lca$ 相同，则合并它们。显然它们之后与其他点的 $lca$ 也会是一样的了。然后正着反着做一遍即可。</p>
+<p>好像有 $O(n)$ 长剖做法，以后补补。</p>
+<h3><span id="cf1044f-dfs">CF1044F DFS</span></h3><p>手玩发现，加入一条边，会使得在它的两个端点内侧的所有点变得不合法。用另一种方式描述是，我们删掉这两个端点 $u,v$ ，形成的若干个联通块中，原来与 $u,v$ 都相邻的联通块是不合法的。</p>
+<p>为什么呢？考虑一张图，它的 $dfs$ 生成树一定是只有树边和返祖边的。所以对于一条边 $(u,v)$ ，以它对应的合法起始点为根，$u,v$ 之间一定是祖先后代关系。</p>
+<p>那么直接 $dfs$ 一遍，不合法的区间只有 $O(1)$ 个，用线段树维护区间 $min$ 以及 $min$ 的个数即可。</p>
+<hr>
+<h5><span id="有点不想写代码了于是开始口胡">有点不想写代码了，于是开始口胡！</span></h5><h4><span id="又回来计数了">又回来计数了。</span></h4><h3><span id="cf1550d-excellent-arrays">CF1550D Excellent Arrays</span></h3><p>观察到最优一定是有一个常数 $C&gt;0$，然后一半的 $a_i=i+C$ 一半 $a_i=i-C$。</p>
+<p>然后寄了。</p>
+<hr>
+<p>我好愚蠢啊。</p>
+<p>观察一下，发现能 $+C$ 的限制强度单调递增，$-C$ 的单调递减。</p>
+<p>于是先直接处理出没被限制时的答案，然后 $C$ 每次 <code>+1</code> 时，限制都会更紧。</p>
+<p>直接枚举限制，组合数直接算。</p>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        
+        <li class="next">
+            <a href="/2021/12/28/hhh/">
+                hhh
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+    <!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
+<div class="gitment-comment">
+    <div id="container"></div>
+</div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id default is location.href
+        owner: 'ObsidianY',
+        repo: 'blog_comments',
+        oauth: {
+            client_id: '6603691d184d0907e56a',
+            client_secret: '848f8ccf2e7d7c87cd892ba59b464cef8e58a784',
+        },
+    })
+    gitment.render('container')
+</script>
+    
+
+
+        </div>
+        <div class="cube-right">
+            
+
+<div class="cube-search cube-sidebar" id="cube-search">
+    <div class="search-container">
+        <input type="text" placeholder="搜索" class="cube-search-input" id="cube-search-input">
+        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
+    </div>
+    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
+</div>
+<script>
+    (function (window) {
+        'use strict';
+        window.searchModule = {}
+        window.searchModule.JSONUrl = '/content.json'
+        window.searchModule.rootUrl = '/'
+    })(window)
+</script>
+<div class="cube-search-form">
+    <div class="cube-search-control">
+        <input type="text" placeholder="搜索" class="search-input">
+        <a class="close-button">
+            <i class="cube-icon cube-close" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="cube-search-result"></div>
+</div>
+
+
+<div class="cube-author cube-sidebar" id="cube-author">
+    
+    
+    <style>
+        @media(min-width: 768px) {
+            .cube-author img {
+                margin-top: 40px;
+                margin-bottom: 10px;
+            }
+        }
+        @media(max-width: 1120px) and (min-width: 768px) {
+            .cube-author img {
+                width: 128px;
+                height: 128px;
+            }
+        }
+        @media(min-width: 1120px) {
+            .cube-author img {
+                width: 160px;
+                height: 160px;
+            }
+        }
+    </style>
+    
+    <img src="/images/avatar.png" alt="avatar" class="cube-avatar">
+    
+    
+    <span>FourteenObsidian</span>
+    
+    
+    <div class="count">
+        <a class="count articles"><span>44</span>文章</a>
+        <a class="count tags"><span>30</span>标签</a>
+        <a class="count categories"><span>6</span>分类</a>
+    </div>
+</div>
+
+
+
+<div class="cube-music cube-sidebar" id="cube-music">
+    <div class="cube-player aplayer" id="cube-player"></div>
+</div>
+<script>
+    (function (window) {
+        window.musicModule = {}
+        window.musicModule.musicConfig = '{"narrow":false,"autoplay":false,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Sweden","author":"c418","url":"https://obsidiany.github.io/music/Sweden.mp3","pic":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=469673353,535287263&fm=26&gp=0.jpg"},{"title":"Wet Hands","author":"c418","url":"https://obsidiany.github.io/music/WetHands.mp3","pic":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=469673353,535287263&fm=26&gp=0.jpg"},{"title":"Minecraft","author":"c418","url":"https://obsidiany.github.io/music/Minecraft.mp3","pic":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=469673353,535287263&fm=26&gp=0.jpg"},{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"}]}'
+        window.musicModule.lrcConfig = {
+            open: '开启歌词',
+            close: '关闭歌词'
+        }
+    })(window)
+</script>
+
+
+
+<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
+    <div class="title">
+        <a>近期文章</a>
+    </div>
+    <ul class="list">
+        
+        
+        <li>
+            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
+            
+            <div class="normal">
+                <p class="index first">
+                    <span>1</span>
+                </p>
+                <p class="title">
+                    <a href="/2022/02/16/stupid/" title="养傻记">养傻记</a>
+                </p>
+            </div>
+            
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>2</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/12/28/hhh/" title="hhh">hhh</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>3</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/12/18/aaa/" title="aaa">aaa</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>4</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/11/17/ARC110F/" title="ARC110F">ARC110F</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>5</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/11/14/CF1508A/" title="CF1508A">CF1508A</a>
+                </p>
+            </div>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-categories cube-sidebar" id="cube-categories">
+    <div class="title">
+        <a href="/categories">分类</a>
+    </div>
+    <div class="cube-boxs">
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/%E5%9B%BE%E8%AE%BA/">#图论</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">#数据结构</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/%E6%95%B0%E5%AD%A6/">#数学</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/">#树上问题</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/%E5%BB%BA%E5%9B%BE%E5%A5%97%E8%B7%AF/">#建图套路</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="cube-tagcloud cube-sidebar" id="cube-tagcloud">
+    <div class="title">
+        <a href="/tags">标签云</a>
+    </div>
+    <div class="cube-boxs">
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/ST%E8%A1%A8/">#ST表</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E8%AE%B0%E5%BD%95/">#记录</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">#线段树</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%95%B0%E8%AE%BA/">#数论</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/2-SAT/">#2-SAT</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E7%8A%B6%E5%8E%8B/">#状压</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/Splay/">#Splay</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/LCT/">#LCT</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E5%A0%86/">#堆</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E8%AE%A1%E6%95%B0/">#计数</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">#概率与期望</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86/">#矩阵树定理</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E8%8E%AB%E5%8F%8D/">#莫反</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%A0%B9%E5%8F%B7%E5%88%86%E6%B2%BB/">#根号分治</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">#最短路</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E7%BB%84%E5%90%88/">#组合</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E6%9A%B4%E5%8A%9B/">#暴力</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/Z%E5%87%BD%E6%95%B0/">#Z函数</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/dp/">#dp</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/">#平衡树</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/tarjan/">#tarjan</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/Polya/">#Polya</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/">#笛卡尔树</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%9E%84%E9%80%A0/">#构造</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E5%AE%B9%E6%96%A5/">#容斥</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/">#扫描线</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E4%BA%8C%E5%88%86/">#二分</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/set/">#set</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/">#单调栈</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="cube-links cube-sidebar" id="cube-links">
+    <div class="title">
+        <a>个人链接</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png">
+            
+            <a href="https://github.com/ObsidianY" target="_blank">GitHub</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="/images/loj.svg">
+            
+            <a href="https://loj.ac/u/ObsidianY" target="_blank">LOJ</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="/images/lg.jpg">
+            
+            <a href="https://www.luogu.com.cn/user/108098" target="_blank">洛谷</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
+    <div class="title">
+        <a>友情链接</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="/images/friend_links.jpg ">
+            <a href="https://obsidiany.github.io/" target="_blank">FourteenObsidian</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+    </div>
+</div>
+<footer class="cube-footer">
+    
+© 2017 FourteenObsidian
+
+<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+</footer>
+<!-- inject:script -->
+<script src="/js/script.js"></script>
+<!-- endinject -->
+<div class="cube-loading out"></div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+</body>
+</html>
